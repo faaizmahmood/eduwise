@@ -6,7 +6,7 @@ function App() {
  return(
   <>
   <Routes>
-    <Route path='/' element={<ComingSoon/>}/>
+    <Route exact path='/' element={<ComingSoon/>}/>
   </Routes>
     
   </>
