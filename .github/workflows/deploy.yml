@@ -1,53 +1,41 @@
-name: Deploy
-
+name: Firebase Deployment
 on:
   push:
     branches:
       - main
-      - qa
-
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        uses: bahmutov/npm-install@v1
-
-      - name: Build project
+      - name: Checkout Repo
+        uses: actions/checkout@v2.3.2
+      - name: Install Dependencies
+        run: npm install      
+      - name: Build
+        env:
+          CI: false        
         run: npm run build
-
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v3
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
         with:
-          name: production-files
-          path: ./dist
-
+          name: build
+          path: build
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v2.3.2
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
         with:
-          name: production-files
-          path: ./dist
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+          name: build
+          path: build
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
