@@ -14,13 +14,31 @@
 /* page loading */
 
 
-.page-loading{
+.page-loading {
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #F4F9FF;
+}
+
+// Pop Up
+
+.popup-content {
+    background-color: #F4F9FF !important;
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+.popup {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F9FF !important;
+    border-radius: 10px !important;
+    height: 300px;
 }
 
 /* hero */
@@ -227,7 +245,7 @@
 
 /* Get Started Now */
 
-.get-started{
+.get-started {
     max-width: 550px;
     width: 80%;
     min-height: 100px;
@@ -241,7 +259,7 @@
     position: relative;
 }
 
-.get-started button{
+.get-started button {
     padding: 10px 30px;
     background-color: #FFC221;
     border: none;
@@ -252,17 +270,17 @@
     font-weight: 500;
 }
 
-.get-started h6{
+.get-started h6 {
     color: #0071DC;
     font-size: 14px;
 }
 
-.get-started h5{
+.get-started h5 {
     color: #262626;
     font-size: 18px;
 }
 
-.get-started img{
+.get-started img {
     position: absolute;
     top: -35px;
     left: -35px;
@@ -271,7 +289,7 @@
 
 /* About */
 
-.about{
+.about {
     width: 100%;
     min-height: 300px;
     background-color: #EFF5F7;
@@ -281,29 +299,95 @@
     justify-content: center;
 }
 
-.about-content h5{
+.about_content h5 {
     font-size: 18px;
     font-weight: 400;
     color: #0071DC;
 }
 
-.about-content h4{
+.about_content h4 {
     font-size: 34px;
     font-weight: 500;
     color: #262626;
 }
 
-.about_card h5{
+.about_card h5 {
     color: #262626;
     font-size: 22px;
     font-weight: 600;
 }
 
-.about_card p{
+.about_card p {
     color: #A6A6A6;
     font-size: 14px;
     font-weight: 500;
 }
+
+
+/* Testimonial */
+
+.testimonial {
+    width: 100%;
+    min-height: 300px;
+    background-color: #F4F9FF;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testimonial_content h5 {
+    font-size: 18px;
+    color: #0071DC;
+    font-weight: 500;
+}
+
+.testimonial_content h4 {
+    font-size: 34px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.testimonial_slider {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.testimonial_item {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.testimonial_item h4 {
+    font-size: 18px;
+    color: #0071DC;
+}
+
+.testimonial_item p {
+    font-size: 16px;
+    color: #B8B7BA;
+}
+
+.testimonial_item h5 {
+    font-size: 14px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.testimonial_item h6 {
+    font-size: 14px;
+    color: #B8B7BA;
+    font-weight: 500;
+}
+
+
 
 /* responsive */
 
@@ -320,6 +404,10 @@
 
     .course-card {
         width: 32%;
+    }
+
+    .testimonial_item {
+        flex: 1 1 calc(50% - 10px);
     }
 }
 
@@ -342,6 +430,11 @@
         width: 49%;
     }
 
+    .get-started {
+        margin: 40px auto;
+    }
+
+
 }
 
 @media (max-width:576px) {
@@ -349,7 +442,6 @@
         font-size: 28px;
         max-width: 70%;
         width: 100%;
-
     }
 
     .hero-cards {
@@ -364,14 +456,14 @@
     }
 
     .tabs {
-       overflow-y: scroll;
+        overflow-y: scroll;
     }
 
-    .tabs::-webkit-scrollbar{
+    .tabs::-webkit-scrollbar {
         display: none;
     }
 
-    .tabs button{
+    .tabs button {
         padding: 0px 10px;
         width: fit-content;
     }
@@ -379,14 +471,42 @@
     .course-card {
         width: 100%;
     }
-    
-    .course-card img{
+
+    .course-card img {
         width: 100% !important;
     }
 
-    .get-started{
+    .get-started {
         display: block;
     }
+
+    .about {
+        padding: 30px 10px;
+    }
+
+
+    .about_content h5,
+    .testimonial_content h5 {
+        font-size: 16px;
+    }
+
+    .about_content,
+    .testimonial_content h4 {
+        font-size: 30px;
+    }
+
+    .about_card h5 {
+        font-size: 20px;
+    }
+
+    .about_card p {
+        font-size: 12px;
+    }
+
+    .testimonial_item {
+        flex: 1 1 calc(100% - 10px);
+    }
+
 
 }
 

@@ -1,7 +1,11 @@
-import styles from './LandingPage.module.css';
+import styles from './LandingPage.module.scss';
 import Icon from '../../containers/Icon';
 import useLandingPage from './useLandingPage';
 import { ClipLoader } from 'react-spinners';
+import 'react-multi-carousel/lib/styles.css';
+import TestimonialCard from './TestimonialCard';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 
 // eslint-disable-next-line react/prop-types
@@ -17,7 +21,8 @@ const CardItems = ({ icon, title, subTitle, description }) => {
     </>
   )
 }
-// buttton  
+
+
 const renderButton = (ele) => {
   if (ele.level === "All Levels") {
     return <button disabled style={{ backgroundColor: '#DCF4F6', color: '#44D9E1' }}>{ele.level}</button>;
@@ -28,7 +33,7 @@ const renderButton = (ele) => {
   } else if (ele.level === "Advanced") {
     return <button style={{ backgroundColor: '#FFE0B2', color: '#FF9800' }}>{ele.level}</button>;
   } else {
-    return <button>{ele.level}</button>; // Default case
+    return <button>{ele.level}</button>;
   }
 };
 
@@ -61,7 +66,12 @@ const LandingPage = () => {
               <div style={{ backgroundColor: '#f5f7fd' }}>
                 <header className={`container py-3 d-flex justify-content-between align-items-center ${styles.header}`}>
                   <img src='./images/smart-learn-logo.png' alt='logo here' width={"200px"} />
-                  <button>Get Started</button>
+                  {/* <button>Get Started</button> */}
+                  <Popup trigger={<button> Get Started</button>} modal position="center center" style={{backgroundColor:'red'}}>
+                    <div className={styles['popup']}>
+                      <h1>Coming Soon!</h1>
+                    </div>
+                  </Popup>
                 </header>
               </div>
               {/* header */}
@@ -183,55 +193,60 @@ const LandingPage = () => {
 
               {/* Get Started */}
 
-              <div className={styles['get-started']}>
+              <section className={styles['get-started']}>
                 <div className={styles['get-started-1']}>
                   <h6>Let Us Help</h6>
                   <h5>Finding Your Right Courses</h5>
                 </div>
                 <div className={styles['get-started-1']}>
-                  <button>Get Started</button>
+                  {/* <button>Get Started</button> */}
+                  <Popup trigger={<button> Get Started</button>} modal position="center center" style={{backgroundColor:'red'}}>
+                    <div className={styles['popup']}>
+                      <h1>Coming Soon!</h1>
+                    </div>
+                  </Popup>
                 </div>
                 <img src='./images/charge-img.png' alt='charge image' />
-              </div>
+              </section>
 
               {/* Get Started */}
 
               {/* About */}
-              <div className={styles['about']}>
+              <section className={styles['about']}>
                 <div className='container'>
                   <div className='row align-items-center'>
 
-                    <div className='col-4'>
-                      <div className={styles['about-content']}>
+                    <div className='col-lg-4 col-12'>
+                      <div className={`text-lg-start text-center ${styles.about_content}`}>
                         <h5>START TO SUCCESS</h5>
                         <h4>Achieve Your Goals with EduMall</h4>
                       </div>
                     </div>
 
-                    <div className='col-8'>
+                    <div className='col-lg-8 col-12 mt-lg-0 mt-5'>
                       <div className='row'>
-                        <div className='col-3'>
+                        <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/bulb.png' alt='bulb image' />
                             <h5 className='mt-3'>18,099</h5>
                             <p>Student Enrolled</p>
                           </div>
                         </div>
-                        <div className='col-3'>
+                        <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/notes.png' alt='bulb image' />
                             <h5 className='mt-3'>18,099</h5>
                             <p>Student Enrolled</p>
                           </div>
                         </div>
-                        <div className='col-3'>
+                        <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/graph.png' alt='bulb image' />
                             <h5 className='mt-3'>88%</h5>
                             <p>Learners report career benefits</p>
                           </div>
                         </div>
-                        <div className='col-3'>
+                        <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/courses.png' alt='bulb image' />
                             <h5 className='mt-3'>4,038</h5>
@@ -244,8 +259,59 @@ const LandingPage = () => {
 
                   </div>
                 </div>
-              </div>
+              </section>
               {/* About */}
+
+              {/* New Section Here */}
+              <sections>
+                <h1 className='my-5 text-center text-decoration-underline'>New Section Here</h1>
+              </sections>
+              {/* New Section Here */}
+
+              {/* TESTIMONIALS */}
+
+              <section className={styles['testimonial']}>
+                <div className={`text-center ${styles.testimonial_content}`}>
+                  <h5>TESTIMONIALS</h5>
+                  <h4>See What Our Students Have To Say</h4>
+                </div>
+
+                <div className='container'>
+                  <div className={`mt-4 ${styles.testimonial_slider}`}>
+                    <TestimonialCard
+                      title='Code Quality'
+                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
+                      name='Madley Pondor'
+                      position='/ Reporter, San Diego'
+                      img='./images/test_img_1.png'
+                    />
+                    <TestimonialCard
+                      title='Code Quality'
+                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
+                      name='Madley Pondor'
+                      position='/ Reporter, San Diego'
+                      img='./images/test_img_2.png'
+                    />
+                    <TestimonialCard
+                      title='Code Quality'
+                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
+                      name='Madley Pondor'
+                      position='/ Reporter, San Diego'
+                      img='./images/test_img_3.png'
+                    />
+                    <TestimonialCard
+                      title='Code Quality'
+                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
+                      name='Madley Pondor'
+                      position='/ Reporter, San Diego'
+                      img='./images/test_img_4.png'
+                    />
+
+                  </div>
+                </div>
+              </section>
+
+              {/* TESTIMONIALS */}
 
             </main>
           </>
