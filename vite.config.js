@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:'/Smart-E-Learning-Platform/'
+  base: import.meta.env.VITE_BRANCH === 'qa' ? '/Smart-E-Learning-Platform/qa/' : '/Smart-E-Learning-Platform/',
 })
