@@ -41,6 +41,13 @@
     height: 300px;
 }
 
+
+@media (max-width:576px) {
+    .popup{
+        width: 100%;
+    }
+}
+
 /* hero */
 
 
@@ -388,6 +395,26 @@
 }
 
 
+// Footer
+
+.footer h5{
+  font-size: 24px;
+  color: #3F5571;
+  font-weight: bold;
+}
+
+.footer p{
+    color: #B8B7BA;
+   font-weight: 400;
+   font-size: 16px;
+}
+
+.footer ul li a{
+  text-decoration: none;
+  color: #3F5571;
+  font-weight: 400;
+  font-size: 20px;
+}
 
 /* responsive */
 
@@ -505,6 +532,7 @@
 
     .testimonial_item {
         flex: 1 1 calc(100% - 10px);
+        width: 100%;
     }
 
 
