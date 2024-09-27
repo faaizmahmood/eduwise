@@ -41,7 +41,7 @@ const LandingPage = () => {
 
   const { switchTab, active, buttons, loading, filteredCourses, pageLoading } = useLandingPage()
 
-
+  
   const buttonStyle = {
     backgroundColor: 'white',
     boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
@@ -352,7 +352,7 @@ const LandingPage = () => {
                       </ul>
                     </div>
                   </div>
-                  <hr/>
+                  <hr />
                   <div className='d-flex flex-sm-row flex-column justify-content-sm-between text-md-start text-center'>
                     <p>Copyright 2024 All Rights Reserved</p>
                     <p>Privacy Policy</p>
@@ -360,6 +360,7 @@ const LandingPage = () => {
                 </div>
               </footer>
               {/* Footer */}
+
 
             </main>
           </>
