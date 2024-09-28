@@ -1,26 +1,16 @@
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import CommingSoon from './components/comingSoon/CommingSoon';
-import LandingPage from './components/landingPage/landingPage';
-import { Routes, Route } from 'react-router-dom';
+import Router from './route/route';
 
 function App() {
   return (
     <>
-      <Routes>
-        {/* Render CommingSoon only for exact root path "/" */}
-        <Route path="/" element={<CommingSoon />} />
 
-        {/* Render LandingPage only for /landing-page */}
-        <Route path="/landing-page" element={<LandingPage />} />
+      <Router />
 
 
-        <Route path="*" element={"<Error />"} />
-
-
-      </Routes>
-
+      {/* for notifications */}
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -33,7 +23,6 @@ function App() {
         pauseOnHover
         theme="light"
       />
-      {/* Same as */}
       <ToastContainer />
     </>
   );
