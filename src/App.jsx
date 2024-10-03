@@ -2,7 +2,7 @@ import { ToastContainer } from 'react-toastify';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import CommingSoon from './components/comingSoon/CommingSoon';
-import LandingPage from './components/landingPage/landingPage';
+import LandingPage from './components/landingPage/LandingPage';
 import { Routes, Route } from 'react-router-dom';
 
 
