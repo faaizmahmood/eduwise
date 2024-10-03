@@ -1,12 +1,11 @@
-import './CommingSoon.css'
+import styles from './CommingSoon.module.css'
 
 const CommingSoon = () => {
     return (
-        <section id='comming-soon'>
-            <h1 className='main-heading'>Comming Soon</h1>
-            <p>Empowering education through innovation. SmartLearn is your go-to platform for interactive and personalized online learning,
-                designed to make education accessible anytime, anywhere. Stay tuned for a transformative digital learning experience tailored
-                to your needs.</p>
+        <section id="coming-soon" className={styles['coming-soon']}>
+            <h2>Smart Learn</h2>
+            <h1>Learn Something <span>New</span> Today</h1>
+            <button disabled>Coming Soon</button>
         </section>
     )
 }

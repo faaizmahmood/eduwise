@@ -1,0 +1,555 @@
+/* header */
+
+.header button {
+    padding: 10px 20px;
+    background-color: #0071DC;
+    color: white;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+
+/* page loading */
+
+
+.page-loading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F9FF;
+}
+
+// Pop Up
+
+.popup-content {
+    background-color: #F4F9FF !important;
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+.popup {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F9FF !important;
+    border-radius: 10px !important;
+    height: 300px;
+}
+
+
+@media (max-width:576px) {
+    .popup{
+        width: 100%;
+    }
+}
+
+/* hero */
+
+
+.hero {
+    width: 100%;
+    min-height: 120vh;
+    /* padding: 100px 0px; */
+    background: url(./images/hero-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+.hero h1 {
+    font-size: 64px;
+    width: 50%;
+    font-weight: 600;
+    color: #031F42;
+}
+
+.hero h1 span {
+    color: #0071DC;
+}
+
+.text-field {
+    display: flex;
+    align-items: center;
+    max-width: 550px;
+    width: 80%;
+    margin-top: 50px;
+    background-color: white;
+    padding: 20px 15px;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.text-field input {
+    width: -webkit-fill-available;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #A6A6A6;
+
+}
+
+.text-field i {
+    width: fit-content;
+    font-size: 20px;
+}
+
+
+.hero-cards {
+    margin-top: 50px;
+    display: flex;
+    /* justify-content: space-between; */
+    max-width: 50%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card-items {
+    flex: 1;
+    text-align: start;
+    padding: 0px 20px;
+}
+
+.card-items h2 {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+}
+
+.card-items p {
+    font-size: 14px;
+    color: #A6A6A6;
+    font-weight: 500;
+
+}
+
+
+
+/* courses */
+
+.courses {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.courses h2 {
+    color: #262626;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    /* flex-wrap: wrap; */
+}
+
+.tabs button {
+    padding: 10px 20px;
+    background-color: #F0F0F0;
+    color: #A6A6A6;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    width: fit-content;
+    margin-top: 15px;
+}
+
+
+.courses_list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.course-card {
+    width: 24%;
+}
+
+.courses_card_btns {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.courses_card_btn {
+    font-size: 12px;
+    padding: 2px 5px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 3px;
+}
+
+.course-loading {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.course-not-available {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.course_card_body {
+    margin-top: 10px;
+}
+
+.course_card_body button {
+    font-size: 12px;
+    padding: 2px 15px;
+    border: none;
+    background-color: #DCF4F6;
+    outline: none;
+    color: #44D9E1;
+    border-radius: 3px;
+}
+
+.course_card_body h3 {
+    color: #262626;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    line-height: 26px;
+}
+
+.course_card_body h4 {
+    color: #0071DC;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-top: -5px;
+}
+
+
+/* Get Started Now */
+
+.get-started {
+    max-width: 550px;
+    width: 80%;
+    min-height: 100px;
+    background-color: #F4F9FF;
+    margin: 80px auto;
+    border-radius: 5px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.get-started button {
+    padding: 10px 30px;
+    background-color: #FFC221;
+    border: none;
+    outline: none;
+    color: #272625;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.get-started h6 {
+    color: #0071DC;
+    font-size: 14px;
+}
+
+.get-started h5 {
+    color: #262626;
+    font-size: 18px;
+}
+
+.get-started img {
+    position: absolute;
+    top: -35px;
+    left: -35px;
+}
+
+
+/* About */
+
+.about {
+    width: 100%;
+    min-height: 300px;
+    background-color: #EFF5F7;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about_content h5 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #0071DC;
+}
+
+.about_content h4 {
+    font-size: 34px;
+    font-weight: 500;
+    color: #262626;
+}
+
+.about_card h5 {
+    color: #262626;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.about_card p {
+    color: #A6A6A6;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+/* Testimonial */
+
+.testimonial {
+    width: 100%;
+    min-height: 300px;
+    background-color: #F4F9FF;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testimonial_content h5 {
+    font-size: 18px;
+    color: #0071DC;
+    font-weight: 500;
+}
+
+.testimonial_content h4 {
+    font-size: 34px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.testimonial_slider {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.testimonial_item {
+    flex: 1;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.testimonial_item h4 {
+    font-size: 18px;
+    color: #0071DC;
+}
+
+.testimonial_item p {
+    font-size: 16px;
+    color: #B8B7BA;
+}
+
+.testimonial_item h5 {
+    font-size: 14px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.testimonial_item h6 {
+    font-size: 14px;
+    color: #B8B7BA;
+    font-weight: 500;
+}
+
+
+// Footer
+
+.footer h5{
+  font-size: 24px;
+  color: #3F5571;
+  font-weight: bold;
+}
+
+.footer p{
+    color: #B8B7BA;
+   font-weight: 400;
+   font-size: 16px;
+}
+
+.footer ul li a{
+  text-decoration: none;
+  color: #3F5571;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+/* responsive */
+
+
+@media (max-width:992px) {
+    .hero h1 {
+        font-size: 44px;
+        width: 50%;
+    }
+
+    .hero-cards {
+        max-width: 70%;
+    }
+
+    .course-card {
+        width: 32%;
+    }
+
+    .testimonial_item {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media (max-width:768px) {
+    .hero h1 {
+        font-size: 36px;
+        width: 50%;
+    }
+
+    .hero-cards {
+        max-width: 90%;
+    }
+
+    .tabs button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .course-card {
+        width: 49%;
+    }
+
+    .get-started {
+        margin: 40px auto;
+    }
+
+
+}
+
+@media (max-width:576px) {
+    .hero h1 {
+        font-size: 28px;
+        max-width: 70%;
+        width: 100%;
+    }
+
+    .hero-cards {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-items {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .tabs {
+        overflow-y: scroll;
+    }
+
+    .tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tabs button {
+        padding: 0px 10px;
+        width: fit-content;
+    }
+
+    .course-card {
+        width: 100%;
+    }
+
+    .course-card img {
+        width: 100% !important;
+    }
+
+    .get-started {
+        display: block;
+    }
+
+    .about {
+        padding: 30px 10px;
+    }
+
+
+    .about_content h5,
+    .testimonial_content h5 {
+        font-size: 16px;
+    }
+
+    .about_content,
+    .testimonial_content h4 {
+        font-size: 30px;
+    }
+
+    .about_card h5 {
+        font-size: 20px;
+    }
+
+    .about_card p {
+        font-size: 12px;
+    }
+
+    .testimonial_item {
+        flex: 1 1 calc(100% - 10px);
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width:400px) {
+
+    .header button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .header img {
+        width: 150px;
+    }
+
+    .text-field input {
+        font-size: 14px;
+    }
+}
