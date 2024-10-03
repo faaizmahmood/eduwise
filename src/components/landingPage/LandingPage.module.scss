@@ -138,6 +138,45 @@
 
 
 
+/* categories */
+
+
+.categories h2{
+    color: #262626;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.categories_list{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 10px;
+}
+
+.categories_item{
+    width: calc(25% - 10px);
+    background-color: #F1F3F8;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.categories_item:hover{
+    transform: scale(1.04);
+}
+
+.categories_item img{
+    width: 30px;
+}
+
+.categories_item h5{
+    font-size: 15px;
+    color: #262626;
+    font-weight: 600;
+}
+
 /* courses */
 
 .courses {
@@ -506,7 +545,7 @@
     .get-started {
         display: block;
     }
-
+  
     .about {
         padding: 30px 10px;
     }

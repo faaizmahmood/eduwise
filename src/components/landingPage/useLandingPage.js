@@ -126,6 +126,58 @@ const useLandingPage = () => {
     });
 
 
+    const categories = [
+        {
+          title: 'Art & Design',
+          img:'./images/category_1.png'
+        },
+        {
+          title: 'Development',
+          img:'./images/category_2.png'
+        },
+        {
+            title: 'Life style',
+            img:'./images/category_3.png'
+          },
+        {
+          title: 'Personal Development',
+          img:'./images/category_4.png'
+        },
+        {
+          title: 'Business',
+          img:'./images/category_5.png'
+        },
+        {
+          title: 'Finance',
+          img:'./images/category_6.png'
+        },
+        {
+          title: 'Marketing',
+          img:'./images/category_7.png'
+        },
+        {
+          title: 'Photography',
+          img:'./images/category_8.png'
+        },
+        {
+          title: 'Data Science',
+          img:'./images/category_9.png'
+        },
+        {
+          title: 'Health & Fitness',
+          img:'./images/category_10.png'
+        },
+        {
+          title: 'Music',
+          img:'./images/category_11.png'
+        },
+        {
+          title: 'Teaching & Academics',
+          img:'./images/category_12.png'
+        },
+    ]
+
+
     useEffect(() => {
 
         setLoading(true)
@@ -175,7 +227,7 @@ const useLandingPage = () => {
     }, [loading, filteredCourses]);
 
 
-    return { switchTab, active, buttons, loading, filteredCourses, pageLoading }
+    return { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories }
 
 }
 

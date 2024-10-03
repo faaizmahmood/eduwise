@@ -39,7 +39,7 @@ const renderButton = (ele) => {
 
 const LandingPage = () => {
 
-  const { switchTab, active, buttons, loading, filteredCourses, pageLoading } = useLandingPage()
+  const { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories } = useLandingPage()
 
 
   const buttonStyle = {
@@ -113,6 +113,37 @@ const LandingPage = () => {
 
               </section>
               {/* hero */}
+
+
+              {/* categories */}
+
+              <section className={`${styles.categories} mt-5 pt-4`}>
+                <h2 className='text-center'>Top Categories</h2>
+
+                <div className='container'>
+
+                  <div className={`${styles.categories_list} mt-5`}>
+
+                    {
+                      categories.map((ele, ind) => {
+                        return (
+                          <>
+                            <div className={`${styles.categories_item} d-flex align-items-center`} key={ind}>
+                              <img src={ele.img} alt='...' className='img-fluid' />
+                              <h5 className='mt-2 ms-3'>{ele.title}</h5>
+                            </div>
+                          </>
+                        )
+                      })
+                    }
+
+                  </div>
+
+                </div>
+
+              </section>
+
+              {/* categories */}
 
 
               {/* courses */}
