@@ -10,11 +10,10 @@ function App() {
   return (
     <>
       <Routes>
-        {/* Render CommingSoon only for exact root path "/" */}
-        <Route path="/" element={<CommingSoon />} />
 
-        {/* Render LandingPage only for /landing-page */}
-        <Route path="/landing-page" element={<LandingPage />} />
+        <Route path="/comming-soon" element={<CommingSoon />} />
+
+        <Route path="/" element={<LandingPage />} />
 
 
         <Route path="*" element={"<Error />"} />
