@@ -5,6 +5,7 @@ import CommingSoon from './components/comingSoon/CommingSoon';
 import LandingPage from './components/landingPage/landingPage';
 import { Routes, Route } from 'react-router-dom';
 
+
 function App() {
   return (
     <>
