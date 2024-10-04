@@ -48,6 +48,13 @@ const LandingPage = () => {
     color: '#0071DC'
   }
 
+  const heroBg={
+    background: 'url(./images/hero-bg.png)',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+  }
+
   return (
     <>
 
@@ -65,7 +72,7 @@ const LandingPage = () => {
               {/* header */}
               <div style={{ backgroundColor: '#f5f7fd' }}>
                 <header className={`container py-3 d-flex justify-content-between align-items-center ${styles.header}`}>
-                  <img src='./images/smart-learn-logo.png' alt='logo here' width={"200px"} />
+                  <img src='./images/logo.png' alt='logo here' width={"35px"} />
                   {/* <button>Get Started</button> */}
                   <Popup trigger={<button> Get Started</button>} modal position="center center" style={{ backgroundColor: 'red' }}>
                     <div className={styles['popup']}>
@@ -77,7 +84,7 @@ const LandingPage = () => {
               {/* header */}
 
               {/* hero */}
-              <section className={styles['hero']}>
+              <section className={styles['hero']} style={heroBg}>
 
                 <h1>Learn Something <span>New</span> Today</h1>
 
