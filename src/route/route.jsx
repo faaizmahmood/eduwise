@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import CommingSoon from '../components/comingSoon/CommingSoon';
-import LandingPage from '../components/landingPage/landingPage';
+import LandingPage from '../components/landingPage/LandingPage';
 import Signin from '../auth/signin/signin';
 import Error from '../error/error';
 
@@ -10,8 +10,8 @@ const Router = () => {
         <>
             <Routes>
 
-                <Route path="/" element={<CommingSoon />} />
-                <Route path="/landing-page" element={<LandingPage />} />
+                <Route path="/comming-soon" element={<CommingSoon />} />
+                <Route path="/" element={<LandingPage />} />
                 <Route path="/auth/signin" element={<Signin />} />
                 <Route path="*" element={<Error />} />
 

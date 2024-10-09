@@ -13,6 +13,8 @@ const useLandingPage = () => {
 
     const [pageLoading, setPageLoading] = useState(true)
 
+    const [faqVisibility, setFaqVisibility] = useState([true, false, false, false, false])
+
     const courses = [
         {
             title: "React for Beginners",
@@ -178,6 +180,31 @@ const useLandingPage = () => {
     ]
 
 
+    const faqs = [
+      {
+        question: "What is an e-learning platform?",
+        answer: "An e-learning platform is an online system that allows users to access educational resources, take courses, and interact with instructors and other students remotely."
+      },
+      {
+        question: "How do I enroll in a course?",
+        answer: "To enroll in a course, create an account, browse the available courses, and click the 'Enroll' button. Some courses may require payment before enrollment."
+      },
+      {
+        question: "Can I access the courses on mobile devices?",
+        answer: "Yes, most e-learning platforms are accessible via mobile browsers and apps, allowing you to take courses on smartphones and tablets."
+      },
+      {
+        question: "Is there a certificate provided after course completion?",
+        answer: "Yes, most courses provide a certificate upon successful completion. You can download and share the certificate from your account dashboard."
+      },
+      {
+        question: "What if I need help during the course?",
+        answer: "You can reach out to the course instructor or support team via the platform's messaging system or helpdesk for assistance with any issues."
+      }
+    ];
+    
+
+
     useEffect(() => {
 
         setLoading(true)
@@ -227,7 +254,25 @@ const useLandingPage = () => {
     }, [loading, filteredCourses]);
 
 
-    return { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories }
+    const toggleFaq=(index)=>{
+      setFaqVisibility((prevVisibility) => {
+        prevVisibility.map((visible, ind) => (ind === index ? !visible : visible))
+      })
+    }
+
+
+    return { 
+      switchTab, 
+      active, 
+      buttons, 
+      loading, 
+      filteredCourses, 
+      pageLoading, 
+      categories,
+      faqs,
+      toggleFaq,
+      faqVisibility
+     }
 
 }
 

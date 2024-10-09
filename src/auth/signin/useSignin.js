@@ -1,5 +1,5 @@
 import { useFormik } from "formik"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import * as yup from 'yup'
 
@@ -9,6 +9,8 @@ const useSignin = () => {
     const [showHidePassVal, setShowHidePassVal] = useState(false)
 
     const [btnLoading, setBtnLoading] = useState(false)
+
+    const [loading, setLoading] = useState(true)
 
     const formik = useFormik({
         initialValues: {
@@ -77,11 +79,18 @@ const useSignin = () => {
         setShowHidePassVal(!showHidePassVal)
     }
 
+    useEffect(()=>{
+        setTimeout(() => {
+            setLoading(false)
+        }, 2000);
+    })
+
     return {
         formik,
         showHidePassVal,
         showHide,
-        btnLoading
+        btnLoading,
+        loading
     }
 
 }
