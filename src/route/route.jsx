@@ -4,6 +4,7 @@ import CommingSoon from '../components/comingSoon/CommingSoon';
 import LandingPage from '../components/landingPage/LandingPage';
 import Signin from '../auth/signin/signin';
 import Signup from '../auth/signup/signup';
+import Otp from '../auth/otp/otp';
 import Error from '../error/error';
 
 const Router = () => {
@@ -15,6 +16,7 @@ const Router = () => {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/auth/signin" element={<Signin />} />
                 <Route path="/auth/signup" element={<Signup />} />
+                <Route path="/auth/otp" element={<Otp />} />
                 <Route path="*" element={<Error />} />
 
 

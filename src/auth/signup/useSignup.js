@@ -2,6 +2,7 @@ import { useFormik } from "formik"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import * as yup from 'yup'
+import { useNavigate } from "react-router-dom"
 
 
 
@@ -21,6 +22,8 @@ const useSignup = () => {
     const [findUsername, setFindUseranme] = useState(false)
 
     const [isUserNameFind, setIsUserNameFind] = useState()
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -56,7 +59,7 @@ const useSignup = () => {
             cPassword: yup.string().required('Confirm password is required')
                 .oneOf([yup.ref('password'), null], 'Passwords must match')
         }),
-        onSubmit: async (value) => {
+        onSubmit: async (values) => {
 
             if (isUserNameFind === false) {
                
@@ -68,12 +71,12 @@ const useSignup = () => {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            email: value.email,
-                            fName: value.fName,
-                            lName: value.lName,
-                            password: value.password,
+                            email: values.email,
+                            fName: values.fName,
+                            lName: values.lName,
+                            password: values.password,
                             privacyPolicy: true,
-                            username: value.uName
+                            username: values.uName
                         })
                     })
 
@@ -86,7 +89,13 @@ const useSignup = () => {
                     if(response.status === 200){
                         toast.success("Sucessfully created account")
                         setSignupLoading(false)
+                        const otpData = await response.json()
+                        const otp = otpData.otp
                         formik.resetForm()
+                        navigate('/auth/otp', {state: {
+                            values,
+                            otp
+                        }})
                         return
                     }
 
@@ -143,7 +152,7 @@ const useSignup = () => {
                 }
 
             } catch (error) {
-                setFindUseranme(false)
+                setFindUseranme(null)
                 console.log(error)
             }
         })()

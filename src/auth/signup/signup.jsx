@@ -74,7 +74,17 @@ const Signup = () => {
                                                     formik.values.uName && (
                                                         findUsername ? (
                                                             <PulseLoader color="#0071DC" size={5} />
-                                                        ) : <p className={`${styles.found_text} mt-2`} style={{color: isUserNameFind? 'red' : "green"}}>{ isUserNameFind ? "✗ Username is taken!" : "✓ Username is ok"}</p>
+                                                        ) : (
+                                                            <p className={`${styles.found_text} mt-2`} style={{ color: isUserNameFind ? 'red' : isUserNameFind === false ? "green" : "yellow" }}>
+                                                                {
+                                                                    isUserNameFind
+                                                                        ? "✗ Username is taken!"
+                                                                        : isUserNameFind === false
+                                                                            ? "✓ Username is ok"
+                                                                            : "Error while fetching"
+                                                                }
+                                                            </p>
+                                                        )
                                                     )
                                                 }
 
@@ -130,7 +140,7 @@ const Signup = () => {
                                                 <p className='ms-2'>Accept the <a href='#'>Term</a> and <a href='#'>Privacy Policy</a></p>
                                             </div>
 
-                                            <button type='submit' className={`mt-2 ${isChecked? "" : styles.disabled_btn}`} disabled={!isChecked}>{signupLoading ? <PulseLoader color="#fff" size={6} /> : "Register"}</button>
+                                            <button type='submit' className={`mt-2 ${isChecked ? "" : styles.disabled_btn}`} disabled={!isChecked}>{signupLoading ? <PulseLoader color="#fff" size={6} /> : "Register"}</button>
 
                                             <h6 className='mt-2'>Already have an account? <NavLink to='/auth/signin'>Log in</NavLink></h6>
 
