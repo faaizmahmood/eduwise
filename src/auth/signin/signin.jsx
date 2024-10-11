@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import styles from './signin.module.scss'
 import useSignin from './useSignin'
 import { BeatLoader, ClipLoader } from 'react-spinners'
@@ -58,7 +59,7 @@ const Signin = () => {
                                                 <button type='submit'>{btnLoading ? <BeatLoader /> : "Log In"}</button>
                                             </div>
 
-                                            <p style={{ marginTop: '20px' }}>Don’t have an account yet?  <span style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}>Sign up for free</span></p>
+                                            <p style={{ marginTop: '20px' }}>Don’t have an account yet?  <span style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}><NavLink to='/auth/signup'>Sign up for free</NavLink></span></p>
                                         </form>
                                     </div>
 
