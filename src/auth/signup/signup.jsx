@@ -26,7 +26,7 @@ const Signup = () => {
                             <div className={`container ${styles.signup_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
                                     <div className={`col-lg-6 d-lg-block d-none ${styles.signup_img}`}>
-                                        <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                        <img src='./public/images/side_img.png' alt='SignUp image' />
                                     </div>
                                     <div className={`col-lg-6 ${styles.signup_form}`}>
                                         <h3>Sign Up</h3>
