@@ -1,4 +1,4 @@
-# SmartLearn - Smart E-Learning Platform
+# Eduwise - Smart E-Learning Platform
 
 The Smart E-Learning Platform is an advanced educational tool designed to enhance the learning experience through innovative technology. The platform integrates modern web development techniques and artificial intelligence to offer a comprehensive solution for students, educators, and administrators. Its primary features include personalized learning recommendations, interactive dashboards, and robust data security measures.
 

@@ -48,14 +48,12 @@ const LandingPage = () => {
     color: '#0071DC'
   }
 
-  const heroBg = {
+  const heroBg={
     background: 'url(./images/hero-bg.png)',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
   }
-
-
 
   return (
     <>
