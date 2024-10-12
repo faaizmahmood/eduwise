@@ -28,7 +28,7 @@ const Otp = () => {
                             <div className={`container ${styles.otp_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
                                     <div className={`col-lg-6 d-lg-block d-none ${styles.otp_img}`}>
-                                        <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                        <img src='./images/side_img.png' alt='SignUp image' />
                                     </div>
                                     <div className={`col-lg-6 ${styles.otp_form_container}`}>
                                         <h3>OTP Verification</h3>
