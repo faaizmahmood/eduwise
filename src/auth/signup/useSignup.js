@@ -65,7 +65,7 @@ const useSignup = () => {
                
                 try {
                     setSignupLoading(true)
-                    const response = await fetch('http://localhost:5000/auth/signup', {
+                    const response = await fetch('http://localhost:5000/api/auth/signup', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -128,7 +128,7 @@ const useSignup = () => {
         (async () => {
             try {
                 setFindUseranme(true)
-                const reponse = await fetch("http://localhost:5000/auth/username", {
+                const reponse = await fetch("http://localhost:5000/api/auth/username", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

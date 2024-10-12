@@ -23,11 +23,11 @@ const Signin = () => {
 
                                 <div className='row g-0'>
 
-                                    <div className={`${styles.side_img} col-6`}>
-                                        <img src='./images/side_img.png' alt='...' />
+                                    <div className={`${styles.side_img} col-lg-6`}>
+                                        <img src='../../../public/images/side_img.png' alt='...' />
                                     </div>
 
-                                    <div className={`${styles.form} col-6 text-center`}>
+                                    <div className={`${styles.form} col-lg-6 text-center`}>
                                         <form onSubmit={formik.handleSubmit}>
                                             <h3>Login</h3>
                                             <div className='text-start'>

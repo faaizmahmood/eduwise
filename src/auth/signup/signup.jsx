@@ -26,7 +26,8 @@ const Signup = () => {
                             <div className={`container ${styles.signup_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
                                     <div className={`col-lg-6 d-lg-block d-none ${styles.signup_img}`}>
-                                        <img src='./public/images/side_img.png' alt='SignUp image' />
+                                        <img src='.
+                                        /images/side_img.png' alt='SignUp image' />
                                     </div>
                                     <div className={`col-lg-6 ${styles.signup_form}`}>
                                         <h3>Sign Up</h3>
@@ -75,7 +76,7 @@ const Signup = () => {
                                                         findUsername ? (
                                                             <PulseLoader color="#0071DC" size={5} />
                                                         ) : (
-                                                            <p className={`${styles.found_text} mt-2`} style={{ color: isUserNameFind ? 'red' : isUserNameFind === false ? "green" : "yellow" }}>
+                                                            <p className={`${styles.found_text} mt-2`} style={{ color: isUserNameFind ? 'red' : isUserNameFind === false ? "green" : "#FFA500" }}>
                                                                 {
                                                                     isUserNameFind
                                                                         ? "✗ Username is taken!"

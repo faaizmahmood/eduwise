@@ -145,3 +145,31 @@
     font-size: 12px;
     margin-top: 5px;
 }
+
+
+
+// responsive
+
+
+@media (max-width:992px) {
+
+    .container {
+        padding: 40px 0px;
+    }
+
+    .form {
+        border-radius: 25px  !important;
+        padding: 40px 0px !important;
+    }
+    .side_img{
+        border-radius: 25px !important;
+        height: 300px;
+    }
+}
+
+
+@media (max-width:576px) {
+    .form form {
+        width: 85%;
+    }
+}
