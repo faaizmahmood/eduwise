@@ -43,7 +43,7 @@
 
 
 @media (max-width:576px) {
-    .popup{
+    .popup {
         width: 100%;
     }
 }
@@ -133,6 +133,74 @@
 }
 
 
+
+/* categories */
+
+
+.categories h2 {
+    color: #262626;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.categories_list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 10px;
+}
+
+.categories_item {
+    width: calc(25% - 10px);
+    background-color: #F1F3F8;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.categories_item:hover {
+    transform: scale(1.04);
+}
+
+.categories_item img {
+    width: 30px;
+}
+
+.categories_item h5 {
+    font-size: 15px;
+    color: #262626;
+    font-weight: 600;
+}
+
+
+// responsive
+
+@media (max-width:992px) {
+    .categories_item {
+        width: calc(33% - 10px);
+    }
+
+    .categories_list {
+        row-gap: 15px;
+    }
+
+
+}
+
+@media (max-width:768px) {
+    .categories_item {
+        width: calc(50% - 10px);
+    }
+
+}
+
+@media (max-width:576px) {
+    .categories_item {
+        width: calc(100% - 10px);
+    }
+
+}
 
 /* courses */
 
@@ -327,6 +395,53 @@
 }
 
 
+
+// -----
+
+.become_instructor {
+    height: 200px;
+    background-color: #F6F3ED;
+    border-radius: 6px;
+}
+
+.become_student {
+    height: 200px;
+    background-color: #EEF0F4;
+    border-radius: 6px;
+}
+
+.become_instructor h3,
+.become_student h3 {
+    font-size: 19px;
+    color: #262626;
+    font-weight: 600;
+}
+
+.become_instructor p,
+.become_student p {
+    font-size: 14px;
+    color: #A6A6A6;
+    font-weight: 600;
+}
+
+.become_instructor button,
+.become_student button {
+    padding: 10px 20px;
+    background-color: #0071DC;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.become_instructor img,
+.become_student img {
+    width: 35%;
+}
+
+
 /* Testimonial */
 
 .testimonial {
@@ -391,25 +506,76 @@
 }
 
 
+//  FAQ
+
+
+.faq {
+    width: 100%;
+    min-height: 300px;
+    padding: 50px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.faq_content h5 {
+    font-size: 18px;
+    color: #0071DC;
+    font-weight: 500;
+}
+
+.faq_content h4 {
+    font-size: 34px;
+    color: #262626;
+    font-weight: 500;
+}
+
+.faq_item {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+    border-radius: 5px;
+    background: #FFF;
+}
+
+.faq_item h6 {
+    color: #262626;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.faq_item p {
+    color: #B8B7BA;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.faq_item i{
+    cursor: pointer;
+}
+
 // Footer
 
-.footer h5{
-  font-size: 24px;
-  color: #3F5571;
-  font-weight: bold;
+.footer h5 {
+    font-size: 24px;
+    color: #3F5571;
+    font-weight: bold;
 }
 
-.footer p{
+.footer p {
     color: #B8B7BA;
-   font-weight: 400;
-   font-size: 16px;
+    font-weight: 400;
+    font-size: 16px;
 }
 
-.footer ul li a{
-  text-decoration: none;
-  color: #3F5571;
-  font-weight: 400;
-  font-size: 20px;
+.footer ul li a {
+    text-decoration: none;
+    color: #3F5571;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 /* responsive */

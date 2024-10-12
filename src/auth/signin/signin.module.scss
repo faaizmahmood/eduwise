@@ -1,0 +1,147 @@
+/* page loading */
+
+
+.page-loading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F9FF;
+}
+
+
+// page styling
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 500px;
+    background-color: #fff;
+}
+
+
+.side_img {
+    background: linear-gradient(166deg, rgba(252, 234, 234, 0.48) 0.47%, rgba(255, 210, 210, 0.52) 44.56%, #C9D8FF 99.29%);
+    border-radius: 40px 0px 0px 40px;
+    height: 500px;
+    display: flex;
+    align-items: end;
+}
+
+.side_img img {
+    width: 60%;
+}
+
+.form {
+    border-radius: 0px 40px 40px 0px;
+    background: #F5F7FD;
+    padding: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form form {
+    width: 75%;
+}
+
+.form h3 {
+    color: #262626;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 44px;
+    /* 95.652% */
+}
+
+.form-group {
+    margin-top: 20px;
+}
+
+.form-group input[type='email'] {
+    padding: 12px 10px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #FFF;
+    background-color: white;
+    color: #A6A6A6;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.form_group_2 {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #FFF;
+}
+
+.form_group_2 input[type='password'],
+.form_group-2 input[type='text'] {
+    width: 100%;
+    height: 100%;
+    padding: 15px 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    background-color: white;
+    color: #A6A6A6;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+
+.form label {
+    color: #262626;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+}
+
+.submit-btn button {
+    padding: 10px 20px;
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    background-color: #0071DC;
+    border-radius: 3px;
+    color: white;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.forget_password {
+    color: #0071DC;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+// error
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

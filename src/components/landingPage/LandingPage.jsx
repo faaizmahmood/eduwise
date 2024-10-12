@@ -39,9 +39,9 @@ const renderButton = (ele) => {
 
 const LandingPage = () => {
 
-  const { switchTab, active, buttons, loading, filteredCourses, pageLoading } = useLandingPage()
+  const { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories, faqs, toggleFaq, faqVisibility } = useLandingPage()
 
-  
+
   const buttonStyle = {
     backgroundColor: 'white',
     boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
@@ -122,9 +122,40 @@ const LandingPage = () => {
               {/* hero */}
 
 
+              {/* categories */}
+
+              <section className={`${styles.categories} mt-md-5 mt-2 pt-4`}>
+                <h2 className='text-center'>Top Categories</h2>
+
+                <div className='container'>
+
+                  <div className={`${styles.categories_list} mt-md-5 mt-4`}>
+
+                    {
+                      categories.map((ele, ind) => {
+                        return (
+                          <>
+                            <div className={`${styles.categories_item} d-flex align-items-center`} key={ind}>
+                              <img src={ele.img} alt='...' className='img-fluid' />
+                              <h5 className='mt-2 ms-3'>{ele.title}</h5>
+                            </div>
+                          </>
+                        )
+                      })
+                    }
+
+                  </div>
+
+                </div>
+
+              </section>
+
+              {/* categories */}
+
+
               {/* courses */}
 
-              <section className={styles['courses']}>
+              <section className={`${styles.courses} pt-md-4 pt-0`}>
                 <h2>Most Popular Courses</h2>
 
                 <div className={`mt-3 ${styles.tabs}`}>
@@ -270,9 +301,35 @@ const LandingPage = () => {
               {/* About */}
 
               {/* New Section Here */}
-              <sections>
-                <h1 className='my-5 text-center text-decoration-underline'>New Section Here</h1>
-              </sections>
+              <section className='my-5'>
+
+                <div className='container'>
+                  <div className='row'>
+                    <div className='col-6'>
+                      <div className={`${styles.become_instructor} d-flex justify-content-between align-items-end`}>
+                        <div className='p-4'>
+                          <h3>Become An Instructor</h3>
+                          <p>Top instructors from around the world teach millions of students on EduMall.</p>
+                          <button>Start teaching today</button>
+                        </div>
+                        <img src='./images/become-instructor.png' alt='...' className='' />
+                      </div>
+                    </div>
+                    <div className='col-6'>
+                      <div className={`${styles.become_student} d-flex justify-content-between align-items-end`}>
+                        <div className='p-4'>
+                          <h3>Transform Access To Education</h3>
+                          <p>Create an account to receive our newsletter, course recommendations and promotions.</p>
+                          <button>Register for free</button>
+                        </div>
+                        <img src='./images/become-student.png' alt='...' className='' />
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+              </section>
               {/* New Section Here */}
 
               {/* TESTIMONIALS */}
@@ -319,6 +376,38 @@ const LandingPage = () => {
               </section>
 
               {/* TESTIMONIALS */}
+
+
+              {/* FAQS */}
+
+              <section className={styles['faq']}>
+                <div className={`text-center ${styles.faq_content}`}>
+                  <h5>FAQ’s</h5>
+                  <h4>How may we help you?</h4>
+                </div>
+
+                <div className='container'>
+
+                  {
+                    faqs?.map((ele, ind) => {
+                      return (
+                        <>
+                          <div className={`${styles.faq_item} mt-4`} key={ind}>
+                            <div className='d-flex justify-content-between'>
+                              <h6>{ele.question}</h6>
+                              <i className="fa-sharp fa-regular fa-chevron-down" style={{ color: '#0071DC' }} onClick={()=> toggleFaq(ind)}></i>
+                            </div>
+                            <p className='m-0' style={{display: faqVisibility[ind] ? 'block' : 'none' }}>{ele.answer}</p>
+                          </div>
+                        </>
+                      )
+                    })
+                  }
+
+                </div>
+              </section>
+
+              {/* FAQS */}
 
               {/* Footer */}
               <footer className={`pb-2 pt-5 px-sm-0 px-2 ${styles.footer}`}>

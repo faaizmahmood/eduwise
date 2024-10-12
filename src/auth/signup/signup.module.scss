@@ -1,0 +1,194 @@
+@mixin inputStyles {
+    border-radius: 5px;
+    background: #FFF;
+    border: none;
+    outline: none;
+    padding: 15px 10px;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    margin-top: 6px;
+}
+
+.page-loading {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4F9FF;
+}
+
+.signup {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px;
+
+    .signup_container {
+        width: 100%;
+        height: 85%;
+
+
+        .signup_img {
+            border-radius: 25px 0px 0px 25px;
+            background: linear-gradient(166deg, rgba(252, 234, 234, 0.48) 0.47%, rgba(255, 210, 210, 0.52) 44.56%, #C9D8FF 99.29%);
+            display: flex !important;
+            align-items: end;
+
+            img {
+                width: 60%;
+            }
+        }
+
+        .signup_form {
+            background: #F5F7FD;
+            border-radius: 0px 25px 25px 0px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0px;
+
+            h3 {
+                color: #262626;
+                font-size: 46px;
+                font-style: normal;
+                font-weight: 600;
+            }
+
+            .register_form {
+                width: 75%;
+
+
+                .error_msg {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: red;
+                }
+
+                .found_text {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+
+                label {
+                    color: #262626;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                }
+
+                .sigiup_simple_fields input[type='text'],
+                .sigiup_simple_fields input[type='email'] {
+                    @include inputStyles;
+
+                    ::placeholder {
+                        color: #A6A6A6;
+                    }
+                }
+
+                .siginup_pass_group {
+                    @include inputStyles;
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        margin-right: 15px;
+                        border: none;
+                        outline: none;
+                    }
+                }
+
+                input[type='password'] {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+
+                    ::placeholder {
+                        color: #A6A6A6;
+                    }
+                }
+
+                .checkbox {
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid #A6A6A6;
+                    border-radius: 5px;
+                    background: #F5F7FD;
+                    cursor: pointer;
+                    // margin-top: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    i {
+                        color: green;
+                    }
+                }
+
+                p {
+                    color: #A6A6A6;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                }
+
+                button {
+                    width: 100%;
+                    padding: 10px 20px;
+                    background-color: #0071DC;
+                    color: #FFF;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+                .disabled_btn{
+                    cursor: not-allowed;
+                }
+
+                h6 {
+                    color: #262626;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 44px;
+                    text-align: center;
+                }
+            }
+
+            .signup_input_group {
+                display: block;
+                margin-top: 15px;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}
+
+
+// responsive
+
+
+@media (max-width:992px) {
+    .signup_form {
+        border-radius: 25px !important;
+        padding: 50px 0px !important;
+
+        .register_form {
+            width: 80% !important;
+        }
+    }
+}
