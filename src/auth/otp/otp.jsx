@@ -5,11 +5,12 @@ import { useLocation } from 'react-router-dom'
 
 const Otp = () => {
 
-    const { loading, handleInputChange, InputRef, verificationLoading, time, setTime } = useOtp()
-
     const location = useLocation()
 
-    const  {email} = location.state.values || {}
+    const { email } = location?.state?.values || {}
+
+    const { loading, handleInputChange, InputRef, verificationLoading, time, reqAgainOtp, resendingLoading } = useOtp()
+
 
 
     return (
@@ -28,7 +29,12 @@ const Otp = () => {
                             <div className={`container ${styles.otp_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
                                     <div className={`col-lg-6 d-lg-block d-none ${styles.otp_img}`}>
-                                        <img src='./images/side_img.png' alt='SignUp image' />
+                                        <div>
+                                            <h5>
+                                                {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
+                                            </h5>
+                                            <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                        </div>
                                     </div>
                                     <div className={`col-lg-6 ${styles.otp_form_container}`}>
                                         <h3>OTP Verification</h3>
@@ -41,16 +47,32 @@ const Otp = () => {
                                                 {
                                                     verificationLoading ? (
                                                         <>
-                                                            <PulseLoader color="#0071DC" size={6} style={{margin:'0px auto'}}/>
+                                                            <PulseLoader color="#0071DC" size={6} style={{ margin: '0px auto' }} />
                                                         </>
                                                     ) : (
-                                                        Array(4).fill().map((_, ind) => {
-                                                            return (
-                                                                <>
-                                                                    <input type='text' disabled={time === 0 ? true : false} className={`${time === 0 ? 'disabled_input' : ""}`} key={ind} maxLength={1} ref={(el) => (InputRef.current[ind] = el)} onChange={(e) => handleInputChange(e, ind)} autoFocus={ind === 0} />
-                                                                </>
-                                                            )
-                                                        })
+                                                        <>
+
+                                                            {
+                                                                time === 0 ? (
+                                                                    <>
+                                                                        <p className='text-center w-100' style={{ color: 'red' }}>OTP Expired...</p>
+                                                                    </>
+                                                                ) : (
+                                                                    <>
+                                                                        {
+                                                                            Array(4).fill().map((_, ind) => {
+                                                                                return (
+                                                                                    <>
+                                                                                        <input type='text' disabled={time === 0 ? true : false} className={`${time === 0 ? 'disabled_input' : ""}`} key={ind} maxLength={1} ref={(el) => (InputRef.current[ind] = el)} onChange={(e) => handleInputChange(e, ind)} autoFocus={ind === 0} />
+                                                                                    </>
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                    </>
+                                                                )
+                                                            }
+
+                                                        </>
                                                     )
 
                                                 }
@@ -58,8 +80,8 @@ const Otp = () => {
 
                                         </form>
 
-                                        <p className={`${styles.timer_para} mt-5`}>
-                                            <span className={`${styles.timer}`} >00:{time < 10 ? `0${time}` : time}</span>  Don’t receive the OTP? <span className={`${styles.send_again}`} onClick={()=> setTime(59)}>Send again</span>
+                                        <p className={`${styles.timer_para} mt-5 d-flex align-items-center`}>
+                                            <span className={`${styles.timer}`} >00:{time < 10 ? `0${time}` : time} </span>  Don’t receive the OTP? {resendingLoading ? <PulseLoader color="#0071DC" size={5} style={{ marginLeft: '10px' }} /> : <span className={`${styles.send_again}`} onClick={() => { reqAgainOtp() }}>Send again</span>}
                                         </p>
                                     </div>
                                 </div>

@@ -1,11 +1,15 @@
 import styles from './LandingPage.module.scss';
-import Icon from '../../containers/Icon';
+import Icon from '../../../containers/Icon';
 import useLandingPage from './useLandingPage';
 import { ClipLoader } from 'react-spinners';
 import 'react-multi-carousel/lib/styles.css';
 import TestimonialCard from './TestimonialCard';
-import Popup from 'reactjs-popup';
+import Header from '../header/header'
+
+// import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { NavLink } from 'react-router-dom';
+import Footer from '../footer/footer';
 
 
 // eslint-disable-next-line react/prop-types
@@ -48,7 +52,7 @@ const LandingPage = () => {
     color: '#0071DC'
   }
 
-  const heroBg={
+  const heroBg = {
     background: 'url(./images/hero-bg.png)',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -57,7 +61,7 @@ const LandingPage = () => {
 
   return (
     <>
-
+      <Header />
       {
         pageLoading ? (
           <>
@@ -69,24 +73,12 @@ const LandingPage = () => {
           <>
             <main id="landing-page" className={styles['landing-page']}>
 
-              {/* header */}
-              <div style={{ backgroundColor: '#f5f7fd' }}>
-                <header className={`container py-3 d-flex justify-content-between align-items-center ${styles.header}`}>
-                  <img src='./images/logo.png' alt='logo here' width={"35px"} />
-                  {/* <button>Get Started</button> */}
-                  <Popup trigger={<button> Get Started</button>} modal position="center center" style={{ backgroundColor: 'red' }}>
-                    <div className={styles['popup']}>
-                      <h1>Coming Soon!</h1>
-                    </div>
-                  </Popup>
-                </header>
-              </div>
-              {/* header */}
+
 
               {/* hero */}
               <section className={styles['hero']} style={heroBg}>
 
-                <h1>Learn Something <span>New</span> Today</h1>
+                <h1 className='mt-sm-0 mt-5'>Learn Something <span>New</span> Today</h1>
 
                 <div className={styles['text-field']}>
                   <input
@@ -237,12 +229,12 @@ const LandingPage = () => {
                   <h5>Finding Your Right Courses</h5>
                 </div>
                 <div className={styles['get-started-1']}>
-                  {/* <button>Get Started</button> */}
-                  <Popup trigger={<button> Get Started</button>} modal position="center center" style={{ backgroundColor: 'red' }}>
+                  <NavLink to='/auth/signup'><button>Get Started</button></NavLink>
+                  {/* <Popup trigger={<button> Get Started</button>} modal position="center center" style={{ backgroundColor: 'red' }}>
                     <div className={styles['popup']}>
                       <h1>Coming Soon!</h1>
                     </div>
-                  </Popup>
+                  </Popup> */}
                 </div>
                 <img src='./images/charge-img.png' alt='charge image' />
               </section>
@@ -304,25 +296,25 @@ const LandingPage = () => {
               <section className='my-5'>
 
                 <div className='container'>
-                  <div className='row'>
-                    <div className='col-6'>
+                  <div className='row g-3'>
+                    <div className='col-lg-6'>
                       <div className={`${styles.become_instructor} d-flex justify-content-between align-items-end`}>
                         <div className='p-4'>
                           <h3>Become An Instructor</h3>
                           <p>Top instructors from around the world teach millions of students on EduMall.</p>
-                          <button>Start teaching today</button>
+                          <NavLink to='/auth/signup'><button>Start teaching today</button></NavLink>
                         </div>
-                        <img src='./images/become-instructor.png' alt='...' className='' />
+                        <img src='./images/become-instructor.png' alt='...' className='d-sm-block d-none' />
                       </div>
                     </div>
-                    <div className='col-6'>
+                    <div className='col-lg-6'>
                       <div className={`${styles.become_student} d-flex justify-content-between align-items-end`}>
                         <div className='p-4'>
                           <h3>Transform Access To Education</h3>
                           <p>Create an account to receive our newsletter, course recommendations and promotions.</p>
-                          <button>Register for free</button>
+                          <NavLink to='/auth/signup'><button>Register for free</button></NavLink>
                         </div>
-                        <img src='./images/become-student.png' alt='...' className='' />
+                        <img src='./images/become-student.png' alt='...' className='d-sm-block d-none' />
                       </div>
                     </div>
 
@@ -390,79 +382,44 @@ const LandingPage = () => {
 
                   {
                     faqs?.map((ele, ind) => {
+                      const isOpen = faqVisibility[`faq${ind + 1}`]; // Check if the current FAQ is open
                       return (
-                        <>
-                          <div className={`${styles.faq_item} mt-4`} key={ind}>
-                            <div className='d-flex justify-content-between'>
-                              <h6>{ele.question}</h6>
-                              <i className="fa-sharp fa-regular fa-chevron-down" style={{ color: '#0071DC' }} onClick={()=> toggleFaq(ind)}></i>
-                            </div>
-                            <p className='m-0' style={{display: faqVisibility[ind] ? 'block' : 'none' }}>{ele.answer}</p>
+                        <div className={`${styles.faq_item} mt-4`} key={ind}>
+                          <div className='d-flex justify-content-between'>
+                            <h6>{ele.question}</h6>
+                            <i
+                              className="fa-sharp fa-regular fa-chevron-down"
+                              style={{ color: '#0071DC' }}
+                              onClick={() => toggleFaq(ind)}
+                            ></i>
                           </div>
-                        </>
-                      )
+                          <p
+                            className={`m-0 faq-answer ${isOpen ? 'faq-answer-open' : ''}`}
+                            style={{
+                              display: isOpen ? 'block' : 'none',
+                            }}
+                          >
+                            {ele.answer}
+                          </p>
+                        </div>
+                      );
                     })
                   }
+
+
 
                 </div>
               </section>
 
               {/* FAQS */}
 
-              {/* Footer */}
-              <footer className={`pb-2 pt-5 px-sm-0 px-2 ${styles.footer}`}>
-                <div className='container pt-3'>
-                  <div className="row justify-content-center">
-                    <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-                      <h5>Logo Here</h5>
-                      <p>ThemeMove deserves 5 star for themes features, design quality, flexibility and support service!</p>
-                    </div>
-
-                    <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-                      <h5>Quick Links</h5>
-                      <ul className="list-unstyled mt-3">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Become an Instructor</a></li>
-                      </ul>
-                    </div>
-
-                    <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-                      <h5>Social Media</h5>
-                      <ul className="list-unstyled mt-3">
-                        <li className='my-2'><a href="#"><Icon icon={'Twitter'} /> <span className='ms-2'>Twitter</span></a></li>
-                        <li className='my-2'><a href="#"><Icon icon={'Youtube'} /> <span className='ms-2'>YouTube</span></a></li>
-                        <li className='my-2'><a href="#"><Icon icon={'Linkedin'} /> <span className='ms-2'>LinkedIn</span></a></li>
-                        <li className='my-2'><a href="#"><Icon icon={'Facebook'} /> <span className='ms-2'>Facebook</span></a></li>
-                      </ul>
-                    </div>
-
-                    <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-                      <h5>Contact Us</h5>
-                      <ul className="list-unstyled">
-                        <li className='my-2'><a href="#"><Icon icon={'call'} /> <span className='ms-2'>(+88) 1990 6886</span></a></li>
-                        <li className='my-2'><a href="#"><Icon icon={'mail'} /> <span className='ms-2'> agency@gmail.com</span></a></li>
-                        <li className='my-2'><a href="#"><Icon icon={'address'} /> <span className='ms-2'> 5th Street, 21st Floor, New York, USA</span></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div className='d-flex flex-sm-row flex-column justify-content-sm-between text-md-start text-center'>
-                    <p>Copyright 2024 All Rights Reserved</p>
-                    <p>Privacy Policy</p>
-                  </div>
-                </div>
-              </footer>
-              {/* Footer */}
-
+             
 
             </main>
           </>
         )
       }
-
+<Footer/>
 
     </>
   );

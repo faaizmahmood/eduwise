@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import styles from './signup.module.scss'
 import useSignup from './useSignup'
 import { ClipLoader, PulseLoader } from 'react-spinners'
+// import Header from '../../components/unProtected/header/header'
+// import Footer from '../../components/unProtected/footer/footer'
 
 const Signup = () => {
 
@@ -12,6 +14,8 @@ const Signup = () => {
     return (
 
         <>
+
+        {/* <Header/> */}
             {
                 loading ? (
                     <>
@@ -26,7 +30,12 @@ const Signup = () => {
                             <div className={`container ${styles.signup_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
                                     <div className={`col-lg-6 d-lg-block d-none ${styles.signup_img}`}>
-                                        <img src='./public/images/side_img.png' alt='SignUp image' />
+                                        <div>
+                                            <h5>
+                                                {'"'}The beautiful thing about learning is that nobody can take it away from you.{'"'}
+                                            </h5>
+                                            <img src='../../../images/side_img.png' alt='SignUp image' />
+                                        </div>
                                     </div>
                                     <div className={`col-lg-6 ${styles.signup_form}`}>
                                         <h3>Sign Up</h3>
@@ -75,7 +84,7 @@ const Signup = () => {
                                                         findUsername ? (
                                                             <PulseLoader color="#0071DC" size={5} />
                                                         ) : (
-                                                            <p className={`${styles.found_text} mt-2`} style={{ color: isUserNameFind ? 'red' : isUserNameFind === false ? "green" : "yellow" }}>
+                                                            <p className={`${styles.found_text} mt-2`} style={{ color: isUserNameFind ? 'red' : isUserNameFind === false ? "green" : "#FFA500" }}>
                                                                 {
                                                                     isUserNameFind
                                                                         ? "✗ Username is taken!"
@@ -137,7 +146,7 @@ const Signup = () => {
                                                     <i className="fa-duotone fa-solid fa-check" style={{ display: isChecked ? "block" : "none" }}></i>
                                                     <input type='checkbox' name='privacyPolicy' checked={isChecked} onChange={e => formik.setFieldValue('privacyPolicy', e.target.checked)} style={{ display: 'none' }} />
                                                 </div>
-                                                <p className='ms-2'>Accept the <a href='#'>Term</a> and <a href='#'>Privacy Policy</a></p>
+                                                <p className='ms-2'>Accept the <a href='https://www.freeprivacypolicy.com/live/5c42cc9c-f01d-4f69-b222-64ce87647ba2' target='_blank'>Term</a> and <a href='https://www.freeprivacypolicy.com/live/84062085-d77e-4042-a8f4-c30d4af6d0c9' target='_blank'>Privacy Policy</a></p>
                                             </div>
 
                                             <button type='submit' className={`mt-2 ${isChecked ? "" : styles.disabled_btn}`} disabled={!isChecked}>{signupLoading ? <PulseLoader color="#fff" size={6} /> : "Register"}</button>
@@ -153,6 +162,8 @@ const Signup = () => {
                     </>
                 )
             }
+
+            {/* <Footer/> */}
         </>
 
     )
