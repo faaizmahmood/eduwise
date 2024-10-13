@@ -382,15 +382,15 @@ const LandingPage = () => {
 
                   {
                     faqs?.map((ele, ind) => {
-                      const isOpen = faqVisibility[`faq${ind + 1}`]; // Check if the current FAQ is open
+                      const isOpen = faqVisibility[`faq${ind + 1}`];
                       return (
-                        <div className={`${styles.faq_item} mt-4`} key={ind}>
+                        <div className={`${styles.faq_item} mt-4`} onClick={() => toggleFaq(ind)} style={{cursor:'pointer'}} key={ind}>
                           <div className='d-flex justify-content-between'>
                             <h6>{ele.question}</h6>
                             <i
-                              className="fa-sharp fa-regular fa-chevron-down"
+                              className={`fa-sharp fa-regular ${isOpen ? "fa-chevron-down" : "fa-chevron-up"}`}
                               style={{ color: '#0071DC' }}
-                              onClick={() => toggleFaq(ind)}
+
                             ></i>
                           </div>
                           <p
@@ -413,13 +413,13 @@ const LandingPage = () => {
 
               {/* FAQS */}
 
-             
+
 
             </main>
           </>
         )
       }
-<Footer/>
+      <Footer />
 
     </>
   );
