@@ -2,6 +2,8 @@ import { NavLink } from 'react-router-dom'
 import styles from './signin.module.scss'
 import useSignin from './useSignin'
 import { BeatLoader, ClipLoader } from 'react-spinners'
+// import Header from '../../components/unProtected/header/header'
+// import Footer from '../../components/unProtected/footer/footer'
 
 const Signin = () => {
 
@@ -10,6 +12,9 @@ const Signin = () => {
 
     return (
         <>
+
+            {/* <Header /> */}
+
             {
                 loading ? (
                     <>
@@ -26,10 +31,10 @@ const Signin = () => {
 
                                     <div className={`${styles.side_img} col-lg-6 d-lg-block d-none`} >
                                         <div>
-                                        <h5>
-                                            {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
-                                        </h5>
-                                        <img src='../../../public/images/side_img.png' alt='...' />
+                                            <h5>
+                                                {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
+                                            </h5>
+                                            <img src='../../../public/images/side_img.png' alt='...' />
                                         </div>
                                     </div>
 
@@ -62,7 +67,7 @@ const Signin = () => {
                                             </div>
 
                                             <div className={styles['submit-btn']}>
-                                                <button type='submit'>{btnLoading ? <BeatLoader color='#fff' size={6}/> : "Log In"}</button>
+                                                <button type='submit'>{btnLoading ? <BeatLoader color='#fff' size={6} /> : "Log In"}</button>
                                             </div>
 
                                             <p style={{ marginTop: '20px' }}>Don’t have an account yet?  <span style={{ color: 'blue', cursor: 'pointer', textDecoration: 'underline' }}><NavLink to='/auth/signup'>Sign up for free</NavLink></span></p>
@@ -76,6 +81,8 @@ const Signin = () => {
                     </>
                 )
             }
+
+            {/* <Footer/> */}
         </>
     )
 }

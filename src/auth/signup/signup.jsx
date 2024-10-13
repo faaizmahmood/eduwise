@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import styles from './signup.module.scss'
 import useSignup from './useSignup'
 import { ClipLoader, PulseLoader } from 'react-spinners'
+// import Header from '../../components/unProtected/header/header'
+// import Footer from '../../components/unProtected/footer/footer'
 
 const Signup = () => {
 
@@ -12,6 +14,8 @@ const Signup = () => {
     return (
 
         <>
+
+        {/* <Header/> */}
             {
                 loading ? (
                     <>
@@ -158,6 +162,8 @@ const Signup = () => {
                     </>
                 )
             }
+
+            {/* <Footer/> */}
         </>
 
     )

@@ -7,7 +7,7 @@ const Header = () => {
             {/* header */}
             <div style={{ backgroundColor: '#f5f7fd' }}>
                 <header className={`container py-3 d-flex justify-content-between align-items-center ${styles.header}`}>
-                    <img src='./images/logo.png' alt='logo here' width={"35px"} />
+                    <img src='../../../../public/images/logo.png' alt='logo here' width={"35px"} />
                     <nav className={`${styles.navbar} mt-3 d-lg-block d-none`}>
                         <ul className='d-flex justify-content-center'>
                             {/* <a href='#' className={styles['active']}> <li>Home</li></a> */}
@@ -36,9 +36,9 @@ const Header = () => {
 
                     <div className={`${styles.nav_btns} d-flex`}>
                         {/* <NavLink to='/auth/signup'><button>Get Started</button></NavLink> */}
-                        <NavLink to='/auth/signin'> <p>Log in</p></NavLink>
+                        <NavLink to='/auth/signin' className={({isActive}) => isActive? `${styles.active}` : ""}> <p>Log in</p></NavLink>
                         <p>|</p>
-                        <NavLink to='/auth/signup'><p>Register</p></NavLink>
+                        <NavLink to='/auth/signup' className={({isActive}) => isActive? `${styles.active}` : ""}><p>Register</p></NavLink>
                     </div>
 
                     {/* <Popup trigger={<button> Get Started</button>} modal position="center center" style={{ backgroundColor: 'red' }}>
