@@ -12,7 +12,6 @@ const Instructor = () => {
 
   return (
     <>
-    <Header />
       {
         loading ? (
           <>
@@ -27,8 +26,6 @@ const Instructor = () => {
           </>
         )
       }
-
-      <Footer/>
     </>
   )
 }

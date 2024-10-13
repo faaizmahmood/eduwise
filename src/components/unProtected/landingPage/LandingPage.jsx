@@ -4,12 +4,10 @@ import useLandingPage from './useLandingPage';
 import { ClipLoader } from 'react-spinners';
 import 'react-multi-carousel/lib/styles.css';
 import TestimonialCard from './TestimonialCard';
-import Header from '../header/header'
 
 // import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { NavLink } from 'react-router-dom';
-import Footer from '../footer/footer';
 
 
 // eslint-disable-next-line react/prop-types
@@ -61,7 +59,6 @@ const LandingPage = () => {
 
   return (
     <>
-      <Header />
       {
         pageLoading ? (
           <>
@@ -419,7 +416,6 @@ const LandingPage = () => {
           </>
         )
       }
-      <Footer />
 
     </>
   );

@@ -3,8 +3,6 @@ import React from 'react'
 import styles from './about.module.scss'
 import useAbout from './useAbout.js'
 import { ClipLoader } from 'react-spinners'
-import Header from '../header/header.jsx'
-import Footer from '../footer/footer.jsx'
 
 const About = () => {
 
@@ -12,7 +10,6 @@ const About = () => {
 
   return (
     <>
-      <Header />
       {
         loading ? (
           <>
@@ -28,7 +25,6 @@ const About = () => {
         )
       }
 
-      <Footer />
     </>
   )
 }

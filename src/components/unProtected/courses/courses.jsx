@@ -3,8 +3,7 @@ import React from 'react'
 import styles from './courses.module.scss'
 import { ClipLoader } from 'react-spinners'
 import useCourses from './useCourses'
-import Header from '../header/header'
-import Footer from '../footer/footer'
+
 
 const Courses = () => {
 
@@ -12,7 +11,6 @@ const Courses = () => {
 
   return (
     <>
-      <Header />
       {
         loading ? (
           <>
@@ -27,7 +25,6 @@ const Courses = () => {
         )
       }
 
-      <Footer/>
     </>
   )
 }

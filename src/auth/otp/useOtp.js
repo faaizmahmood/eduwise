@@ -26,14 +26,13 @@ const useOtp = () => {
 
     const [resendingLoading, setResendingLoading] = useState(false)
 
-
     useEffect(() => {
         if (!location.state || !email || !otp) {
             toast.warning('No OTP or Email found, redirecting...');
             navigate('/auth/signup');
         }
     }, [navigate, email, otp, location.state]);
-    
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
