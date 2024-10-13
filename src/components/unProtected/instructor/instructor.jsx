@@ -4,6 +4,7 @@ import styles from './instructor.module.scss'
 import { ClipLoader } from 'react-spinners'
 import useInstructor from './useInstructor'
 import Header from '../header/header'
+import Footer from '../footer/footer';
 
 const Instructor = () => {
 
@@ -22,10 +23,12 @@ const Instructor = () => {
         ) : (
           <>
             
-            <div>Instructor</div>
+            <div style={{height:'50vh'}}>Instructor Content Here...</div>
           </>
         )
       }
+
+      <Footer/>
     </>
   )
 }

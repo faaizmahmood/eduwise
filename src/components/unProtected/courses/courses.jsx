@@ -4,6 +4,7 @@ import styles from './courses.module.scss'
 import { ClipLoader } from 'react-spinners'
 import useCourses from './useCourses'
 import Header from '../header/header'
+import Footer from '../footer/footer'
 
 const Courses = () => {
 
@@ -11,8 +12,8 @@ const Courses = () => {
 
   return (
     <>
-    <Header/>
-       {
+      <Header />
+      {
         loading ? (
           <>
             <div className={styles['page-loading']}>
@@ -21,11 +22,12 @@ const Courses = () => {
           </>
         ) : (
           <>
-          
-          <div>Courses</div>
+            <div style={{ height: '50vh' }}>Courses Content Here...</div>
           </>
         )
       }
+
+      <Footer/>
     </>
   )
 }

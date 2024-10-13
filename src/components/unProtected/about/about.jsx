@@ -4,6 +4,7 @@ import styles from './about.module.scss'
 import useAbout from './useAbout.js'
 import { ClipLoader } from 'react-spinners'
 import Header from '../header/header.jsx'
+import Footer from '../footer/footer.jsx'
 
 const About = () => {
 
@@ -11,7 +12,7 @@ const About = () => {
 
   return (
     <>
-    <Header />
+      <Header />
       {
         loading ? (
           <>
@@ -21,11 +22,13 @@ const About = () => {
           </>
         ) : (
           <>
-            
-            <div>about</div>
+
+            <div style={{ height: '50vh' }}>About Content Here...</div>
           </>
         )
       }
+
+      <Footer />
     </>
   )
 }

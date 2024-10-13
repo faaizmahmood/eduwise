@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './error.module.scss'
 import { ClipLoader } from 'react-spinners';
 import Header from '../header/header';
+import Footer from '../footer/footer';
 
 
 const Error = () => {
@@ -36,6 +37,8 @@ const Error = () => {
                     </>
                 )
             }
+
+            <Footer/>
         </>
     )
 }
