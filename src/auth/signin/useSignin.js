@@ -2,9 +2,13 @@ import { useFormik } from "formik"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import * as yup from 'yup'
+import { useDispatch } from "react-redux";
+import { setUpUser } from "../../redux/actions"; //actions
 
 
 const useSignin = () => {
+
+    const dispatch = useDispatch()
 
     const [showHidePassVal, setShowHidePassVal] = useState(false)
 
@@ -52,6 +56,8 @@ const useSignin = () => {
                     toast.success("Sign in sucessfully")
                     console.log(values)
                     formik.resetForm()
+                    const userData = await response.json()
+                    dispatch(setUpUser(userData))
                 }
                 if (response.status === 401) {
                     toast.error("Password is incorrect")
