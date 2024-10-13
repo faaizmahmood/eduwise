@@ -7,7 +7,7 @@ const Otp = () => {
 
     const location = useLocation()
 
-    const { email } = location.state.values || {}
+    const { email } = location?.state?.values || {}
 
     const { loading, handleInputChange, InputRef, verificationLoading, time, reqAgainOtp, resendingLoading } = useOtp()
 
@@ -29,7 +29,12 @@ const Otp = () => {
                             <div className={`container ${styles.otp_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
                                     <div className={`col-lg-6 d-lg-block d-none ${styles.otp_img}`}>
-                                        <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                        <div>
+                                            <h5>
+                                                {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
+                                            </h5>
+                                            <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                        </div>
                                     </div>
                                     <div className={`col-lg-6 ${styles.otp_form_container}`}>
                                         <h3>OTP Verification</h3>
@@ -50,7 +55,7 @@ const Otp = () => {
                                                             {
                                                                 time === 0 ? (
                                                                     <>
-                                                                        <p className='text-center w-100' style={{color: 'red'}}>OTP Expired...</p>
+                                                                        <p className='text-center w-100' style={{ color: 'red' }}>OTP Expired...</p>
                                                                     </>
                                                                 ) : (
                                                                     <>

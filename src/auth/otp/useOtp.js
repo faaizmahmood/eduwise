@@ -15,11 +15,12 @@ const useOtp = () => {
 
     const location = useLocation()
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const otp = location?.state?.otp || {}
 
     const [OtpValue, setOtpValue] = useState(otp)
 
-    const { email, fName } = location.state.values || {}
+    const { email, fName } = location?.state?.values || {}
 
     const [time, setTime] = useState(61)
 
@@ -27,13 +28,12 @@ const useOtp = () => {
 
 
     useEffect(() => {
-        if (!location.state || !location.state.values) {
-            toast.warning('No OTP found, redirecting...');
+        if (!location.state || !email || !otp) {
+            toast.warning('No OTP or Email found, redirecting...');
             navigate('/auth/signup');
         }
-
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [navigate]);
+    }, [navigate, email, otp, location.state]);
+    
 
     useEffect(() => {
         const timer = setTimeout(() => {

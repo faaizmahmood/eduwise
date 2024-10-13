@@ -1,3 +1,8 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+// Fonts
+
+
 @mixin inputStyles {
     border-radius: 5px;
     background: #FFF;
@@ -32,15 +37,29 @@
         height: 85%;
 
 
-        .signup_img {
+        .signup_img > div {
             border-radius: 25px 0px 0px 25px;
             background: linear-gradient(166deg, rgba(252, 234, 234, 0.48) 0.47%, rgba(255, 210, 210, 0.52) 44.56%, #C9D8FF 99.29%);
             display: flex !important;
-            align-items: end;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 30px 0px 30px !important;
+            height: 100%;
 
             img {
                 width: 60%;
             }
+
+            h5 {
+                color: #262626;
+                text-align: center;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 40px;
+                font-family: "Prata", serif;
+            }
+
         }
 
         .signup_form {
@@ -151,7 +170,7 @@
                     border-radius: 5px;
                 }
 
-                .disabled_btn{
+                .disabled_btn {
                     cursor: not-allowed;
                 }
 
@@ -183,12 +202,17 @@
 
 
 @media (max-width:992px) {
-    .signup_img{
+    .signup_img {
         border-radius: 25px !important;
     }
+
     .signup_form {
         border-radius: 25px !important;
         padding: 50px 0px !important;
+
+        h3{
+            font-size: 28px !important;
+        }
 
         .register_form {
             width: 80% !important;
