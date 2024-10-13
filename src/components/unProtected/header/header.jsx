@@ -7,7 +7,7 @@ const Header = () => {
             {/* header */}
             <div style={{ backgroundColor: '#f5f7fd' }}>
                 <header className={`container py-3 d-flex justify-content-between align-items-center ${styles.header}`}>
-                    <img src='../../../../public/images/logo.png' alt='logo here' width={"35px"} />
+                    <img src='./images/logo.png' alt='logo here' width={"35px"} />
                     <nav className={`${styles.navbar} mt-3 d-lg-block d-none`}>
                         <ul className='d-flex justify-content-center'>
                             {/* <a href='#' className={styles['active']}> <li>Home</li></a> */}

@@ -4,7 +4,7 @@
 const Icon = ({icon}) => {
   return (
     <>
-        <img src={`../../public/icons/${icon}.png`} alt={icon}/>
+        <img src={`./icons/${icon}.png`} alt={icon}/>
     </>
   )
 }
