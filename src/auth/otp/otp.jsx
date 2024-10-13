@@ -33,7 +33,7 @@ const Otp = () => {
                                             <h5>
                                                 {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
                                             </h5>
-                                            <img src='./images/side_img.png' alt='SignUp image' />
+                                            <img src='../../../public/images/side_img.png' alt='SignUp image' />
                                         </div>
                                     </div>
                                     <div className={`col-lg-6 ${styles.otp_form_container}`}>
