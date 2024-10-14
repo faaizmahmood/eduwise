@@ -11,7 +11,7 @@ const Layout = () => {
         <>
             <>
                 <main style={{ display: 'flex' }}>
-                    <div style={{ height: '100vh', width: '20vw' }}>
+                    <div style={{ height: '100vh', width: '20vw' }} className='p-3'>
                         <Sidebar/>
                     </div>
                     <div>
