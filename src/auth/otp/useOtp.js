@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { setUpUser } from "../../redux/actions";
 
 
 const useOtp = () => {
+
+    const dispatch = useDispatch()
 
     const [loading, setLoading] = useState(true)
 
@@ -22,14 +26,18 @@ const useOtp = () => {
 
     const { email, fName } = location?.state?.values || {}
 
+
+    const userData = location?.state?.values || {}
+
     const [time, setTime] = useState(61)
 
     const [resendingLoading, setResendingLoading] = useState(false)
 
+
     useEffect(() => {
         if (!location.state || !email || !otp) {
             toast.warning('No OTP or Email found, redirecting...');
-            navigate('/auth/signup');
+            navigate('/');
         }
     }, [navigate, email, otp, location.state]);
 
@@ -76,6 +84,13 @@ const useOtp = () => {
                     setVerificationLoading(false)
                     if (otpValues == OtpValue) {
                         toast.success("Email is verified");
+
+                        dispatch(setUpUser(userData))
+
+                        navigate('/')
+
+
+
                         setTime(0);
                     } else {
                         toast.error("Wrong OTP");

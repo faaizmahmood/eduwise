@@ -33,7 +33,7 @@ const Signin = () => {
                                         <div>
                                             <h5>
                                                 {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
-                                            </h5>
+                                            </h5>s
                                             <img src='../../../public/images/side_img.png' alt='...' />
                                         </div>
                                     </div>

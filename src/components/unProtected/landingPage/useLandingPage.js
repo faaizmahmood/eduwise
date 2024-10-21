@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
@@ -6,6 +7,8 @@ import { toast } from "react-toastify";
 const useLandingPage = () => {
 
   let buttons = ['All', 'Trending', 'Popularity', 'Featured', 'Art & Design']
+
+  const navigate = useNavigate()
 
   buttons = buttons.slice(0, 5)
 
@@ -19,6 +22,8 @@ const useLandingPage = () => {
     faq3: false,
     faq4: false,
   });
+
+  const [input, setInput] = useState('')
 
   const courses = [
     {
@@ -265,12 +270,29 @@ const useLandingPage = () => {
   const toggleFaq = (ind) => {
     // setFaqVisibility(!faqVisibility)
 
-    setFaqVisibility((preVisibility)=>(
+    setFaqVisibility((preVisibility) => (
       {
         ...preVisibility,
-        [`faq${ind+1}`]: !preVisibility[`faq${ind+1}`]
+        [`faq${ind + 1}`]: !preVisibility[`faq${ind + 1}`]
       }
     ))
+  }
+
+  const search_course = (e) => {
+    const { value } = e.target
+
+    setInput(value)
+
+  }
+
+  const navigate_to_courses = () => {
+
+    navigate('/courses', {
+      state: {
+        input
+      }
+    })
+
   }
 
 
@@ -284,7 +306,10 @@ const useLandingPage = () => {
     categories,
     faqs,
     toggleFaq,
-    faqVisibility
+    faqVisibility,
+    search_course,
+    input,
+    navigate_to_courses
   }
 
 }
