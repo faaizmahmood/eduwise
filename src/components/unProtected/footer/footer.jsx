@@ -39,9 +39,9 @@ const Footer = () => {
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Contact Us</h5>
                             <ul className="list-unstyled">
-                                <li className='my-2'><a href="#"><Icon icon={'call'} /> <span className='ms-2'>(+88) 1990 6886</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'mail'} /> <span className='ms-2'> agency@gmail.com</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'address'} /> <span className='ms-2'> 5th Street, 21st Floor, New York, USA</span></a></li>
+                                <li className='my-2'><a href="#"><Icon icon={'call'} /> <span className='ms-2'>+92 303 3777018</span></a></li>
+                                <li className='my-2'><a href="#"><Icon icon={'mail'} /> <span className='ms-2'> contacte@eduwise.com</span></a></li>
+                                <li className='my-2'><a href="#"><Icon icon={'address'} /> <span className='ms-2'> Lahore, Punjab, Pakistan</span></a></li>
                             </ul>
                         </div>
                     </div>

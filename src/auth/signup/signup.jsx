@@ -35,7 +35,7 @@ const Signup = () => {
                                                 {'"'}The beautiful thing about learning is that nobody can take it away from you.{'"'}
                                             </h5>
 
-                                            <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                            <img src='.m/public/images/side_img.png' alt='SignUp image' />
                                         </div>
                                     </div>
                                     <div className={`col-lg-6 ${styles.signup_form}`}>

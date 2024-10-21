@@ -41,7 +41,7 @@ const renderButton = (ele) => {
 
 const LandingPage = () => {
 
-  const { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories, faqs, toggleFaq, faqVisibility } = useLandingPage()
+  const { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories, faqs, toggleFaq, faqVisibility, search_course, input, navigate_to_courses } = useLandingPage()
 
 
   const buttonStyle = {
@@ -73,6 +73,7 @@ const LandingPage = () => {
 
 
               {/* hero */}
+              <form onSubmit={navigate_to_courses}>
               <section className={styles['hero']} style={heroBg}>
 
                 <h1 className='mt-sm-0 mt-5'>Learn Something <span>New</span> Today</h1>
@@ -81,9 +82,10 @@ const LandingPage = () => {
                   <input
                     placeholder='What do you want to learn?'
                     name='search-box'
-                    value={""}
+                    onChange={search_course}
+                    value={input}
                   />
-                  <i className="fa-thin fa-magnifying-glass"></i>
+                  <i className="fa-thin fa-magnifying-glass" type='submit'></i>
                 </div>
 
                 <div className={styles['hero-cards']}>
@@ -108,6 +110,7 @@ const LandingPage = () => {
                 </div>
 
               </section>
+              </form>
               {/* hero */}
 
 

@@ -17,7 +17,7 @@ const useSignup = () => {
 
     const [loading, setLoading] = useState(true)
 
-   const [signupLoading, setSignupLoading] = useState(false)
+    const [signupLoading, setSignupLoading] = useState(false)
 
     const [findUsername, setFindUseranme] = useState(false)
 
@@ -62,7 +62,7 @@ const useSignup = () => {
         onSubmit: async (values) => {
 
             if (isUserNameFind === false) {
-               
+
                 try {
                     setSignupLoading(true)
                     const response = await fetch('http://localhost:5000/api/auth/signup', {
@@ -76,26 +76,32 @@ const useSignup = () => {
                             lName: values.lName,
                             password: values.password,
                             privacyPolicy: true,
-                            username: values.uName
+                            username: values.uName,
+                            isEmailVerified: false,
+                            role: 'student'
                         })
                     })
 
-                    if(response.status === 409){
+                    if (response.status === 409) {
                         toast.error("email already exists!")
                         setSignupLoading(false)
                         return
                     }
 
-                    if(response.status === 200){
+                    if (response.status === 200) {
                         toast.success("Sucessfully created account")
                         setSignupLoading(false)
+
                         const otpData = await response.json()
+                        
                         const otp = otpData.otp
                         formik.resetForm()
-                        navigate('/auth/otp', {state: {
-                            values,
-                            otp
-                        }})
+                        navigate('/auth/otp', {
+                            state: {
+                                values,
+                                otp
+                            }
+                        })
                         return
                     }
 
@@ -104,7 +110,7 @@ const useSignup = () => {
                     console.log(error)
                     toast.error("Internal Server Error")
                 }
-            }else{
+            } else {
                 toast.warning("User name is not available")
             }
         }
