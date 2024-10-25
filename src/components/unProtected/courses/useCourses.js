@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom"
 
 const useCourses = () => {
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     const [input, setInput] = useState()
 
@@ -344,8 +344,6 @@ const useCourses = () => {
 
 
     useEffect(() => {
-
-        setLoading(true)
 
         setTimeout(() => {
             setLoading(false)

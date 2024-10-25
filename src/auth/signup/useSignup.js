@@ -121,12 +121,6 @@ const useSignup = () => {
         setIsChecked(!isChecked);
     }
 
-    // const checkUserName = () => {
-
-
-
-    // }
-
 
     useEffect(() => {
         const usernameValue = formik.values.uName.trim().toLowerCase();
@@ -164,7 +158,6 @@ const useSignup = () => {
         })()
 
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [formik.values.uName])
 
     return {

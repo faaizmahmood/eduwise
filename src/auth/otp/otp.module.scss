@@ -52,12 +52,13 @@
 
         .otp_form_container {
             background: #F5F7FD;
-            border-radius: 0px 25px 25px 0px;
+            border-radius: 16px;
             display: flex;
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            padding: 20px 0px;
+            // padding: 60px 0px !important;
+            height: 80vh;
 
             h3 {
                 color: #262626;
@@ -101,12 +102,12 @@
             }
 
             .otp_form {
-                width: 75%;
+                width: 40%;
 
                 .otp_inputs {
 
                     display: flex;
-                    gap: 15px;
+                    gap: 10px;
                     justify-content: space-between;
 
                     input {
@@ -172,5 +173,11 @@
         h3{
             font-size: 28px !important;
         }
+    }
+}
+
+@media (max-width:768px) {
+    .otp_form{
+        width: 70% !important;
     }
 }

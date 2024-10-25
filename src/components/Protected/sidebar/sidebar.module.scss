@@ -65,13 +65,12 @@
 
     .side_bar_item {
 
-        padding: 13px 20px;
+        // padding: 13px 20px;
         border-radius: 30px;
         transition: all 1s;
 
 
         i {
-            margin-top: 2px;
             height: 14px;
             width: 24px;
             color: #262626;
@@ -87,4 +86,27 @@
         }
     }
 
+}
+
+
+@media (max-width:992px) {
+
+    .nav_item_list{
+   overflow-y: visible;
+    }
+
+    .side_bar_item{
+        height: fit-content !important;
+        padding: 30px 30px !important;
+        border-radius: 50% !important;
+
+        i{
+            width: auto !important;
+            font-size: 30px;
+        }
+
+        h5{
+            display: none;
+        }
+    }
 }

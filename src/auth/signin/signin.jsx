@@ -1,11 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import styles from './signin.module.scss'
 import useSignin from './useSignin'
-import { BeatLoader, ClipLoader } from 'react-spinners'
-// import Header from '../../components/unProtected/header/header'
-// import Footer from '../../components/unProtected/footer/footer'
+import { BeatLoader } from 'react-spinners'
+import HomeNavigation from '../../containers/homeNavigation/homeNavigation'
+import PageLoading from '../../containers/pageLoading/outerPageLoading/pageLoading'
 
 const Signin = () => {
+
 
 
     const { formik, showHide, showHidePassVal, btnLoading, loading } = useSignin()
@@ -18,27 +19,28 @@ const Signin = () => {
             {
                 loading ? (
                     <>
-                        <div className={styles['page-loading']}>
-                            <ClipLoader color="#0071DC" />
-                        </div>
+                        <PageLoading/>
                     </>
                 ) : (
                     <>
+
+                        <HomeNavigation/>
+
                         <div className={`${styles.container} container`}>
                             <div className={styles['wrapper']}>
 
                                 <div className='row g-0'>
 
-                                    <div className={`${styles.side_img} col-lg-6 d-lg-block d-none`} >
+                                    {/* <div className={`${styles.side_img} col-lg-6 d-lg-block d-none`} >
                                         <div>
                                             <h5>
                                                 {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
                                             </h5>s
                                             <img src='../../../public/images/side_img.png' alt='...' />
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div className={`${styles.form} col-lg-6 text-center`}>
+                                    <div className={`${styles.form} col-lg-12 text-center`}>
                                         <form onSubmit={formik.handleSubmit}>
                                             <h3>Login</h3>
                                             <div className='text-start'>
