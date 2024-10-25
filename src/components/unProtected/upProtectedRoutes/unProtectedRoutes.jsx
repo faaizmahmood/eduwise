@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import LandingPage from '../landingPage/LandingPage'
 import Signin from '../../../auth/signin/signin'
 import Signup from '../../../auth/signup/signup'
@@ -13,10 +13,17 @@ import Header from '../header/header'
 import Footer from '../footer/footer'
 
 const UnProtectedRoutes = () => {
+
+    const location = useLocation();
+
+    const noHeaderFooterPaths = ['/auth/signin', '/auth/signup', '/auth/otp'];
+
+    const shouldHideHeaderFooter = noHeaderFooterPaths.includes(location.pathname);
+
     return (
 
         <>
-        <Header/>
+        {!shouldHideHeaderFooter && <Header />}
             <Routes>
 
                 <Route path="/" element={<LandingPage />} />
@@ -29,7 +36,7 @@ const UnProtectedRoutes = () => {
                 <Route path="*" element={<Error />} />
 
             </Routes>
-            <Footer/>
+            {!shouldHideHeaderFooter && <Footer />}
         </>
 
     )

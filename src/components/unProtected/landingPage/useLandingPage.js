@@ -219,15 +219,15 @@ const useLandingPage = () => {
 
 
   useEffect(() => {
-
-    setLoading(true)
+    setLoading(true);
 
     setTimeout(() => {
-      setLoading(false)
-      setPageLoading(false)
+      setLoading(false);
+      setPageLoading(false);
     }, 2000)
 
-  }, [])
+  }, []);
+  
 
   const filterCourses = (btn) => {
     if (btn == 'All') {

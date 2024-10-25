@@ -8,6 +8,7 @@ import TestimonialCard from './TestimonialCard';
 // import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { NavLink } from 'react-router-dom';
+import PageLoading from '../../../containers/pageLoading/outerPageLoading/pageLoading';
 
 
 // eslint-disable-next-line react/prop-types
@@ -62,9 +63,7 @@ const LandingPage = () => {
       {
         pageLoading ? (
           <>
-            <div className={styles['page-loading']}>
-              <ClipLoader color="#0071DC" />
-            </div>
+           <PageLoading/>
           </>
         ) : (
           <>

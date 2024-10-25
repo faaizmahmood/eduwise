@@ -2,7 +2,8 @@
 import React from 'react'
 import styles from './about.module.scss'
 import useAbout from './useAbout.js'
-import { ClipLoader } from 'react-spinners'
+import { BarLoader, ClipLoader } from 'react-spinners'
+import PageLoading from '../../../containers/pageLoading/outerPageLoading/pageLoading';
 
 const About = () => {
 
@@ -13,9 +14,7 @@ const About = () => {
       {
         loading ? (
           <>
-            <div className={styles['page-loading']}>
-              <ClipLoader color="#0071DC" />
-            </div>
+            <PageLoading/>
           </>
         ) : (
           <>

@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import styles from './instructor.module.scss'
-import { ClipLoader } from 'react-spinners'
+import { BarLoader, ClipLoader } from 'react-spinners'
 import useInstructor from './useInstructor'
 import Header from '../header/header'
 import Footer from '../footer/footer';
+import PageLoading from '../../../containers/pageLoading/outerPageLoading/pageLoading';
 
 const Instructor = () => {
 
@@ -15,9 +16,7 @@ const Instructor = () => {
       {
         loading ? (
           <>
-            <div className={styles['page-loading']}>
-              <ClipLoader color="#0071DC" />
-            </div>
+            <PageLoading/>
           </>
         ) : (
           <>

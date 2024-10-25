@@ -4,6 +4,7 @@ import { ProtectedRoutes } from '../protectedRoutes/protectedRoutes'
 import Sidebar from '../sidebar/sidebar'
 import Header from '../header/header'
 import Footer from '../footer/footer'
+import styles from './protectedUI.module.scss'
 
 const Layout = () => {
 
@@ -17,20 +18,22 @@ const Layout = () => {
 
     return (
         <>
-            <main style={{ display: 'flex', backgroundColor:'#FDFDFF' }}>
+            <main style={{ display: 'flex', backgroundColor: '#FDFDFF' }}>
 
-                <div style={{ height: '100vh', width: drawer ? '20vw' : '8vw', transition:'all 0.5s' }} className='p-3'>
-                    <Sidebar toggleDrawer={toggleDrawer} drawer={drawer}/>
+                <div style={{ height: '100vh', width: drawer ? '20vw' : '8vw', transition: 'all 0.5s' }} className={`p-3 ${styles.sidebar}`}>
+                    <Sidebar toggleDrawer={toggleDrawer} drawer={drawer} />
                 </div>
-                
 
-                <div>
-                    <div style={{ width: '80vw', backgroundColor: 'aqua' }}>
-                        <Header/>
+
+                <div className={`${styles.web_routing_area}`}>
+                    <div style={{ width: drawer ? '80vw' : '90vw', transition: 'all 0.5s', backgroundColor: 'aqua' }} className={`${styles.web_content}`}>
+                        <Header />
                     </div>
-                    <ProtectedRoutes />
-                    <div style={{ width: '80vw', backgroundColor: 'aqua' }}>
-                        <Footer/>
+                    <div className={`${styles.web_content}`}>
+                        <ProtectedRoutes />
+                    </div>
+                    <div style={{ width: drawer ? '80vw' : '90vw', transition: 'all 0.5s', backgroundColor: 'aqua' }} className={`${styles.web_content}`}>
+                        <Footer />
                     </div>
                 </div>
             </main>

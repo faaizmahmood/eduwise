@@ -3,11 +3,13 @@ import React from 'react'
 import styles from './courses.module.scss'
 import { ClipLoader } from 'react-spinners'
 import useCourses from './useCourses'
+import PageLoading from '../../../containers/pageLoading/outerPageLoading/pageLoading';
 
 
 const Courses = () => {
 
   const { loading, courses, handelInput, filteredCourses, input } = useCourses()
+
 
   const bg = {
     background: 'url(./images/courses_hero_bg.png)',
@@ -36,9 +38,7 @@ const Courses = () => {
       {
         loading ? (
           <>
-            <div className={styles['page-loading']}>
-              <ClipLoader color="#0071DC" />
-            </div>
+            <PageLoading/>
           </>
         ) : (
           <>

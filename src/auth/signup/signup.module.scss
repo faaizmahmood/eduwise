@@ -64,7 +64,7 @@
 
         .signup_form {
             background: #F5F7FD;
-            border-radius: 0px 25px 25px 0px;
+            border-radius: 16px;
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -79,7 +79,7 @@
             }
 
             .register_form {
-                width: 75%;
+                width: 50%;
 
 
                 .error_msg {
