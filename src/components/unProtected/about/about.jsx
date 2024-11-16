@@ -24,6 +24,7 @@ const About = () => {
           <>
 
             <div style={{ height: '50vh' }}>About Content Here...</div>
+            <div style="width: 100%; height: 100%; background: linear-gradient(0deg, rgba(255, 255, 255, 0.30) 0%, rgba(255, 255, 255, 0.30) 100%)"></div>
           </>
         )
       }
