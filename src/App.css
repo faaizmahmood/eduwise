@@ -8,3 +8,11 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
+
+.popup-content{
+  margin: auto;
+  width: 40% !important;
+  padding: 0px !important;
+  border: none !important;
+  border-radius: 10px;
+}

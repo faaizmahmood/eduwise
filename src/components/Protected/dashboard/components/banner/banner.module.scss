@@ -1,0 +1,38 @@
+.banner {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 10px;
+    background: #0071DC;
+    padding: 30px 20px;
+
+    h6 {
+        color: #FFF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    h3 {
+        color: #FFF;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 44px;
+        margin: 20px 0px;
+    }
+
+    .bannerBtn {
+        background-color: #FFC221;
+        width: fit-content;
+        padding: 10px 20px;
+        border-radius: 30px;
+        color: #FFF;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        cursor: pointer;
+
+    }
+}

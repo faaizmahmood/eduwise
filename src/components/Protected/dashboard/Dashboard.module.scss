@@ -1,0 +1,13 @@
+.dashboard {
+    overflow-x: hidden;
+
+    .main_content {
+        height: 90vh;
+        overflow-y: auto;
+        scrollbar-width: none;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
