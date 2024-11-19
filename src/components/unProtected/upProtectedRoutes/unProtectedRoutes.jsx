@@ -11,6 +11,8 @@ import Courses from '../courses/courses'
 import Error from '../error/error'
 import Header from '../header/header'
 import Footer from '../footer/footer'
+import styles from './outer.module.scss'
+import Contact from '../contact/contact'
 
 const UnProtectedRoutes = () => {
 
@@ -33,6 +35,7 @@ const UnProtectedRoutes = () => {
                 <Route path="/become-instructor" element={<Instructor />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/courses" element={<Courses />} />
+                <Route path="/contact" element={<Contact/>} />
                 <Route path="*" element={<Error />} />
 
             </Routes>

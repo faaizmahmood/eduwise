@@ -1,0 +1,56 @@
+.specialAboutUs {
+
+    h2 {
+        color: #262626;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    p {
+        color: #A6A6A6;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+        /* 200% */
+    }
+
+    .card {
+
+        h3 {
+            color: #262626;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        p {
+            color: #A6A6A6;
+            font-size: 16px !important;
+            font-style: normal;
+            font-weight: 400 !important;
+            line-height: 32px;
+            /* 200% */
+        }
+
+    }
+
+
+}
+
+
+// responsive
+
+
+@media (max-width:768px) {
+    .card {
+
+       img{
+        width: 100%;
+       }
+
+    }
+}

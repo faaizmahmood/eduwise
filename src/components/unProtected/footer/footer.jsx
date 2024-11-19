@@ -40,7 +40,7 @@ const Footer = () => {
                             <h5>Contact Us</h5>
                             <ul className="list-unstyled">
                                 <li className='my-2'><a href="#"><Icon icon={'call'} /> <span className='ms-2'>+92 303 3777018</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'mail'} /> <span className='ms-2'> contacte@eduwise.com</span></a></li>
+                                <li className='my-2'><a href="#"><Icon icon={'mail'} /> <span className='ms-2'> contact@eduwise.com</span></a></li>
                                 <li className='my-2'><a href="#"><Icon icon={'address'} /> <span className='ms-2'> Lahore, Punjab, Pakistan</span></a></li>
                             </ul>
                         </div>

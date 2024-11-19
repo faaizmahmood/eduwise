@@ -9,3 +9,205 @@
     align-items: center;
     background-color: #F4F9FF;
 }
+
+
+.hero {
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        color: #031F42;
+        font-size: 54px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+        span {
+            color: #0071DC;
+        }
+    }
+
+    input {
+        padding: 20px;
+        width: 45%;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        // color: #A6A6A6;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+
+.discover {
+
+    h6 {
+        color: #0071DC;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        /* 133.333% */
+    }
+
+    h2 {
+        color: #262626;
+        text-align: center;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 44px;
+        /* 129.412% */
+        width: 75%;
+    }
+
+    p {
+        color: #A6A6A6;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+        /* 200% */
+    }
+
+
+    .card {
+
+        background-color: #F1F3F8;
+        min-height: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h4 {
+            color: #262626;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        p {
+            color: #A6A6A6;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+        }
+    }
+}
+
+
+// responsive
+
+
+@media (max-width:768px) {
+    .discover {
+
+        h6 {
+            font-size: 14px;
+        }
+
+        h2 {
+            font-size: 28px;
+            width: 100%;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+
+@media (max-width:768px) {
+    .discover {
+
+        h6 {
+            font-size: 14px;
+        }
+
+        h2 {
+            font-size: 22px;
+            width: 100%;
+            line-height: 34px;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+}
+
+
+.help {
+
+    .container {
+        background: linear-gradient(166deg, rgba(252, 234, 234, 0.48) 0.47%, rgba(241, 243, 248, 0.52) 99.29%);
+        min-height: 300px;
+
+        h3 {
+            color: #262626;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        p {
+            color: #A6A6A6;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+        }
+    }
+
+
+
+}
+
+
+.call_to_action {
+
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    h2 {
+        color: #262626;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 44px;
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 5px;
+        background: #0071DC;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border: none;
+        outline: none;
+
+    }
+}

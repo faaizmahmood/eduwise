@@ -1,4 +1,4 @@
-/* eslint-disable react-refresh/only-export-components */
+
 import { BarLoader } from "react-spinners"
 import styles from './pageLoading.module.scss'
 

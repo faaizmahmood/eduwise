@@ -1,0 +1,47 @@
+.header {
+
+    padding: 20px;
+
+    .search-box {
+        width: 100%;
+
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            border: 1px solid #D9D9D9;
+            background: #FFF;
+            color: #A6A6A6;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+
+
+    .profileSection {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            cursor: pointer;
+        }
+
+        .PImage {
+
+            h3 {
+                color: #262626;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                margin-top: 10px;
+            }
+        }
+    }
+}

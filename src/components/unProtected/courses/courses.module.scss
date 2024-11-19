@@ -34,7 +34,7 @@
         border: none;
         outline: none;
         border-radius: 10px;
-        color: #A6A6A6;
+        // color: #A6A6A6;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;
@@ -117,18 +117,23 @@
 
         h3 {
             color: #262626;
-            font-size: 16px;
+            font-size: 12px;
             font-weight: 600;
             margin-top: 10px;
-            line-height: 26px;
+            line-height: 20px;
         }
 
         h4 {
             color: #0071DC;
             font-size: 14px;
             font-weight: 500;
-            line-height: 26px;
+            line-height: 22px;
             margin-top: -5px;
+        }
+        p{
+            color: rgb(115, 115, 0);
+            font-size: 12px;
+            line-height: 10px;
         }
 
     }
@@ -136,3 +141,44 @@
 
 
 }
+
+
+
+// responsive
+
+@media (max-width:992px) {
+    .courses_list{
+
+        .course-card{
+            width: 32%;
+        }
+
+    }
+}
+
+
+@media (max-width:768px) {
+    .courses_list{
+
+        .course-card{
+            width: 49%;
+        }
+
+    }
+}
+
+
+@media (max-width:576px) {
+    .courses_list{
+
+        .course-card{
+            width: 100%;
+
+            img{
+                width: 80% !important;
+            }
+        }
+
+    }
+}
+

@@ -1,0 +1,30 @@
+.statsOverview {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .stateCard {
+
+        h3 {
+            color: #262626;
+            text-align: center;
+            font-size: 50px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+        }
+
+        p {
+            color: #A6A6A6;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 26px;
+            /* 130% */
+        }
+    }
+}

@@ -1,0 +1,79 @@
+.preference {
+    width: 100%;
+    height: 100vh;
+    background-color: #F9F9FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s, transform 1s;
+    opacity: 1;
+    position: relative;
+    overflow: hidden;
+
+    &.hide {
+        opacity: 0;
+        pointer-events: none; 
+    }
+
+    .wrapper {
+        width: 80%;
+        min-height: 300px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        button {
+            padding: 20px 40px;
+            border: 1px solid #0071DC;
+            outline: none;
+            background-color: white;
+            color: #0071DC;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 5px;
+
+            &.active {
+                background-color: #0071DC !important;
+                color: white !important;
+            }
+        }
+    }
+
+    .next_btn, .skip_btn {
+        position: absolute;
+        bottom: 20px;
+        padding: 0px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .next_btn {
+        left: 20px;
+        background-color: #F1F3F8;
+        color: #0071DC;
+    }
+
+    .skip_btn {
+        right: 20px;
+        background-color: #0071DC;
+        color: white;
+    }
+}
+
+.sub_preference {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    opacity: 0;
+    transition: right 1s, opacity 1s;
+
+    &.show_sub_preference {
+        right: 0;
+        opacity: 1;
+    }
+}
