@@ -40,7 +40,7 @@ const useCourseDetailPage = () => {
             setLoading(true)
 
             try {
-                const res = await fetch(`http://localhost:5000/api/courses/singleCourse/${courseID}`)
+                const res = await fetch(`https://eduwise-708c009023f3.herokuapp.com/api/courses/singleCourse/${courseID}`)
 
                 if (res.status === 404) {
                     setLoading(false)
@@ -93,6 +93,18 @@ const useCourseDetailPage = () => {
 
     }
 
+   const saveCourse=(action)=>{
+
+    if(action === "add"){
+        // do add
+    }
+
+    if(action === "remove"){
+        //
+    }
+
+   }
+
     const handleTimeUpdate = (event) => {
         const time = Math.floor(event.target.currentTime);
         setCurrentTime(time);
@@ -135,7 +147,8 @@ const useCourseDetailPage = () => {
         course,
         loading, 
         videoRef, 
-        courseID
+        courseID,
+        saveCourse
     }
 
 }

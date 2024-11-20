@@ -147,6 +147,41 @@
                         }
                     }
                 }
+
+                .no_courses {
+
+                    width: 100%;
+                    min-height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    h2 {
+
+                        color: #262626;
+                        text-align: center;
+                        font-size: 22px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+
+                    }
+
+                    button {
+                        padding: 10px 20px;
+                        border-radius: 30px;
+                        background: #0071DC;
+                        border: none;
+                        outline: none;
+                        color: #FFF;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+
+                }
             }
         }
     }

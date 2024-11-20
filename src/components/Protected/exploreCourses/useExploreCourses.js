@@ -23,7 +23,7 @@ const useExploreCourses = () => {
         const fetchCourses = async () => {
             setLoading(true);
             try {
-                const res = await fetch("http://localhost:5000/api/courses/getcourses");
+                const res = await fetch("https://eduwise-708c009023f3.herokuapp.com/api/courses/getcourses");
 
                 if (res.status === 404) {
                     toast.warn("Courses Not Found");
