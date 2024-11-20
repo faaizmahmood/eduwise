@@ -65,7 +65,7 @@ const useSignup = () => {
 
                 try {
                     setSignupLoading(true)
-                    const response = await fetch('http://localhost:5000/api/auth/signup', {
+                    const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/auth/signup', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -128,7 +128,7 @@ const useSignup = () => {
         (async () => {
             try {
                 setFindUseranme(true)
-                const reponse = await fetch("http://localhost:5000/api/auth/username", {
+                const reponse = await fetch("https://eduwise-708c009023f3.herokuapp.com/api/auth/username", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

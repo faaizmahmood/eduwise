@@ -8,16 +8,35 @@ import 'reactjs-popup/dist/index.css';
 import thumbnail from '../../../../public/images/course_thumbail_1.png'
 import pf from '../../../../public/images/profileImg.png'
 import InnerPageLoading from '../../../containers/pageLoading/InnerPageLoading/innerPageLoading'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 
 
 const CourseDetailPage = () => {
 
     const colors = ['#0071dc', '#262626', '#a6a6a6', '#a6a6a6'];
 
-    const { loading, currentTime, handleTimeUpdate, handleLoadedMetadata, duration, courseProgress, boom, enableButton, course, videoRef, courseID } = useCourseDetailPage()
+    const { loading, currentTime, handleTimeUpdate, handleLoadedMetadata, duration, courseProgress, boom, enableButton, course, videoRef, courseID, saveCourse } = useCourseDetailPage()
 
     const navigate = useNavigate()
+
+    const currentUser = useSelector((state) => state.set_up_user)
+
+
+    const location = useLocation()
+
+    const currentUrl = `${window.location.origin}${location?.pathname}`;
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(currentUrl)
+            .then(() => {
+                toast.success('URL copied to clipboard!');
+            })
+            .catch((err) => {
+                toast.error('Failed to copy URL');
+            });
+    };
 
 
     return (
@@ -47,7 +66,7 @@ const CourseDetailPage = () => {
                                     <div className={`${styles.course_meta_data} d-flex justify-content-between align-items-center`}>
                                         <h3 className='mt-3'>{course?.title}</h3>
                                         {enableButton ? <button onClick={() => {
-                                            navigate(`/quiz/${courseID}/?source=course&course_title=${course?.title}`, {state : {course_source: "course"}})
+                                            navigate(`/quiz/${courseID}/?source=course&course_title=${course?.title}`, { state: { course_source: "course" } })
                                         }}>Got To Quiz</button> : ""}
                                     </div>
 
@@ -57,31 +76,27 @@ const CourseDetailPage = () => {
                                             <div className='col-6 d-flex gap-4 align-items-center'>
                                                 <img src={pf} alt='...' className='img-fluid' />
                                                 <div className='mt-2'>
-                                                    <h4>Ayesha Khan</h4>
-                                                    <p>Mentor - Web Developer at Google</p>
+                                                    <h4>{course?.instructor?.name}</h4>
+                                                    <p>{course?.instructor?.bio}</p>
                                                 </div>
                                             </div>
                                             <div className='col-6 d-flex gap-3 justify-content-end'>
-                                                <i className="fa-light fa-bookmark"></i>
+
+                                                {currentUser?.wishlist.includes(courseID) ? (
+                                                    <>
+                                                    <i className="fa-solid fa-bookmark" onClick={()=>saveCourse("remove")}></i>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <i className="fa-regular fa-bookmark" onClick={()=>saveCourse("add")}></i>
+                                                    </>
+                                                )
+                                                }
 
                                                 <Popup trigger={<i className="fa-regular fa-share-nodes"></i>} modal >
-                                                    <div className={`${styles.share_model} d-flex justify-content-center align-items-center`} style={{ height: '30vh', borderRadius: '20px' }}>
-                                                        <div className={`${styles.content}`}>
-                                                            <p>Share this link via</p>
-                                                            <ul className={`${styles.icons}`}>
-                                                                <a href="#"><i className="fab fa-facebook-f"></i></a>
-                                                                <a href="#"><i className="fab fa-twitter"></i></a>
-                                                                <a href="#"><i className="fab fa-instagram"></i></a>
-                                                                <a href="#"><i className="fab fa-whatsapp"></i></a>
-                                                                <a href="#"><i className="fab fa-telegram-plane"></i></a>
-                                                            </ul>
-                                                            <p>Or copy link</p>
-                                                            <div className={`${styles.field}`}>
-                                                                <i className="url-icon uil uil-link"></i>
-                                                                <input type="text" value="https://codepen.io/coding_dev_" />
-                                                                <button>Copy</button>
-                                                            </div>
-                                                        </div>
+                                                    <div className={`${styles.share_model} d-flex flex-column justify-content-center align-items-center`} style={{ height: '30vh', borderRadius: '20px', padding: '20px' }}>
+                                                        <div className={`${styles.link_div}`}>{currentUrl}</div>
+                                                        <button className='mt-3' onClick={handleCopy}>Copy URL</button>
                                                     </div>
                                                 </Popup>
                                             </div>
@@ -89,17 +104,39 @@ const CourseDetailPage = () => {
 
                                     </div>
 
+                                    <div className={`${styles.course_details} mt-4`}>
 
+                                        <h3>About This Course</h3>
 
+                                        <p>{course?.description}</p>
 
-                                    {/* <p>Time: {currentTime}</p>
-                <p>duration: {duration}</p> */}
+                                        <h3 className='mt-5'>Review For This Course</h3>
 
-                                    {/* {
-                            boom ? (
-                                <ReactConfetti/>
-                            ) : null
-                        } */}
+                                        <div className={`${styles.reviews} mt-4`}>
+
+                                            {course?.ratings?.reviews.map((ele) => {
+                                                return (
+                                                    <>
+                                                        <div className={`${styles.review_card} mt-3`}>
+                                                            <div className='d-flex gap-2'>
+                                                                {[...Array(ele?.rating)].map((_, ind) => {
+                                                                    return (
+                                                                        <>
+                                                                            <i key={ind} className="fa-solid fa-star" style={{ color: '#FFD700' }}></i>
+                                                                        </>
+                                                                    )
+                                                                })}
+                                                            </div>
+
+                                                            <h6 className='mt-3'>{ele?.comment}</h6>
+                                                        </div>
+                                                    </>
+                                                )
+                                            })}
+
+                                        </div>
+
+                                    </div>
                                 </div>
 
                                 <div className='col-4'>

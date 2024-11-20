@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { setUpUser } from "../../redux/actions";
+// import { setUpUser } from "../../redux/actions";
 
 
 const useOtp = () => {
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     const [loading, setLoading] = useState(true)
 
@@ -27,7 +27,7 @@ const useOtp = () => {
     const { email, fName } = location?.state?.values || {}
 
 
-    const userData = location?.state?.values || {}
+    // const userData = location?.state?.values || {}
 
     const [time, setTime] = useState(61)
 
@@ -85,11 +85,9 @@ const useOtp = () => {
                     if (otpValues == OtpValue) {
                         toast.success("Email is verified");
 
-                        dispatch(setUpUser(userData))
+                        // dispatch(setUpUser(userData))
 
-                        navigate('/')
-
-
+                        navigate('/auth/signin')
 
                         setTime(0);
                     } else {
@@ -116,7 +114,7 @@ const useOtp = () => {
         try {
             setResendingLoading(true)
             setTime(0)
-            const response = await fetch('http://localhost:5000/api/auth/req-otp', {
+            const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/auth/req-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

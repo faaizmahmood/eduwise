@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import styles from './sidebar.module.scss'
-import { NavLink } from 'react-router-dom'
+import { Navigate, NavLink, useNavigate } from 'react-router-dom'
 import useSidebar from './useSidebar'
 import { useSelector } from 'react-redux'
 
@@ -18,8 +18,13 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
     padding: drawer ? "13px 20px" : '15px'
   }
 
+  const logout=()=>{
 
+    localStorage.removeItem("currentUser")
 
+    location.reload();
+
+  }
 
 
   return (
@@ -77,6 +82,11 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
                 <i className="fa-regular fa-gear"></i>
                 <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Setting</h5>
               </NavLink>
+
+              <div onClick={logout} style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4 cursor-pointer`}>
+                <i className="fa-regular fa-gear"></i>
+                <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Logout</h5>
+              </div>
 
             </div>
 

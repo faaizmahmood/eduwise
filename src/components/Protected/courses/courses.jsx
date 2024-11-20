@@ -6,22 +6,22 @@ import useCourses from './useCourses'
 import styles from './courses.module.scss'
 import { SyncLoader } from 'react-spinners'
 import Sidebar from '../dashboard/components/sidebar/sidebar'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 
 const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_percent }) => {
 
     const navigate = useNavigate()
 
-    const navigateCourseDetailPage=(id, completion_percent)=>{
+    const navigateCourseDetailPage = (id, completion_percent) => {
 
-        navigate(`/courses/${id}`, {state: {completion_percent: completion_percent}});
+        navigate(`/courses/${id}`, { state: { completion_percent: completion_percent } });
 
     }
 
     return (
         <>
-            <div className={`${styles.course_item} mt-3`} onClick={()=>navigateCourseDetailPage(id, completion_percent)} style={{ cursor: 'pointer' }}>
+            <div className={`${styles.course_item} mt-3`} onClick={() => navigateCourseDetailPage(id, completion_percent)} style={{ cursor: 'pointer' }}>
                 <img src='./images/course_thumbail_1.png' />
                 <div className={`${styles.course_data}`}>
                     <h5>{name}</h5>
@@ -93,7 +93,10 @@ const Courses = () => {
 
                                                             filteredCourse.length === 0 ? (
                                                                 <>
-                                                                    No course Right Now
+                                                                    <div className={`${styles.no_courses}`}>
+                                                                        <h2>No course Right Now :{")"}</h2>
+                                                                        <NavLink to="/explore-courses"><button className='mt-3'>Explore Courses</button></NavLink>
+                                                                    </div>
                                                                 </>
                                                             ) : (
                                                                 <>
@@ -103,7 +106,7 @@ const Courses = () => {
                                                                             return (
                                                                                 <>
                                                                                     <CourseCard
-                                                                                       id={ele.course_id}
+                                                                                        id={ele.course_id}
                                                                                         name={ele.title}
                                                                                         total_lesson={ele.totalLessons}
                                                                                         completed_lesson={ele.completedLessons}
