@@ -3,6 +3,16 @@ import React from 'react'
 import styles from './footer.module.scss'
 import Icon from '../../../containers/Icon'
 
+// Icon
+
+import twitterIcon from '../../../../public/icons/Twitter.png'
+import youtubeIcon from '../../../../public/icons/Youtube.png'
+import linkedinIcon from '../../../../public/icons/Linkedin.png'
+import facebookIcon from '../../../../public/icons/Facebook.png'
+import callIcon from '../../../../public/icons/call.png'
+import mailIcon from '../../../../public/icons/mail.png'
+import addressIcon from '../../../../public/icons/address.png'
+
 const Footer = () => {
     return (
         <>
@@ -29,19 +39,19 @@ const Footer = () => {
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Social Media</h5>
                             <ul className="list-unstyled mt-3">
-                                <li className='my-2'><a href="#"><Icon icon={'Twitter'} /> <span className='ms-2'>Twitter</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'Youtube'} /> <span className='ms-2'>YouTube</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'Linkedin'} /> <span className='ms-2'>LinkedIn</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'Facebook'} /> <span className='ms-2'>Facebook</span></a></li>
+                                <li className='my-2'><a href="#"><img src={twitterIcon} /> <span className='ms-2'>Twitter</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={youtubeIcon} /> <span className='ms-2'>YouTube</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={linkedinIcon} /> <span className='ms-2'>LinkedIn</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={facebookIcon} /> <span className='ms-2'>Facebook</span></a></li>
                             </ul>
                         </div>
 
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Contact Us</h5>
                             <ul className="list-unstyled">
-                                <li className='my-2'><a href="#"><Icon icon={'call'} /> <span className='ms-2'>+92 303 3777018</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'mail'} /> <span className='ms-2'> contact@eduwise.com</span></a></li>
-                                <li className='my-2'><a href="#"><Icon icon={'address'} /> <span className='ms-2'> Lahore, Punjab, Pakistan</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={callIcon} /> <span className='ms-2'>+92 303 3777018</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={mailIcon} /> <span className='ms-2'> contact@eduwise.com</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={addressIcon} /> <span className='ms-2'> Lahore, Punjab, Pakistan</span></a></li>
                             </ul>
                         </div>
                     </div>
