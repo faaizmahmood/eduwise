@@ -1,0 +1,215 @@
+.course_detail_page {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
+
+
+    video {
+        width: 100%;
+        // height: 60vh;
+        object-fit: cover;
+        height: 450px;
+        border-radius: 20px;
+        border: 1px solid #D9D9D9;
+        outline: none;
+    }
+
+    .course_meta_data {
+
+        button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #0071DC;
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 24px;
+            border: none;
+            outline: none;
+        }
+    }
+
+    .instructor_detail {
+
+        h4 {
+            color: #262626;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 22px;
+        }
+
+        p {
+            color: #A6A6A6;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        i {
+            color: #0071DC;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+
+
+
+    }
+
+
+    .course_progress {
+        border: 1px solid #D9D9D9;
+        min-height: 150px;
+        border-radius: 10px;
+        width: 100%;
+        padding: 20px;
+
+        h3 {
+            color: #262626;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 26px;
+
+            span {
+                color: #0071DC;
+            }
+        }
+
+        .progress_bar {
+            width: 100%;
+            height: 20px;
+            background-color: #EEF0F4;
+            border-radius: 30px;
+            position: relative;
+
+            .progress_points {
+                position: absolute;
+                width: 20px;
+                height: 100%;
+                background-color: #0072dc5a;
+                top: 0;
+                border-radius: 20px;
+                transition: all 1s;
+
+                &.active {
+                    background-color: #0071DC;
+                }
+            }
+
+            .progress_points_1 {
+                left: 0;
+            }
+
+            .progress_points_2 {
+                left: 22%;
+            }
+
+            .progress_points_3 {
+                left: 46%;
+            }
+
+            .progress_points_4 {
+                left: 70%;
+            }
+
+            .progress_points_5 {
+                right: 0 !important;
+            }
+        }
+
+        .messgae_for_user {
+            padding: 10px;
+            border: 1px solid #0072dc5a;
+            border-radius: 10px;
+            background-color: #EEF0F4;
+
+            p {
+                line-height: 24px;
+                font-size: 12px;
+                margin-bottom: 0px !important;
+            }
+        }
+    }
+}
+
+
+.course_details {
+
+    h3 {
+        color: #262626;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 26px;
+    }
+
+    p {
+        color: #A6A6A6;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+
+    .reviews {
+
+        .review_card {
+            padding: 15px;
+            // border: 1px solid black;
+            border-radius: 10px;
+            background-color: #F1F3F8;
+
+            h6 {
+                color: #262626;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+            }
+
+        }
+    }
+
+}
+
+
+.share_model {
+    .link_div {
+        width: 100%;
+        height: 50px;
+        background-color: #F1F3F8;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        overflow: scroll;
+        scrollbar-width: none;
+        color: #A6A6A6;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
+    }
+
+    button {
+        padding: 8px 20px;
+        border-radius: 30px;
+        background: #0071DC;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border: none;
+        outline: none;
+    }
+}

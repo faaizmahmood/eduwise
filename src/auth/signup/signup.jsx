@@ -2,10 +2,9 @@
 import { NavLink } from 'react-router-dom'
 import styles from './signup.module.scss'
 import useSignup from './useSignup'
-import { ClipLoader, PulseLoader } from 'react-spinners'
-// import Header from '../../components/unProtected/header/header'
-// import Footer from '../../components/unProtected/footer/footer'
-
+import { PulseLoader } from 'react-spinners'
+import HomeNavigation from '../../containers/homeNavigation/homeNavigation'
+import PageLoading from '../../containers/pageLoading/outerPageLoading/pageLoading'
 const Signup = () => {
 
 
@@ -15,30 +14,31 @@ const Signup = () => {
 
         <>
 
-        {/* <Header/> */}
+            {/* <Header/> */}
             {
                 loading ? (
                     <>
-                        <div className={styles['page-loading']}>
-                            <ClipLoader color="#0071DC" />
-                        </div>
+                        <PageLoading/>
                     </>
                 ) : (
                     <>
+
+                        <HomeNavigation />
+                        
                         <main className={`${styles.signup}`}>
 
                             <div className={`container ${styles.signup_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
-                                    <div className={`col-lg-6 d-lg-block d-none ${styles.signup_img}`}>
+                                    {/* <div className={`col-lg-6 d-lg-block d-none ${styles.signup_img}`}>
                                         <div>
                                             <h5>
                                                 {'"'}The beautiful thing about learning is that nobody can take it away from you.{'"'}
                                             </h5>
 
-                                            <img src='../../../public/images/side_img.png' alt='SignUp image' />
+                                            <img src='.m/public/images/side_img.png' alt='SignUp image' />
                                         </div>
-                                    </div>
-                                    <div className={`col-lg-6 ${styles.signup_form}`}>
+                                    </div> */}
+                                    <div className={`col-lg-12 ${styles.signup_form}`}>
                                         <h3>Sign Up</h3>
 
                                         <form className={`${styles.register_form}`} onSubmit={formik.handleSubmit}>
@@ -112,7 +112,7 @@ const Signup = () => {
                                                 <label>Password</label>
                                                 <div className={`${styles.siginup_pass_group}`}>
                                                     <input type={passwordVisibility.pass1 ? 'text' : 'password'} placeholder='Enter your password' name='password' value={formik.values.password} onChange={formik.handleChange} />
-                                                    <i className={`${passwordVisibility.pass2 ? 'fa-eye' : "fa-eye-slash"} fa-solid me-2`} style={{ cursor: 'pointer', color: '#A6A6A6' }} onClick={() => setPasswordVisibility(pre => ({
+                                                    <i className={`${passwordVisibility.pass1 ? 'fa-eye' : "fa-eye-slash"} fa-solid me-2`} style={{ cursor: 'pointer', color: '#A6A6A6' }} onClick={() => setPasswordVisibility(pre => ({
                                                         ...pre,
                                                         pass1: !passwordVisibility.pass1
                                                     }))}></i>

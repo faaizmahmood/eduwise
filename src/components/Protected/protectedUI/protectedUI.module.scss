@@ -1,0 +1,17 @@
+@media (max-width:992px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100% !important;
+        height: 15vh !important;
+    }
+
+    .web_routing_area{
+        width: 100vw !important;
+    }
+
+    .web_content {
+        width: 100vh !important;
+    }
+}

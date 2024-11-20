@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './error.module.scss'
 import { ClipLoader } from 'react-spinners';
-import Header from '../header/header';
-import Footer from '../footer/footer';
 
 
 const Error = () => {
@@ -30,7 +28,6 @@ const Error = () => {
                     </>
                 ) : (
                     <>
-                    <Header/>
                         <div className={styles['container']}>
                             <img src='/images/not_found_image.png' alt='Not found image...' width={'400px'} />
                         </div>
@@ -38,7 +35,6 @@ const Error = () => {
                 )
             }
 
-            <Footer/>
         </>
     )
 }

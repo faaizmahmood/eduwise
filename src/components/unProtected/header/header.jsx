@@ -15,6 +15,7 @@ const Header = () => {
                             <NavLink to='/courses' className={({ isActive }) => isActive ? styles.active : ''}><li>Courses</li></NavLink>
                             <NavLink to='/about' className={({ isActive }) => isActive ? styles.active : ''}><li>About Us</li></NavLink>
                             <NavLink to='/become-instructor' className={({ isActive }) => isActive ? styles.active : ''}><li>Become an Instructor</li></NavLink>
+                            <NavLink to='/contact' className={({ isActive }) => isActive ? styles.active : ''}><li>Contact</li></NavLink>
 
                         </ul>
                     </nav>
@@ -29,6 +30,7 @@ const Header = () => {
                             <NavLink to='/courses' className={({ isActive }) => isActive ? `${styles.active_icon}` : ''}><i className="fa-regular fa-book-open-cover"></i></NavLink>
                             <NavLink to='/about' className={({ isActive }) => isActive ? `${styles.active_icon}` : ''}><i className="fa-regular fa-users"></i></NavLink>
                             <NavLink to='/become-instructor' className={({ isActive }) => isActive ? `${styles.active_icon}` : ''}><i className="fa-regular fa-chalkboard-user"></i></NavLink>
+                            <NavLink to='/contact' className={({ isActive }) => isActive ? `${styles.active_icon}` : ''}><i className="fa-regular fa-comment"></i></NavLink>
 
 
                         </ul>

@@ -2,9 +2,13 @@ import { useFormik } from "formik"
 import { useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import * as yup from 'yup'
+import { useDispatch } from "react-redux";
+import { setUpUser } from "../../redux/actions"; //actions
 
 
 const useSignin = () => {
+
+    const dispatch = useDispatch()
 
     const [showHidePassVal, setShowHidePassVal] = useState(false)
 
@@ -37,7 +41,7 @@ const useSignin = () => {
             setBtnLoading(true)
 
             try {
-                const response = await fetch('http://localhost:5000/api/auth/signin', {
+                const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/auth/signin', {
                     method: 'POST',
                     headers: {
                         "Content-Type": "application/json"
@@ -52,6 +56,8 @@ const useSignin = () => {
                     toast.success("Sign in sucessfully")
                     console.log(values)
                     formik.resetForm()
+                    const userData = await response.json()
+                    dispatch(setUpUser(userData))
                 }
                 if (response.status === 401) {
                     toast.error("Password is incorrect")

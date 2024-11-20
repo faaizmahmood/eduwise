@@ -2,33 +2,46 @@
 import React from 'react'
 import styles from './about.module.scss'
 import useAbout from './useAbout.js'
-import { ClipLoader } from 'react-spinners'
-import Header from '../header/header.jsx'
-import Footer from '../footer/footer.jsx'
+import { BarLoader, ClipLoader } from 'react-spinners'
+import PageLoading from '../../../containers/pageLoading/outerPageLoading/pageLoading';
+import GlobalLearning from './sections/GlobalLearning/globalLearning.jsx';
+import StatsOverview from './sections/StatsOverview/statsOverview.jsx';
+import SpecialAboutUs from './sections/specialAboutUs/specialAboutUs.jsx';
 
 const About = () => {
 
   const { loading } = useAbout()
 
+  const bg = {
+    background: 'url(./images/courses_hero_bg.png)',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+  }
+
   return (
     <>
-      <Header />
       {
         loading ? (
           <>
-            <div className={styles['page-loading']}>
-              <ClipLoader color="#0071DC" />
-            </div>
+            <PageLoading />
           </>
         ) : (
           <>
+            <section className={`${styles.hero}`} style={bg}>
+              <h1>About <span>Us</span></h1>
+              <input type={'text'} className='mt-4' placeholder='What do you want to learn?' />
+            </section>
 
-            <div style={{ height: '50vh' }}>About Content Here...</div>
+            <GlobalLearning />
+
+            <StatsOverview/>
+
+            <SpecialAboutUs/>
           </>
         )
       }
 
-      <Footer />
     </>
   )
 }

@@ -1,7 +1,9 @@
-import { ClipLoader, PulseLoader } from 'react-spinners'
+import { PulseLoader } from 'react-spinners'
 import styles from './otp.module.scss'
 import useOtp from './useOtp'
 import { useLocation } from 'react-router-dom'
+import HomeNavigation from '../../containers/homeNavigation/homeNavigation'
+import PageLoading from '../../containers/pageLoading/outerPageLoading/pageLoading'
 
 const Otp = () => {
 
@@ -11,34 +13,33 @@ const Otp = () => {
 
     const { loading, handleInputChange, InputRef, verificationLoading, time, reqAgainOtp, resendingLoading } = useOtp()
 
-
-
     return (
         <>
             {
                 loading ? (
                     <>
-                        <div className={styles['page-loading']}>
-                            <ClipLoader color="#0071DC" />
-                        </div>
+                        <PageLoading/>
                     </>
                 ) : (
                     <>
+
+                        <HomeNavigation />
+
                         <main className={`${styles.otp}`}>
 
                             <div className={`container ${styles.otp_container}`}>
                                 <div className='row g-0' style={{ height: '100%' }}>
-                                    <div className={`col-lg-6 d-lg-block d-none ${styles.otp_img}`}>
+                                    {/* <div className={`col-lg-6 d-lg-block d-none ${styles.otp_img}`}>
                                         <div>
                                             <h5>
                                                 {'"'}Online learning is not the next big thing; it is the now big thing.{'"'}
                                             </h5>
                                             <img src='../../../public/images/side_img.png' alt='SignUp image' />
                                         </div>
-                                    </div>
-                                    <div className={`col-lg-6 ${styles.otp_form_container}`}>
-                                        <h3>OTP Verification</h3>
-                                        <p>Enter the OTP sent  to <span className='ms-2'>{email[0] + email[1] + '*****@gmail.com'}</span></p>
+                                    </div> */}
+                                    <div className={`col-lg-12 ${styles.otp_form_container}`}>
+                                        <h3 className='text-center'>OTP Verification</h3>
+                                        <p className='text-center'>Enter the OTP sent  to <span className='ms-2'>{email[0] + email[1] + '*****@gmail.com'}</span></p>
 
                                         <form className={`${styles.otp_form} mt-4`}>
 
@@ -80,8 +81,8 @@ const Otp = () => {
 
                                         </form>
 
-                                        <p className={`${styles.timer_para} mt-5 d-flex align-items-center`}>
-                                            <span className={`${styles.timer}`} >00:{time < 10 ? `0${time}` : time} </span>  Don’t receive the OTP? {resendingLoading ? <PulseLoader color="#0071DC" size={5} style={{ marginLeft: '10px' }} /> : <span className={`${styles.send_again}`} onClick={() => { reqAgainOtp() }}>Send again</span>}
+                                        <p className={`${styles.timer_para} mt-5 d-md-flex align-items-center text-md-start text-center`}>
+                                            <span className={`${styles.timer} me-2`} >00:{time < 10 ? `0${time}` : time} </span>Don’t receive the OTP? {resendingLoading ? <PulseLoader color="#0071DC" size={5} style={{ marginLeft: '10px' }} /> : <span className={`${styles.send_again} ms-2`} onClick={() => { reqAgainOtp() }}>Send again</span>}
                                         </p>
                                     </div>
                                 </div>

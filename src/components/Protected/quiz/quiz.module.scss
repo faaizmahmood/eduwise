@@ -1,0 +1,108 @@
+.quiz {
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    h3{
+        font-size: 14px;
+    }
+
+    button{
+        padding: 10px 20px;
+        background-color: #0071DC;
+        border: none;
+        outline: none;
+        color: white;
+        border-radius: 10px;
+    }
+
+    .certificate_model{
+
+        padding: 20px;
+
+        img{
+            width: 100%;
+        }
+
+    }
+
+
+    .btn_group {
+        display: block;
+
+        button {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: transparent;
+            border: 1px solid #0071DC;
+            outline: none;
+            width: 30%;
+            margin-top: 10px;
+            color: #0071DC;
+
+            &.active_btn{
+                background-color: #0071DC;
+                color: white;
+            }
+        }
+    }
+
+
+    .answer_submission{
+
+        button{
+            padding: 10px 20px;
+            background-color: #0071DC;
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 10px;
+
+        }
+    }
+}
+
+
+.quiz_result{
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    h3{
+        font-size: 14px;
+    }
+
+    button{
+        padding: 10px 20px;
+        background-color: #0071DC;
+        border: none;
+        outline: none;
+        color: white;
+        border-radius: 10px;
+    }
+
+}

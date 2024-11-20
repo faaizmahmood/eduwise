@@ -1,0 +1,188 @@
+.courses {
+
+    min-height: 50vh;
+
+    .courses_main_content {
+
+        background-color: white;
+        border-radius: 10px;
+        height: 84vh;
+        overflow: scroll;
+        scrollbar-width: none;
+
+        h4 {
+            color: #262626;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 20px;
+
+            .tab_item {
+                width: 32%;
+
+                button {
+                    width: 100%;
+                    padding: 20px 20px;
+                    border: none;
+                    outline: none;
+                    background-color: #FDFDFD;
+                    border-radius: 10px;
+                    color: #A6A6A6;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    position: relative;
+
+                    &.active {
+                        color: #262626;
+                    }
+
+                    &.active::before {
+                        content: '';
+                        width: 95%;
+                        height: 5px;
+                        background-color: red;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        margin-left: 2%;
+                        border-radius: 10px;
+                        background: #0071DC;
+                    }
+                }
+            }
+        }
+
+        .courses_content {
+
+
+            .course_container {
+
+
+                .course_item {
+                    min-height: 100px;
+                    width: 100%;
+                    background-color: #F4F9FF;
+                    border-radius: 10px;
+                    padding: 20px;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+
+                    img {
+                        width: 30%;
+                    }
+
+                    .course_data {
+
+                        h5 {
+                            color: #262626;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 26px;
+                        }
+
+                        .course_lesson_count {
+                            display: flex;
+                            gap: 30px;
+
+                            p {
+                                color: #A6A6A6;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+
+                                span {
+                                    color: #262626;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+
+                        .course_progress {
+
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+
+                            .course_progress_bar {
+
+                                width: 60%;
+                                height: 4px;
+                                border-radius: 10px;
+                                background: rgb(213, 213, 213);
+                                position: relative;
+
+                                .course_progress_bar_percent {
+                                    // width: 20%;
+                                    height: 4px;
+                                    border-radius: 10px;
+                                    background: #0071DC;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: 999;
+                                }
+
+                            }
+
+                            p {
+                                width: 40%;
+                                color: #A6A6A6;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: normal;
+                            }
+
+
+                        }
+                    }
+                }
+
+                .no_courses {
+
+                    width: 100%;
+                    min-height: 300px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+
+                    h2 {
+
+                        color: #262626;
+                        text-align: center;
+                        font-size: 22px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: normal;
+
+                    }
+
+                    button {
+                        padding: 10px 20px;
+                        border-radius: 30px;
+                        background: #0071DC;
+                        border: none;
+                        outline: none;
+                        color: #FFF;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                    }
+
+                }
+            }
+        }
+    }
+}

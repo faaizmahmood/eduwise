@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from "react";
+// import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+// import { setUpUser } from "../../redux/actions";
 
 
 const useOtp = () => {
+
+    // const dispatch = useDispatch()
 
     const [loading, setLoading] = useState(true)
 
@@ -22,6 +26,9 @@ const useOtp = () => {
 
     const { email, fName } = location?.state?.values || {}
 
+
+    // const userData = location?.state?.values || {}
+
     const [time, setTime] = useState(61)
 
     const [resendingLoading, setResendingLoading] = useState(false)
@@ -30,10 +37,10 @@ const useOtp = () => {
     useEffect(() => {
         if (!location.state || !email || !otp) {
             toast.warning('No OTP or Email found, redirecting...');
-            navigate('/auth/signup');
+            navigate('/');
         }
     }, [navigate, email, otp, location.state]);
-    
+
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -77,6 +84,11 @@ const useOtp = () => {
                     setVerificationLoading(false)
                     if (otpValues == OtpValue) {
                         toast.success("Email is verified");
+
+                        // dispatch(setUpUser(userData))
+
+                        navigate('/auth/signin')
+
                         setTime(0);
                     } else {
                         toast.error("Wrong OTP");
@@ -102,7 +114,7 @@ const useOtp = () => {
         try {
             setResendingLoading(true)
             setTime(0)
-            const response = await fetch('http://localhost:5000/api/auth/req-otp', {
+            const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/auth/req-otp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
