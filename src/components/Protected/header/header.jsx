@@ -3,6 +3,8 @@ import React from 'react';
 import styles from './header.module.scss'
 import Icon from '../../../containers/Icon'
 import pf_image from '../../../../public/images/profileImg.png'
+import messageIcon from '../../../../public/icons/message.png'
+import bellIcon from '../../../../public/icons/notification.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useExploreCourses from '../exploreCourses/useExploreCourses';
@@ -49,10 +51,10 @@ const Header = () => {
                 <div className='col-6'>
                   <div className='row'>
                     <div className='col-6'>
-                      <Icon icon="message" />
+                      <img src={messageIcon} className='Message Icon'/>
                     </div>
                     <div className='col-6'>
-                      <Icon icon="notification" />
+                      <img src={bellIcon} />
                     </div>
                   </div>
                 </div>
