@@ -4,6 +4,7 @@ import styles from './sidebar.module.scss'
 import { Navigate, NavLink, useNavigate } from 'react-router-dom'
 import useSidebar from './useSidebar'
 import { useSelector } from 'react-redux'
+import instructorImage from '../../../../public/images/side_bar_card.png'
 
 
 // eslint-disable-next-line react/prop-types
@@ -91,7 +92,7 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
             </div>
 
             <div className={`${styles.side_bar_img} d-lg-block d-none`} style={{ display: drawer ? "" : "none" }}>
-              <img src='./images/side_bar_card.png' alt='...' className='' />
+              <img src={instructorImage} alt='...' className='' />
             </div>
 
           </div>
