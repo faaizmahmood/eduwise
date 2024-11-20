@@ -91,7 +91,7 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
             </div>
 
             <div className={`${styles.side_bar_img} d-lg-block d-none`} style={{ display: drawer ? "" : "none" }}>
-              <img src='../../../../public/images/side_bar_card.png' alt='...' className='' />
+              <img src='./images/side_bar_card.png' alt='...' className='' />
             </div>
 
           </div>
