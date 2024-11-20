@@ -1,9 +1,14 @@
 import styles from './LandingPage.module.scss';
-import Icon from '../../../containers/Icon';
 import useLandingPage from './useLandingPage';
 import { ClipLoader } from 'react-spinners';
 import 'react-multi-carousel/lib/styles.css';
 import TestimonialCard from './TestimonialCard';
+
+// icon
+
+import noteIcon from '../../../../public/icons/note.png'
+import starIcon from '../../../../public/icons/star.png'
+import historyIcon from '../../../../public/icons/history.png'
 
 // import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -16,7 +21,7 @@ const CardItems = ({ icon, title, subTitle, description }) => {
   return (
     <>
       <div className={styles['card-items']}>
-        <Icon icon={icon} />
+        <img src={icon} />
         <h2>{title}</h2>
         <h2>{subTitle}</h2>
         <p>{description}</p>
@@ -89,19 +94,19 @@ const LandingPage = () => {
 
                 <div className={styles['hero-cards']}>
                   <CardItems
-                    icon={'note'}
+                    icon={noteIcon}
                     title={'6000+'}
                     subTitle={'Online Courses'}
                     description={'Explore wide-range of online courses'}
                   />
                   <CardItems
-                    icon={'star'}
+                    icon={starIcon}
                     title={'Top'}
                     subTitle={'Instructors'}
                     description={'Learn from the best experts of the subjects'}
                   />
                   <CardItems
-                    icon={'history'}
+                    icon={historyIcon}
                     title={'Portable'}
                     subTitle={'Programs'}
                     description={'Allow you to learn anywhere, anytime'}
