@@ -64,9 +64,11 @@
             height: 100%;
             background-color: #FDFDFF;
             padding: 20px 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            overflow: scroll;
+            scrollbar-width: none;
 
 
             form {
@@ -83,6 +85,22 @@
                     font-weight: 500;
                     line-height: normal;
                     width: 15%;
+                }
+
+                .next_btn{
+                    padding: 10px 20px;
+                    border-radius: 30px;
+                    background: #0071DC;
+                    border: none;
+                    outline: none;
+                    color: #FFF;
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    width: 13%;
+                    text-align: center;
+                    cursor: pointer;
                 }
 
             }

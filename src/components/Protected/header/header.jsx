@@ -142,7 +142,7 @@ const Header = () => {
                                         <>
                                           <div className={`${styles.box_item} d-flex gap-2 mt-2`}>
                                             <i className="fa-regular fa-award"></i>
-                                            <h6>Become Instructor</h6>
+                                            <NavLink to='/become-instructor/form'> <h6>Become Instructor</h6></NavLink>
                                           </div>
                                         </>
                                       )

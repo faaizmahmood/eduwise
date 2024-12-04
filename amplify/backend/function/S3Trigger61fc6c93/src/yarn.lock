@@ -2,3 +2,8 @@
 # yarn lockfile v1
 
 
+"S3Trigger61fc6c93@file:":
+  version "2.0.0"
+  resolved "file:"
+  dependencies:
+    S3Trigger61fc6c93 "file:"
