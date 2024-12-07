@@ -89,7 +89,6 @@ const useCourseDetailPage = () => {
     useEffect(() => {
         if (videoProgress?.completion_percent !== undefined && videoProgress?.completion_percent !== null && videoRef.current) {
             const videoElement = videoRef.current;
-
             const seekVideo = () => {
                 const percentageProgress = videoProgress?.completion_percent / 100;
                 videoElement.currentTime = videoElement.duration * percentageProgress;
@@ -171,6 +170,7 @@ const useCourseDetailPage = () => {
 
     }
 
+
     const handleTimeUpdate = (event) => {
         const time = Math.floor(event.target.currentTime);
         setCurrentTime(time);
@@ -217,8 +217,8 @@ const useCourseDetailPage = () => {
         saveCourse,
         SavingLoading,
         isSaved
-    }
 
+    }
 }
 
 export default useCourseDetailPage

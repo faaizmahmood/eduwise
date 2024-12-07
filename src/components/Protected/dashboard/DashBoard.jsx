@@ -33,9 +33,10 @@ const DashBoard = () => {
                 <div className={`col-lg-9 ${styles.main_content}`}>
                   <Banner />
                   <Activity />
-                  <Courses/>
+                  <Courses />
                 </div>
                 <div className='col-3 d-lg-block d-none'>
+
                   <Sidebar />
                 </div>
 
