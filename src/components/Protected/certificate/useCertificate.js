@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-=======
-import { useEffect, useRef, useState } from "react";
-import html2canvas from 'html2canvas';
-import jsPDF from 'jspdf';
->>>>>>> 78fae6764f68f1b45a41f6001337252be3a7eaec
+
 
 const useCertificate = () => {
 
@@ -40,7 +35,7 @@ const useCertificate = () => {
 
             } catch (error) {
                 setLoading(false);
-                
+
                 console.error("Internal Server Error", error);
 
                 toast.error('Internal Server Error');
