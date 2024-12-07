@@ -23,11 +23,13 @@
     "bootstrap": "^5.3.3",
     "buffer": "^6.0.3",
     "canvas-confetti": "^1.9.3",
+    "crypto-browserify": "^3.12.1",
     "emailjs-com": "^3.2.0",
     "formik": "^2.4.6",
     "global": "^4.4.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
+    "process": "^0.11.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-joyride": "^2.9.2",
@@ -40,6 +42,7 @@
     "reactjs-popup": "^2.0.6",
     "redux": "^5.0.1",
     "smart-learn": "file:",
+    "stream-browserify": "^3.0.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
