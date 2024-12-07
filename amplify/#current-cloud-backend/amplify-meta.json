@@ -1,0 +1,103 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-eduwise-dev-7bc7e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::061039801389:role/amplify-eduwise-dev-7bc7e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::061039801389:role/amplify-eduwise-dev-7bc7e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-eduwise-dev-7bc7e-deployment",
+      "UnauthRoleName": "amplify-eduwise-dev-7bc7e-unauthRole",
+      "StackName": "amplify-eduwise-dev-7bc7e",
+      "StackId": "arn:aws:cloudformation:us-east-1:061039801389:stack/amplify-eduwise-dev-7bc7e/751af050-ace6-11ef-9961-0ed9180d38d5",
+      "AmplifyAppId": "d1c40mh1llyh44"
+    }
+  },
+  "auth": {
+    "eduwise69bc7994": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eduwise-dev-7bc7e-deployment/amplify-cfn-templates/auth/eduwise69bc7994-cloudformation-template.json",
+        "logicalId": "autheduwise69bc7994"
+      },
+      "lastPushTimeStamp": "2024-11-27T17:54:19.462Z",
+      "output": {
+        "UserPoolId": "us-east-1_doIAgusrW",
+        "AppClientIDWeb": "7j09ve9rbitnn2kfec6l3csdh6",
+        "AppClientID": "j3e1ic1p608r3l41s13o2tlri",
+        "IdentityPoolId": "us-east-1:e35e0e6b-ff19-4742-be73-e2276cfe4c4e",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:061039801389:userpool/us-east-1_doIAgusrW",
+        "IdentityPoolName": "eduwise69bc7994_identitypool_69bc7994__dev",
+        "UserPoolName": "eduwise69bc7994_userpool_69bc7994"
+      },
+      "lastPushDirHash": "5ZzA8yMW7wrXc2j7Onwwpq7TNDE="
+    }
+  },
+  "storage": {
+    "eduwiseStorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2024-11-27T17:54:23.568Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eduwise-dev-7bc7e-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storageeduwiseStorage"
+      },
+      "output": {
+        "BucketName": "eduwise-s3bucket7bc7e-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "DZnPbYS5PbH5m334lsSNNEcwHzg="
+    }
+  },
+  "function": {
+    "S3Trigger61fc6c93": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "lastBuildTimeStamp": "2024-11-27T17:52:27.013Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-11-27T17:52:27.101Z",
+      "distZipFilename": "S3Trigger61fc6c93-6d41566768704d6c4255-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-eduwise-dev-7bc7e-deployment",
+        "s3Key": "amplify-builds/S3Trigger61fc6c93-6d41566768704d6c4255-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-eduwise-dev-7bc7e-deployment/amplify-cfn-templates/function/S3Trigger61fc6c93-cloudformation-template.json",
+        "logicalId": "functionS3Trigger61fc6c93"
+      },
+      "lastPushTimeStamp": "2024-11-27T17:54:23.568Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::061039801389:role/S3Trigger61fc6c93LambdaRole61fc6c93-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:061039801389:function:S3Trigger61fc6c93-dev",
+        "Name": "S3Trigger61fc6c93-dev",
+        "LambdaExecutionRole": "S3Trigger61fc6c93LambdaRole61fc6c93-dev"
+      },
+      "lastPushDirHash": "l9/hqM8vqr/By3xQK9OPJ79A+4Y="
+    }
+  }
+}

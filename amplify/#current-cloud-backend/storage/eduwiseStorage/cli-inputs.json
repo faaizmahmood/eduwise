@@ -1,0 +1,13 @@
+{
+  "resourceName": "eduwiseStorage",
+  "policyUUID": "fed9172e",
+  "bucketName": "eduwise-s3bucket",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "groupAccess": {}
+}
