@@ -12,3 +12,9 @@ export const handleSearchInput = (value) => ({
     type: "HANDLE_INPUT",
     payload: value,
 });
+
+
+export const switchMode = (value) => ({
+    type: "SWITCH_MODE",
+    payload: value,
+});

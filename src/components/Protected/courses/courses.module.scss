@@ -18,6 +18,12 @@
             line-height: normal;
         }
 
+        i{
+            color: #0071DC;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
         .tabs {
             display: flex;
             gap: 20px;
@@ -184,5 +190,30 @@
                 }
             }
         }
+    }
+}
+
+
+
+// responsive
+
+@media (max-width:992px) {
+    
+
+    .courses_main_content {
+
+        padding-bottom: 100px;
+
+    }
+}
+
+@media (max-width:768px) {
+    
+
+    .courses_main_content {
+
+        height: auto !important;
+        overflow: visible !important;
+
     }
 }

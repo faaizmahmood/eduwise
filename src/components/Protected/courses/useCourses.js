@@ -45,7 +45,7 @@ const useCourses = () => {
             updatedCourses = completed_courses
         }
 
-        setFilteredCourse(updatedCourses);
+        setFilteredCourse(updatedCourses.reverse());
 
         setTimeout(() => {
             setCoursesLoading(false)

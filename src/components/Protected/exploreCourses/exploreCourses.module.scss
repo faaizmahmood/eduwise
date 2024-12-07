@@ -68,8 +68,18 @@
             color: #0071DC;
             font-size: 14px;
             font-weight: 500;
-            line-height: 26px;
+            line-height: 22px;
             margin-top: -5px;
+        }
+
+        i{
+            font-size: 14px;
+        }
+
+        p{
+            font-size: 12px;
+            line-height: 12px;
+            margin-bottom: 0;
         }
 
     }
@@ -99,5 +109,32 @@
         font-style: normal;
         font-weight: 700;
         line-height: normal;
+    }
+}
+
+
+// responsive
+
+
+
+@media (max-width:992px) {
+    
+
+    .explore_courses {
+
+        height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 100px !important;
+
+    }
+}
+
+
+@media (max-width:576px) {
+    
+
+    
+    .course_item {
+        width: 100% !important;
     }
 }

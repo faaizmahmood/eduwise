@@ -1,3 +1,37 @@
+.already_attempt {
+
+    width: 100;
+    height: 80vh;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        background: #0071DC;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+}
+
 .quiz {
 
     background-color: white;
@@ -13,11 +47,11 @@
         line-height: normal;
     }
 
-    h3{
+    h3 {
         font-size: 14px;
     }
 
-    button{
+    button {
         padding: 10px 20px;
         background-color: #0071DC;
         border: none;
@@ -26,11 +60,11 @@
         border-radius: 10px;
     }
 
-    .certificate_model{
+    .certificate_model {
 
         padding: 20px;
 
-        img{
+        img {
             width: 100%;
         }
 
@@ -50,7 +84,7 @@
             margin-top: 10px;
             color: #0071DC;
 
-            &.active_btn{
+            &.active_btn {
                 background-color: #0071DC;
                 color: white;
             }
@@ -58,9 +92,9 @@
     }
 
 
-    .answer_submission{
+    .answer_submission {
 
-        button{
+        button {
             padding: 10px 20px;
             background-color: #0071DC;
             border: none;
@@ -73,7 +107,7 @@
 }
 
 
-.quiz_result{
+.quiz_result {
 
     background-color: white;
     padding: 20px;
@@ -83,7 +117,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     h2 {
         color: #262626;
         font-size: 18px;
@@ -92,17 +126,40 @@
         line-height: normal;
     }
 
-    h3{
+    h3 {
         font-size: 14px;
     }
 
-    button{
+    button {
         padding: 10px 20px;
         background-color: #0071DC;
         border: none;
         outline: none;
         color: white;
         border-radius: 10px;
+    }
+
+}
+
+
+// ressposive
+
+
+@media (max-width:768px) {
+    .quiz_result {
+        height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 100px !important;
+    }
+
+}
+
+
+@media (max-width:768px) {
+    .btn_group {
+        button {
+            width: fit-content !important;
+        }
     }
 
 }

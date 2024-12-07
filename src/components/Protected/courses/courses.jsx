@@ -7,6 +7,7 @@ import styles from './courses.module.scss'
 import { SyncLoader } from 'react-spinners'
 import Sidebar from '../dashboard/components/sidebar/sidebar'
 import { NavLink, useNavigate } from 'react-router-dom'
+import Popup from 'reactjs-popup'
 
 
 const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_percent }) => {
@@ -15,7 +16,7 @@ const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_perce
 
     const navigateCourseDetailPage = (id, completion_percent) => {
 
-        navigate(`/courses/${id}`, { state: { completion_percent: completion_percent } });
+        navigate(`/my-courses/${id}`, { state: { completion_percent: completion_percent } });
 
     }
 
@@ -31,12 +32,12 @@ const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_perce
                         <p>Completed Lessons: <span>{completed_lesson} / {total_lesson}</span></p>
                     </div> */}
 
-                    <div className={`${styles.course_progress}`}>
+                    {/* <div className={`${styles.course_progress}`}>
                         <div className={`${styles.course_progress_bar}`}>
                             <div className={`${styles.course_progress_bar_percent}`} style={{ width: `${completion_percent}%` }}> </div>
                         </div>
                         <p className='mt-3'>{completion_percent} % Complete</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
@@ -57,8 +58,13 @@ const Courses = () => {
                 ) : (
                     <main className={`${styles.courses} px-4 `}>
                         <div className='row'>
-                            <div className={`${styles.courses_main_content} col-9 px-4 pt-3`}>
-                                <h4>Enrolled Courses</h4>
+                            <div className={`${styles.courses_main_content} col-lg-9 col-12 px-4 pt-3`}>
+                                <div className='d-flex justify-content-between'>
+                                    <h4>Enrolled Courses</h4>
+                                    <i className="fa-regular fa-arrows-rotate" onClick={() => {
+                                        location.reload()
+                                    }}></i>
+                                </div>
 
                                 <section className={`${styles.tabs} mt-4`}>
                                     <div className={`${styles.tab_item}`}>
@@ -129,7 +135,7 @@ const Courses = () => {
 
                                 </section>
                             </div>
-                            <div className='col-3'>
+                            <div className='col-lg-3 d-lg-block d-none'>
                                 <Sidebar />
                             </div>
                         </div>

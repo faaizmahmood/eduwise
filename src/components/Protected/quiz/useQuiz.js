@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import confetti from 'canvas-confetti';
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 
 const useQuiz = () => {
 
@@ -33,13 +34,23 @@ const useQuiz = () => {
 
     const { course_source } = location.state || {}
 
+    const currentUser = useSelector((state) => state.set_up_user)
+
+    const alreadyAttempt = currentUser?.completed_courses?.some((ele) => ele?.course_id == courseID);
+
+
+
     // alert(course_source)
 
 
     useEffect(() => {
 
-        if (source === null && course_title === null && (course_source != 'course')) {
+        if ((source === null && course_title === null && (course_source != 'course'))) {
             navigate('/my-courses')
+        }
+
+        if(alreadyAttempt){
+            toast.error("You Already Did It")
         }
 
         if (courseID === null) {
@@ -126,7 +137,9 @@ const useQuiz = () => {
         isQuizFinished,
         answers,
         selectedOption,
-        handleConfetti
+        handleConfetti,
+        courseID,
+        alreadyAttempt
     };
 };
 

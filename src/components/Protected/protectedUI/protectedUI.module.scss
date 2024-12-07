@@ -1,17 +1,44 @@
+
+.sidebar{
+    z-index: 999;
+}
+
+
 @media (max-width:992px) {
     .sidebar {
         position: fixed;
-        bottom: 0;
+        bottom: 20px;
         right: 0;
         width: 100% !important;
         height: 15vh !important;
     }
 
-    .web_routing_area{
+    .web_routing_area {
         width: 100vw !important;
     }
 
     .web_content {
-        width: 100vh !important;
+        width: 150vh !important;
     }
+}
+
+
+.layout {
+
+    background-color: transparent;
+
+}
+
+
+
+
+@media (max-width:992px) {
+
+    .layout {
+
+        background-color: transparent;
+        width: auto !important;
+
+    }
+
 }

@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-eduwise-dev-7bc7e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::061039801389:role/amplify-eduwise-dev-7bc7e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::061039801389:role/amplify-eduwise-dev-7bc7e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-eduwise-dev-7bc7e-deployment",
+      "UnauthRoleName": "amplify-eduwise-dev-7bc7e-unauthRole",
+      "StackName": "amplify-eduwise-dev-7bc7e",
+      "StackId": "arn:aws:cloudformation:us-east-1:061039801389:stack/amplify-eduwise-dev-7bc7e/751af050-ace6-11ef-9961-0ed9180d38d5",
+      "AmplifyAppId": "d1c40mh1llyh44"
+    },
+    "categories": {
+      "auth": {
+        "eduwise69bc7994": {}
+      },
+      "storage": {
+        "eduwiseStorage": {}
+      },
+      "function": {
+        "S3Trigger61fc6c93": {
+          "deploymentBucketName": "amplify-eduwise-dev-7bc7e-deployment",
+          "s3Key": "amplify-builds/S3Trigger61fc6c93-6d41566768704d6c4255-build.zip"
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,20 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useRef } from "react";
-import { useLocation, useParams } from 'react-router-dom'
+import { useSelector } from "react-redux";
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { toast } from "react-toastify";
 
 
 const useCourseDetailPage = () => {
 
+    const currentUser = useSelector((state) => state.set_up_user)
+
     const [loading, setLoading] = useState(true)
+
+    const [SavingLoading, setSavingLoading] = useState(false)
+
+    const [isSaved, setIsSaved] = useState(false)
 
     const [currentTime, setCurrentTime] = useState(0);
 
@@ -31,6 +39,20 @@ const useCourseDetailPage = () => {
     const videoRef = useRef(null);
 
     console.log("Course ID:", courseID);
+
+    const navigate = useNavigate()
+
+    const alreadyEnrolledOrCompleted = currentUser?.current_courses?.some((ele) => ele?.course_id == courseID) || currentUser?.completed_courses?.some((ele) => ele?.course_id == courseID);
+
+    useEffect(() => {
+
+        if (!alreadyEnrolledOrCompleted) {
+            toast.warning("Please Enroll First to Access!")
+            navigate(`/explore-courses/enroll-course/${courseID}`)
+
+        }
+
+    }, [])
 
 
     useEffect(() => {
@@ -67,7 +89,7 @@ const useCourseDetailPage = () => {
     useEffect(() => {
         if (videoProgress?.completion_percent !== undefined && videoProgress?.completion_percent !== null && videoRef.current) {
             const videoElement = videoRef.current;
-            
+
             const seekVideo = () => {
                 const percentageProgress = videoProgress?.completion_percent / 100;
                 videoElement.currentTime = videoElement.duration * percentageProgress;
@@ -80,7 +102,7 @@ const useCourseDetailPage = () => {
                 videoElement.removeEventListener('loadedmetadata', seekVideo);
             };
         }
-    }, [videoProgress?.completion_percent]); 
+    }, [videoProgress?.completion_percent]);
 
 
     const boomFuncion = () => {
@@ -93,17 +115,61 @@ const useCourseDetailPage = () => {
 
     }
 
-   const saveCourse=(action)=>{
+    const saveCourse = async (action) => {
 
-    if(action === "add"){
-        // do add
+        const paylaod = {
+            user_id: currentUser?._id,
+            action: action === "add" ? "save_course" : "unsave_course",
+            data: {
+                course_id: courseID,
+                course_title: course?.title,
+                course_thumbmail: "../../../public/images/course_thumbail_6.png",
+                instuctor: "Michael Jordon",
+                avg_rating: Math.floor(course?.ratings?.average_rating)
+            }
+        }
+
+        try {
+
+            setSavingLoading(true)
+
+            const res = await fetch(`https://eduwise-708c009023f3.herokuapp.com/api/user/update-user`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(paylaod)
+            })
+
+            if (res.status === 409) {
+                setSavingLoading(false)
+                toast.error("Already Unsaved")
+            }
+
+            if (res.ok) {
+                const course_res = await res.json()
+
+                action === "add" ? toast.success("Course Saved!") : toast.success("Course Un Saved!")
+
+                setIsSaved(true)
+
+                action === "add" ? setIsSaved(true) : setIsSaved(false)
+
+                const updatedUser = course_res.updatedUser;
+                localStorage.removeItem('currentUser')
+                localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+
+                setSavingLoading(false)
+            }
+
+
+        } catch (error) {
+            setSavingLoading(false)
+            console.log(error)
+            toast.error("Internal Server Error")
+        }
+
     }
-
-    if(action === "remove"){
-        //
-    }
-
-   }
 
     const handleTimeUpdate = (event) => {
         const time = Math.floor(event.target.currentTime);
@@ -145,10 +211,12 @@ const useCourseDetailPage = () => {
         boom,
         enableButton,
         course,
-        loading, 
-        videoRef, 
+        loading,
+        videoRef,
         courseID,
-        saveCourse
+        saveCourse,
+        SavingLoading,
+        isSaved
     }
 
 }

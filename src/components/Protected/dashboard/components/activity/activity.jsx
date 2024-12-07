@@ -1,18 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from 'react-redux'
-import Icon from '../../../../../containers/Icon'
 import styles from './activity.module.scss'
+import book_filled from '../../../../../../public/icons/book_filled.png'
+import courses_filled from '../../../../../../public/icons/courses_filled.png'
+import tick_filled from '../../../../../../public/icons/tick_filled.png'
 
 
-const Card=({img, count, name})=>{
+const Card = ({ img, count, name }) => {
     return (
         <>
-            <div className='col-4'>
+            <div className='col-sm-4 mt-sm-0 mt-3'>
                 <div className='d-flex gap-3 align-items-center'>
-                    <Icon icon={img} />
+                    <img src={img} alt={img} />
                     <div>
-                    <h6>{count}</h6>
-                    <h6>{name}</h6>
+                        <h6>{count}</h6>
+                        <h6>{name}</h6>
                     </div>
                 </div>
             </div>
@@ -22,7 +24,7 @@ const Card=({img, count, name})=>{
 
 function Activity() {
 
-    const currentUser = useSelector((state)=> state.set_up_user)
+    const currentUser = useSelector((state) => state.set_up_user)
 
     const current_courses = currentUser.current_courses
 
@@ -32,9 +34,9 @@ function Activity() {
         <>
             <section className={`${styles.activity} my-4`}>
                 <div className='row'>
-                    <Card img={"book_filled"} count={current_courses.length} name={"Enrolled Coursese"}/>
-                    <Card img={"tick_filled"} count={completed_courses.length + current_courses.length} name={"Total Coursese"}/>
-                    <Card img={"tick_filled"} count={completed_courses.length} name={"Completed Coursese"}/>
+                    <Card img={book_filled} count={current_courses.length} name={"Enrolled"} />
+                    <Card img={courses_filled} count={completed_courses.length + current_courses.length} name={"Total"} />
+                    <Card img={tick_filled} count={completed_courses.length} name={"Completed"} />
                 </div>
             </section>
         </>

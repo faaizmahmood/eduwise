@@ -213,3 +213,20 @@
         outline: none;
     }
 }
+
+
+// responsive
+
+
+
+@media (max-width:992px) {
+    
+
+    .course_detail_page {
+
+        height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 100px;
+
+    }
+}

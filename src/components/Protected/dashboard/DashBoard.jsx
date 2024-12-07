@@ -27,15 +27,15 @@ const DashBoard = () => {
           </>
         ) : (
           <>
-            <main className={`${styles.dashboard}`}>
+            <main className={`${styles.dashboard} p-lg-0 p-3`}>
               <div className='row'>
 
-                <div className={`col-9 ${styles.main_content}`}>
+                <div className={`col-lg-9 ${styles.main_content}`}>
                   <Banner />
                   <Activity />
                   <Courses/>
                 </div>
-                <div className='col-3'>
+                <div className='col-3 d-lg-block d-none'>
                   <Sidebar />
                 </div>
 

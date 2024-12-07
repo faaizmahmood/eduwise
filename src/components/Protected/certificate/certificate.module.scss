@@ -1,176 +1,71 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pinyon+Script|Rochester');
-
-.cursive {
-    font-family: 'Pinyon Script', cursive;
-}
-
-.sans {
-    font-family: 'Open Sans', sans-serif;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.block {
-    display: block;
-}
-
-.underline {
-    border-bottom: 1px solid #777;
-    padding: 5px;
-    margin-bottom: 15px;
-}
-
-.margin-0 {
-    margin: 0;
-}
-
-.padding-0 {
-    padding: 0;
-}
-
-.pmEmptySpace {
-    height: 40px;
-    width: 100%;
-}
-
-.pmCertificateContainer {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    background-color: #618597;
-    padding: 30px;
-    color: #333;
-    font-family: 'Open Sans', sans-serif;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-
-    .outerBorder {
-        width: 794px;
-        height: 594px;
-        position: absolute;
-        left: 50%;
-        margin-left: -397px;
-        top: 50%;
-        margin-top: -297px;
-        border: 2px solid #fff;
-    }
-
-    .innerBorder {
-        width: 730px;
-        height: 530px;
-        position: absolute;
-        left: 50%;
-        margin-left: -365px;
-        top: 50%;
-        margin-top: -265px;
-        border: 2px solid #fff;
-    }
-
-    .pmCertificateBorder {
-        position: relative;
-        width: 720px;
-        height: 520px;
-        padding: 0;
-        border: 1px solid #E1E5F0;
-        background-color: #fff;
-        left: 50%;
-        margin-left: -360px;
-        top: 50%;
-        margin-top: -260px;
-
-        .pmCertificateBlock {
-            width: 650px;
-            height: 200px;
-            position: relative;
-            left: 50%;
-            margin-left: -325px;
-            top: 70px;
-            margin-top: 0;
-        }
-
-        .pmCertificateHeader {
-            margin-bottom: 10px;
-        }
-
-        .pmCertificateTitle {
-            position: relative;
-            top: 40px;
-
-            h2 {
-                font-size: 34px;
-            }
-        }
-
-        .pmCertificateBody {
-            padding: 20px;
-
-            .pmNameText {
-                font-size: 20px;
-            }
-        }
-
-        .pmEarned {
-            margin: 15px 0 20px;
-
-            .pmEarnedText {
-                font-size: 20px;
-            }
-
-            .pmCreditsText {
-                font-size: 15px;
-            }
-        }
-
-        .pmCourseTitle {
-            .pmEarnedText {
-                font-size: 20px;
-            }
-
-            .pmCreditsText {
-                font-size: 15px;
-            }
-        }
-
-        .pmCertified {
-            font-size: 12px;
-
-            .underline {
-                margin-bottom: 5px;
-            }
-        }
-
-        .pmCertificateFooter {
-            width: 650px;
-            height: 100px;
-            position: relative;
-            left: 50%;
-            margin-left: -325px;
-            bottom: -105px;
-        }
-    }
-}
-
-
-
 .certificate {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
 
-    position: relative;
+    .no_certificate {
 
-    button {
-        padding: 10px 20px;
-        border-radius: 30px;
-        background: #0071DC;
-        color: white;
-        border: none;
-        outline: none;
-        position: absolute;
-        top: 10px;
-        right: 20px;
-        color: #FFF;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
+        width: 100%;
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2 {
+
+            color: #262626;
+            text-align: center;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #0071DC;
+            border: none;
+            outline: none;
+            color: #FFF;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+    }
+
+    .certificate_item {
+        background-color: #F1F3F8;
+        min-height: 100px;
+        border-radius: 10px;
+        padding: 20px;
+
+        a{
+            text-decoration: none;
+        }
+
+
+        button {
+            padding: 8px 30px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            background: #0071DC;
+            color: #FFF;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 }

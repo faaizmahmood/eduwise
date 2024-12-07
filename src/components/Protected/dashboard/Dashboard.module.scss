@@ -2,12 +2,23 @@
     overflow-x: hidden;
 
     .main_content {
-        height: 90vh;
+        min-height: 90vh;
         overflow-y: auto;
         scrollbar-width: none;
 
         ::-webkit-scrollbar {
             display: none;
+        }
+    }
+}
+
+
+@media (max-width:992px) {
+    .dashboard {
+    
+        .main_content {
+            min-height: 160vh;
+            padding-bottom: 50px;
         }
     }
 }

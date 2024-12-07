@@ -14,6 +14,37 @@
         flex-wrap: wrap;
         gap: 20px;
 
+        .course_not_available {
+            width: 100%;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+            h2 {
+                color: #262626;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            button {
+                padding: 10px 20px;
+                border: none;
+                outline: none;
+                border-radius: 30px;
+                background: #0071DC;
+                color: #FFF;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+
         .course_item {
             width: 31%;
             min-height: 200px;
@@ -39,7 +70,7 @@
                 position: relative;
 
 
-                .course_progress{
+                .course_progress {
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -50,4 +81,35 @@
             }
         }
     }
+}
+
+
+// responsive
+
+
+@media (max-width:992px) {
+    
+    .courses_container{
+
+        .course_item{
+
+            width: 46% !important;
+        }
+
+    }
+
+}
+
+
+@media (max-width:576px) {
+    
+    .courses_container{
+
+        .course_item{
+
+            width: 100% !important;
+        }
+
+    }
+
 }

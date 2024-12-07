@@ -11,13 +11,14 @@ import InnerPageLoading from '../../../containers/pageLoading/InnerPageLoading/i
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
+import { PulseLoader } from 'react-spinners';
 
 
 const CourseDetailPage = () => {
 
     const colors = ['#0071dc', '#262626', '#a6a6a6', '#a6a6a6'];
 
-    const { loading, currentTime, handleTimeUpdate, handleLoadedMetadata, duration, courseProgress, boom, enableButton, course, videoRef, courseID, saveCourse } = useCourseDetailPage()
+    const { loading, currentTime, handleTimeUpdate, handleLoadedMetadata, duration, courseProgress, boom, enableButton, course, videoRef, courseID, saveCourse, SavingLoading, isSaved } = useCourseDetailPage()
 
     const navigate = useNavigate()
 
@@ -53,7 +54,7 @@ const CourseDetailPage = () => {
                         <main className={`${styles.course_detail_page}`}>
                             <div className='row'>
 
-                                <div className='col-8'>
+                                <div className='col-sm-8'>
                                     <video
                                         ref={videoRef}
                                         controls="controls"
@@ -80,18 +81,54 @@ const CourseDetailPage = () => {
                                                     <p>{course?.instructor?.bio}</p>
                                                 </div>
                                             </div>
-                                            <div className='col-6 d-flex gap-3 justify-content-end'>
+                                            <div className='col-6 d-flex gap-3 justify-content-end align-items-center'>
 
-                                                {currentUser?.wishlist.includes(courseID) ? (
-                                                    <>
-                                                    <i className="fa-solid fa-bookmark" onClick={()=>saveCourse("remove")}></i>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <i className="fa-regular fa-bookmark" onClick={()=>saveCourse("add")}></i>
-                                                    </>
-                                                )
+                                                {
+                                                    SavingLoading ? (
+                                                        <>
+                                                            <PulseLoader
+                                                                color="#0071DC"
+                                                                size={5}
+                                                            />
+                                                        </>
+                                                    ) : (
+                                                        <>
+
+                                                            {currentUser?.wishlist?.some((course) => course.course_id == courseID) ? (
+                                                                <>
+                                                                    {
+                                                                        isSaved ? (
+                                                                            <>
+                                                                                <i className="fa-regular fa-bookmark" onClick={() => saveCourse("add")}></i>
+                                                                            </>
+                                                                        ) : (
+                                                                            <>
+                                                                                <i className="fa-solid fa-bookmark" onClick={() => saveCourse("remove")}></i>
+                                                                            </>
+                                                                        )
+                                                                    }
+
+                                                                </>
+                                                            ) : (
+                                                                <>
+                                                                    {
+                                                                        isSaved ? (
+                                                                            <>
+                                                                                <i className="fa-solid fa-bookmark" onClick={() => saveCourse("remove")}></i>
+                                                                            </>
+                                                                        ) : (
+                                                                            <>
+                                                                                <i className="fa-regular fa-bookmark" onClick={() => saveCourse("add")}></i>
+                                                                            </>
+                                                                        )
+                                                                    }
+                                                                </>
+                                                            )
+                                                            }
+                                                        </>
+                                                    )
                                                 }
+
 
                                                 <Popup trigger={<i className="fa-regular fa-share-nodes"></i>} modal >
                                                     <div className={`${styles.share_model} d-flex flex-column justify-content-center align-items-center`} style={{ height: '30vh', borderRadius: '20px', padding: '20px' }}>
@@ -114,18 +151,20 @@ const CourseDetailPage = () => {
 
                                         <div className={`${styles.reviews} mt-4`}>
 
-                                            {course?.ratings?.reviews.map((ele) => {
+                                            {course?.ratings?.reviews?.map((ele) => {
+
+                                                const rating_num = Math.floor(ele?.rating)
+
                                                 return (
                                                     <>
                                                         <div className={`${styles.review_card} mt-3`}>
                                                             <div className='d-flex gap-2'>
-                                                                {[...Array(ele?.rating)].map((_, ind) => {
+                                                                {[...Array(rating_num > 0 ? rating_num : 0)].map((_, ind) => {
                                                                     return (
-                                                                        <>
-                                                                            <i key={ind} className="fa-solid fa-star" style={{ color: '#FFD700' }}></i>
-                                                                        </>
-                                                                    )
+                                                                        <i key={ind} className="fa-solid fa-star" style={{ color: '#FFD700' }}></i>
+                                                                    );
                                                                 })}
+
                                                             </div>
 
                                                             <h6 className='mt-3'>{ele?.comment}</h6>
@@ -139,7 +178,7 @@ const CourseDetailPage = () => {
                                     </div>
                                 </div>
 
-                                <div className='col-4'>
+                                <div className='col-4 d-sm-block d-none'>
                                     <div className={`${styles.course_progress}`}>
                                         <h3>Your Study Progress <span className='ms-1'>{courseProgress ? courseProgress : "0"}%</span></h3>
 

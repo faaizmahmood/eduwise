@@ -46,7 +46,7 @@ const useExploreCourses = () => {
 
     // Navigate to a specific course
     const openCourse = (course) => {
-        navigate(`/courses/${course._id}`);
+        navigate(`/explore-courses/enroll-course/${course._id}`);
     };
 
     // Handle search term updates

@@ -1,8 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base:'/'
-})
+  optimizeDeps: {
+    include: ['aws-amplify'],
+    exclude: ['@aws-amplify/ui-react'], // Exclude UI components if not needed
+  },
+  resolve: {
+    alias: {
+      './runtimeConfig': './runtimeConfig.browser', // Fix Amplify config resolution
+    },
+  },
+});

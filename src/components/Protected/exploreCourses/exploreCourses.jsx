@@ -36,27 +36,45 @@ const ExploreCourses = () => {
                 ) : (
                   <>
                     {
-                      filteredCourses.map((ele, ind) => (
-                        <div
-                          className={`${styles.course_item}`}
-                          onClick={() => openCourse(ele)}
-                          key={ele._id}
-                        >
-                          <div className={styles['course-card']}>
-                            <div className={`position-relative ${styles.course_card_head}`}>
-                              <img
-                                src={`./images/course_thumbail_1.png`}
-                                alt="course_thumbnail"
-                                className="img-fluid"
-                              />
+
+
+                      filteredCourses.map((ele, ind) => {
+
+                        const rating_num = Math.floor(ele?.ratings?.average_rating)
+
+                        return (
+                          <>
+                            <div
+                              className={`${styles.course_item} mt-3`}
+                              onClick={() => openCourse(ele)}
+                              key={ele._id}
+                            >
+                              <div className={styles['course-card']}>
+                                <div className={`position-relative ${styles.course_card_head}`}>
+                                  <img
+                                    src={`./images/course_thumbail_1.png`}
+                                    alt="course_thumbnail"
+                                    className="img-fluid"
+                                  />
+                                </div>
+                                <div className={`text-start ${styles.course_card_body}`}>
+                                  <h3>{ele?.title}</h3>
+                                  <h4>{ele?.instructor?.name}</h4>
+                                  <div className='d-flex gap-2 align-items-center'>
+                                    {[...Array(rating_num > 0 ? rating_num : 0)].map((_, ind) => {
+                                      return (
+                                        <i key={ind} className="fa-solid fa-star" style={{ color: '#FFD700' }}></i>
+                                      );
+                                    })}
+
+                                    <p className=''>{`(${rating_num} stars)`}</p>
+                                  </div>
+                                </div>
+                              </div>
                             </div>
-                            <div className={`text-start ${styles.course_card_body}`}>
-                              <h3>{ele.title}</h3>
-                              <h4>{ele.description}</h4>
-                            </div>
-                          </div>
-                        </div>
-                      ))
+                          </>
+                        )
+                      })
                     }
                   </>
                 )

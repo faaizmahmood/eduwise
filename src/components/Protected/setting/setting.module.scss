@@ -1,0 +1,90 @@
+.setting {
+
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
+    // display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    .pp_sec {
+        width: fit-content;
+        position: relative;
+
+        img {
+            border-radius: 50%;
+        }
+
+        i {
+            color: #0071DC;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            cursor: pointer;
+        }
+    }
+
+    .input_group {
+
+        input {
+            padding: 10px 20px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            border: 1px solid #D9D9D9;
+            background: #FFF;
+            color: #000000;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+        }
+
+
+        .error_message{
+            font-size: 10px;
+            color: red;
+            
+        }
+
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 30px;
+        background: #0071DC;
+        border: none;
+        outline: none;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        width: 15%;
+    }
+
+}
+
+
+
+// responsive
+
+
+@media (max-width:992px) {
+    .setting {
+        height: auto !important;
+        overflow: visible !important;
+        padding-bottom: 100px !important;
+    }
+}

@@ -1,0 +1,25 @@
+.notification {
+
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .notification_item {
+        background-color: #EFF5F7;
+        min-height: 100px;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+}

@@ -1,8 +1,10 @@
 .sidebar {
-
+    z-index: 999;
     position: relative;
+    height: 100%;
+ 
 
-    .drawer_icon{
+    .drawer_icon {
         background-color: white;
         color: #0071DC;
         padding: 3px 12px;
@@ -15,7 +17,7 @@
         top: 20;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-        i{
+        i {
             margin: 0 !important;
             padding: 0 !important;
             font-size: 12px;
@@ -27,13 +29,13 @@
     }
 
     .active_side_menu {
-        background-color: white !important;
+        background-color: #F5F7FD !important;
 
-        i{ 
+        i {
             color: #0071DC !important;
         }
-        
-        h5{
+
+        h5 {
             color: #0071DC !important;
         }
 
@@ -44,7 +46,7 @@
         height: 58vh !important;
     }
 
-    .closed_drawer_nav_items{
+    .closed_drawer_nav_items {
         height: 100vh !important;
     }
 
@@ -92,21 +94,27 @@
 
 @media (max-width:992px) {
 
-    .nav_item_list{
-   overflow-y: visible;
+    .sidebar{
+        height: 150%;
     }
 
-    .side_bar_item{
+    .nav_item_list {
+        overflow-y: visible;
+    }
+
+    .side_bar_item {
         height: fit-content !important;
-        padding: 30px 30px !important;
+        padding: 10px 10px !important;
         border-radius: 50% !important;
 
-        i{
+        i {
             width: auto !important;
-            font-size: 30px;
+            font-size: 20px;
+            height: auto !important;
+            margin-bottom: 0;
         }
 
-        h5{
+        h5 {
             display: none;
         }
     }

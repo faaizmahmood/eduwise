@@ -1,0 +1,42 @@
+.error {
+
+
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+
+    img{
+        width: 40%;
+    }
+
+
+    h2 {
+
+        color: #262626;
+        text-align: center;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+    }
+
+    button {
+        padding: 10px 20px;
+        border-radius: 30px;
+        background: #0071DC;
+        border: none;
+        outline: none;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+}

@@ -3,7 +3,19 @@ import styles from './sidebar.module.scss'
 
 const Sidebar = () => {
 
-    const currentUser = useSelector((state)=> state.set_up_user)
+    const currentUser = useSelector((state) => state.set_up_user)
+
+
+    const getGreeting = () => {
+        const hours = new Date().getHours();
+        if (hours < 12) {
+            return "Good Morning";
+        } else if (hours < 18) {
+            return "Good Afternoon";
+        } else {
+            return "Good Evening";
+        }
+    }
 
     return (
         <aside className={`${styles.side_overview}`}>
@@ -16,12 +28,11 @@ const Sidebar = () => {
                             {'32'}%
                         </div>
                         <div className={`${styles.progress_track}`}></div>
-                        <img src='./images/PF_img_main.png' style={{width:'120px'}}/>
-
+                        <img src={currentUser?.profile_image} style={{ width: '120px', borderRadius:'50%', height:'120px' }} />
                     </div>
                 </div>
                 <div className='d-flex align-items-center flex-column mt-3'>
-                <h5>Good Morning {currentUser?.fName}</h5>
+                    <h5>{getGreeting()} {currentUser?.fName.slice(0, 5)}</h5>
                     <p className='w-75 text-center'>Continue your learning to achive your target!</p>
                 </div>
             </div>
