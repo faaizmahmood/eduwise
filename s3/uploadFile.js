@@ -5,8 +5,20 @@ import { s3Config } from '../s3-config';
 const generateUniqueFileName = (file) => {
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-'); // e.g., 2024-11-29T12-45-30-123Z
   const extension = file.name.substring(file.name.lastIndexOf('.')); // Get file extension
-  const folder = file.type.startsWith('image/') ? 'images' : 'videos'; // Determine folder based on file type
-  return `${folder}/upload-${timestamp}${extension}`; // e.g., images/upload-2024-11-29T12-45-30-123Z.png
+  let folder = '';
+
+  // Determine folder based on file type
+  if (file.type.startsWith('image/')) {
+    folder = 'images';
+  } else if (file.type.startsWith('video/')) {
+    folder = 'videos';
+  } else if (['.pdf', '.doc', '.docx'].includes(extension.toLowerCase())) {
+    folder = 'resumes'; // Folder for resume files
+  } else {
+    folder = 'others'; // Default folder for other types
+  }
+
+  return `${folder}/upload-${timestamp}${extension}`; // e.g., resumes/upload-2024-11-29T12-45-30-123Z.pdf
 };
 
 const uploadFile = async (file) => {

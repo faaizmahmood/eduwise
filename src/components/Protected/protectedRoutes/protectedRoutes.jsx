@@ -1,4 +1,3 @@
-/* eslint-disable no-constant-condition */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
@@ -17,6 +16,8 @@ import Error from '../error/error'
 import Setting from '../setting/setting'
 import { useSelector } from 'react-redux'
 import BecomeInstructor from '../becomeInstructor/becomeInstructor'
+import InstructorsRequests from '../../admin/InstructorsRequests/InstructorsRequests'
+import InstructorsRequestsDetails from '../../admin/InstructorsRequestsDetails/InstructorsRequestsDetails'
 
 
 export const ProtectedRoutes = () => {
@@ -47,9 +48,11 @@ export const ProtectedRoutes = () => {
                     isAdmin ? (
                         <>
                             <Route path='/' element={"admin DashBoard"} />
-                            <Route path='/instructors-application' element={"Instructor Application"} />
+                            <Route path='/instructors-application' element={<InstructorsRequests />} />
+                            <Route path='/instructors-application/:applicationID' element={<InstructorsRequestsDetails />} />
                             <Route path='/app-users' element={"App Users"} />
                             <Route path='/view-analytics' element={"Analytics Here"} />
+                            <Route path='/setting' element={<Setting />} />
                         </>
                     ) : (
                         <>
@@ -63,6 +66,7 @@ export const ProtectedRoutes = () => {
                                         <Route path='/analytics' element={"Analytics"} />
                                         <Route path='/profile' element={"Instructor Profile"} />
                                         <Route path='/notifications' element={<Notification />} />
+
                                     </>
                                 ) : (
                                     <>

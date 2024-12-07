@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import styles from "./professionalBackground.module.scss";
 import { Autocomplete, TextField, Chip } from "@mui/material";
+import { toast } from "react-toastify";
+import uploadFile from "../../../../../../s3/uploadFile";
 
 const expertiseOptions = [
     "Web Development",
@@ -14,6 +16,29 @@ const expertiseOptions = [
 ];
 
 const ProfessionalBackground = ({ handleInputChange, formData }) => {
+
+    const resumeUpload = async (file) => {
+
+        if (file) {
+
+            try {
+
+                const uploadedFileUrl = await uploadFile(file);
+
+                if (uploadedFileUrl) {
+                    toast.success("Resume Uploaded")
+                    handleInputChange("resume", uploadedFileUrl)
+                }
+
+            } catch (error) {
+                toast.error('Error uploading file.');
+                console.error('Error uploading file:', error);
+            }
+        }
+
+
+    }
+
     const [expertise, setExpertise] = useState([]);
 
     return (
@@ -26,7 +51,7 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
 
                     <div className="row mt-4">
 
-                        <div className="col-6">
+                        <div className="col-sm-6">
                             <div className={`${styles.input_group}`}>
                                 <select
                                     value={formData.degreeLevel}
@@ -44,7 +69,7 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
                             </div>
                         </div>
 
-                        <div className="col-6">
+                        <div className="col-sm-6 mt-sm-0 mt-4">
                             <div className={`${styles.input_group}`}>
                                 <input
                                     value={formData.degreeTitle}
@@ -55,7 +80,7 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
                             </div>
                         </div>
 
-                        <div className="col-6 mt-4">
+                        <div className="col-sm-6 mt-4">
                             <div className={`${styles.input_group}`}>
                                 <input
                                     value={formData.institutionName}
@@ -66,7 +91,7 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
                             </div>
                         </div>
 
-                        <div className="col-6 mt-4">
+                        <div className="col-sm-6 mt-4">
                             <div className={`${styles.input_group}`}>
                                 <input
                                     value={formData.degreeYoP}
@@ -82,7 +107,7 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
                     <h2 className="mt-4">2. Teaching Experience</h2>
 
                     <div className="row mt-4">
-                        <div className="col-6">
+                        <div className="col-sm-6">
                             <div className={`${styles.input_group}`}>
                                 <input
                                     value={formData.yearsOfExperience}
@@ -93,7 +118,7 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
                             </div>
                         </div>
 
-                        <div className="col-6">
+                        <div className="col-sm-6 mt-sm-0 mt-4">
                             <div className={`${styles.input_group}`}>
                                 <input
                                     value={formData.experienceYoP}
@@ -179,13 +204,13 @@ const ProfessionalBackground = ({ handleInputChange, formData }) => {
                     <h2 className="mt-4">4. Resume or CV</h2>
 
                     <div className="row mt-4">
-                        <div className="col-6">
+                        <div className="col-sm-6 ">
                             <div className={``}>
                                 <input
                                     type="file"
                                     accept=".pdf,.doc,.docx"
                                     onChange={(e) =>
-                                        handleInputChange("resume", e.target.files[0])
+                                        resumeUpload(e.target.files[0])
                                     }
                                 />
                             </div>

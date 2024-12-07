@@ -52,18 +52,26 @@ const Header = () => {
             <div className={styles['search-box']}>
 
               {
-                location.pathname === '/explore-courses' ? (
+                isAdmin ? "" : (
                   <>
-                    <input type='text' placeholder='Search your course...' onChange={(e) => dispatch(handleSearchInput(e.target.value))} />
-                  </>
-                ) : (
-                  <>
-                    <input type='text' placeholder='Search your course...' onChange={() => {
-                      navigate(`/explore-courses`)
-                    }} />
+                    {
+                      location.pathname === '/explore-courses' ? (
+                        <>
+                          <input type='text' placeholder='Search your course...' onChange={(e) => dispatch(handleSearchInput(e.target.value))} />
+                        </>
+                      ) : (
+                        <>
+                          <input type='text' placeholder='Search your course...' onChange={() => {
+                            navigate(`/explore-courses`)
+                          }} />
+                        </>
+                      )
+                    }
                   </>
                 )
               }
+
+
 
             </div>
           </div>

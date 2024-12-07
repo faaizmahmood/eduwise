@@ -87,7 +87,7 @@
                     width: 15%;
                 }
 
-                .next_btn{
+                .next_btn {
                     padding: 10px 20px;
                     border-radius: 30px;
                     background: #0071DC;
@@ -108,5 +108,35 @@
 
     }
 
+
+}
+
+
+// responsove
+
+@media (max-width:992px) {
+
+    .sidebar {
+
+        width: 100% !important;
+        display: none !important;
+    }
+
+    .form_section {
+        width: 100% !important;
+    }
+
+    form {
+
+        button {
+            width: 35% !important;
+        }
+
+        .next_btn {
+
+            width: 35% !important;
+        }
+
+    }
 
 }

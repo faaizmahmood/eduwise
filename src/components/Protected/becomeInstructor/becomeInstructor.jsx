@@ -5,10 +5,13 @@ import pp from '../../../../public/images/profileImg.png'
 import PersonalInformation from './components/personalInformation/personalInformation'
 import ProfessionalBackground from './components/professionalBackground/professionalBackground'
 import useBecomeInstructor from './useBecomeInstructor'
+import TechnicalReadiness from './components/technicalReadiness/technicalReadiness'
+import Agreements from './components/agreements/agreements'
 
 const BecomeInstructor = () => {
 
-    const { handelStepNext, step, handelStepBack, handleInputChange, formData } = useBecomeInstructor();
+    const { handelStepNext, step, handelStepBack, handleInputChange, formData,  handelSubmit } = useBecomeInstructor();
+
 
 
     return (
@@ -48,11 +51,11 @@ const BecomeInstructor = () => {
                         <div>
 
                             {/* <form className='w-100 text-align-center' onSubmit={formik.handleSubmit}> */}
-                            <form className='w-100 text-align-center'>
+                            <form className='w-100 text-align-center' onSubmit={handelSubmit}> 
 
 
                                 {
-                                    step === 1 ? <PersonalInformation handleInputChange={handleInputChange} formData={formData} />  : (step === 2 ?   <ProfessionalBackground handleInputChange={handleInputChange} formData={formData} /> : (step === 3 ? "Step 3" : "Step 4"))
+                                    step === 1 ? <PersonalInformation handleInputChange={handleInputChange} formData={formData} /> : (step === 2 ? <ProfessionalBackground handleInputChange={handleInputChange} formData={formData} /> : (step === 3 ? <TechnicalReadiness handleInputChange={handleInputChange} formData={formData} /> : <Agreements handleInputChange={handleInputChange} formData={formData} />))
                                 }
 
 
@@ -62,8 +65,9 @@ const BecomeInstructor = () => {
                                 {
                                     step === 4 ? (
                                         <>
-                                            <div>
-                                                <button type='submit' className='mt-4'>submit</button>
+                                            <div className='d-flex justify-content-between'>
+                                                <p className={`${styles.next_btn} mt-4`} onClick={handelStepBack}>Back</p>
+                                                <button type='submit' disabled={formData.termsAccepted ? false : true} style={{ cursor: formData.termsAccepted ? "pointer" : "not-allowed" }} className='mt-4'>submit</button>
                                             </div>
                                         </>
                                     ) : (

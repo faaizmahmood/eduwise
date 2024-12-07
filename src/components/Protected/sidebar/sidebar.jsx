@@ -78,6 +78,11 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
                       <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Analytics</h5>
                     </NavLink>
 
+                    <NavLink to='/setting' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
+                      <i className="fa-regular fa-gear"></i>
+                      <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Setting</h5>
+                    </NavLink>
+
                   </div>
 
                   {/* <div className={`${styles.side_bar_img} d-lg-block d-none`} style={{ display: drawer ? "" : "none" }}>
