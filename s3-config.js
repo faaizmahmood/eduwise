@@ -1,11 +1,8 @@
-const S3_BUCKET = import.meta.env.VITE_S3_BUCKET;
-const REGION = import.meta.env.VITE_REGION;
-const ACCESS_KEY = import.meta.env.VITE_ACCESS_KEY;
-const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
+
 
 export const s3Config = {
-  bucketName: S3_BUCKET,
-  region: REGION,
-  accessKeyId: ACCESS_KEY,
-  secretAccessKey: SECRET_KEY,
+  bucketName: import.meta.env.VITE_S3_BUCKET,
+  region: import.meta.env.VITE_REGION,
+  accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID,
+  secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY,
 };
