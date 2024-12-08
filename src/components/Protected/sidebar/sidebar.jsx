@@ -163,11 +163,11 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
                             <i className="fa-regular fa-file-certificate"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Certificates</h5>
                           </NavLink>
-
+{/* 
                           <NavLink to='/profile' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                             <i className="fa-regular fa-user"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Profile</h5>
-                          </NavLink>
+                          </NavLink> */}
 
                           <NavLink to='/setting' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                             <i className="fa-regular fa-gear"></i>

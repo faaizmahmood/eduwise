@@ -602,13 +602,23 @@
 }
 
 
+.testimonial_item img{
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+}
+
+
 .testimonial_item h4 {
     font-size: 18px;
     color: #0071DC;
 }
 
 .testimonial_item p {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 20px;
     color: #B8B7BA;
 }
 

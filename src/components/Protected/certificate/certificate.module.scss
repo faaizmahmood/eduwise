@@ -47,8 +47,81 @@
         border-radius: 10px;
         padding: 20px;
 
-        a{
+        .certificate_head {
+            .certificate_img {
+                width: 100%;
+                height: 250px;
+                padding: 20px;
+                border: 10px solid #0072dca8;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                background: linear-gradient(135deg, #f4f9ff 0%, #ffffff 100%);
+                text-align: center;
+                font-family: 'Georgia', serif;
+
+                h1 {
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin: 20px 0;
+                    color: #031F42;
+                }
+
+                p {
+                    font-size: 8px;
+                    margin: 10px 0;
+                    color: #5f5f5f;
+                    line-height: 10px;
+                }
+
+                .name {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #0071DC;
+                }
+
+                .course-title {
+                    font-style: italic;
+                    font-size: 18px;
+                    color: #262626;
+                }
+
+                .issue-date {
+                    margin-top: 15px;
+                    font-size: 16px;
+                    color: #262626;
+                }
+
+                button {
+                    padding: 7px 10px;
+                    border: 1px solid #0071DC;
+                    outline: none;
+                    border-radius: 30px;
+                    background: transparent;
+                    color: #0071DC;
+                    font-size: 8px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0px 5px;
+                }
+            }
+
+        }
+
+        a {
             text-decoration: none;
+        }
+
+        h2 {
+
+            color: #262626;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+
         }
 
 

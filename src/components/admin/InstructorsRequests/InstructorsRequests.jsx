@@ -58,9 +58,9 @@ const InstructorsRequests = () => {
                                                                         }
                                                                     </div>
 
-                                                                    <div className={`${styles.date}`}>
+                                                                    {/* <div className={`${styles.date}`}>
                                                                         <h5>1 June</h5>
-                                                                    </div>
+                                                                    </div> */}
 
                                                                     <NavLink to={`/instructors-application/${ele?._id}`}><button className='mt-3'>View Complete Requests</button></NavLink>
                                                                 </div>

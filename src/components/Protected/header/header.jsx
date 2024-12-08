@@ -17,6 +17,8 @@ const Header = () => {
 
   const currentUser = useSelector((state) => state.set_up_user)
 
+  const Instructor = useSelector((state) => state.Instructor)
+
   const location = useLocation()
 
   const navigate = useNavigate()
@@ -27,9 +29,7 @@ const Header = () => {
 
   const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
-
   const [isAdmin, setIsAdmin] = useState(false)
-
 
   useEffect(() => {
     if (
@@ -93,7 +93,7 @@ const Header = () => {
                   <div className='row'>
                     <div className={`col-12 ${styles.PImage}`}>
                       <div className='d-flex align-items-center gap-3' onClick={handelShowBox}>
-                        <img src={currentUser?.profile_image || "../../../../public/images/PF_img_main.png"} alt='User Image - Eduwise' />
+                        <img src={currentUser?.profile_image || "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp"} alt='User Image - Eduwise' />
                         <h3 className='d-md-block d-none'>{currentUser?.fName.slice(0, 5)}</h3>
                       </div>
 
@@ -104,7 +104,7 @@ const Header = () => {
                             <div className={`${styles.profileBox}`}>
 
                               <div className={`${styles.box_item} d-flex align-items-center gap-2`}>
-                                <img src={currentUser?.profile_image || "../../../../public/images/PF_img_main.png"} alt='User Image - Eduwise' />
+                                <img src={currentUser?.profile_image || "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp"} alt='User Image - Eduwise' />
                                 <h3>{currentUser?.fName.slice(0, 5)}</h3>
                               </div>
 
@@ -112,7 +112,7 @@ const Header = () => {
                                 isAdmin ? "" : (
                                   <>
                                     {
-                                      currentUser?.role === "instructor" ? (
+                                      Instructor?._id ? (
                                         <>
                                           <div className={`${styles.switch} ${styles.box_item} d-flex align-items-center justify-content-between`}>
                                             <h6>Switch Instructor</h6>
@@ -136,15 +136,15 @@ const Header = () => {
 
                                     <hr />
 
-                                    <NavLink to={'/profile'}>
+                                    <NavLink to={'/setting'}>
                                       <div className={`${styles.box_item} d-flex gap-2 mt-2`}>
-                                        <i className="fa-regular fa-user"></i>
-                                        <h6>Your Profile</h6>
+                                        <i className="fa-regular fa-gear"></i>
+                                        <h6>Setting</h6>
                                       </div>
                                     </NavLink>
 
                                     {
-                                      currentUser?.role === "instructor" ? (
+                                      Instructor?._id ? (
                                         ""
                                       ) : (
                                         <>

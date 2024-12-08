@@ -18,3 +18,10 @@ export const switchMode = (value) => ({
     type: "SWITCH_MODE",
     payload: value,
 });
+
+
+export const Instructor = (value) => ({
+    type: "INSTRUCTOR",
+    payload: value,
+});
+

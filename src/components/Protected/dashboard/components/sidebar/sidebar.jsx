@@ -24,11 +24,11 @@ const Sidebar = () => {
                 <h5>Statistic</h5>
                 <div className='text-center d-flex justify-content-center'>
                     <div className={`${styles.pf} my-3`}>
-                        <div className={`${styles.progress_count}`}>
+                        {/* <div className={`${styles.progress_count}`}>
                             {'32'}%
-                        </div>
+                        </div> */}
                         <div className={`${styles.progress_track}`}></div>
-                        <img src={currentUser?.profile_image} style={{ width: '120px', borderRadius:'50%', height:'120px' }} />
+                        <img src={currentUser?.profile_image || "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp"} style={{ width: '120px', borderRadius: '50%', height: '120px' }} />
                     </div>
                 </div>
                 <div className='d-flex align-items-center flex-column mt-3'>

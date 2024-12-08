@@ -12,7 +12,7 @@ import historyIcon from '../../../../public/icons/history.png'
 
 // import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import PageLoading from '../../../containers/pageLoading/outerPageLoading/pageLoading';
 
 
@@ -49,6 +49,7 @@ const LandingPage = () => {
 
   const { switchTab, active, buttons, loading, filteredCourses, pageLoading, categories, faqs, toggleFaq, faqVisibility, search_course, input, navigate_to_courses } = useLandingPage()
 
+  const navigate = useNavigate()
 
   const buttonStyle = {
     backgroundColor: 'white',
@@ -68,7 +69,7 @@ const LandingPage = () => {
       {
         pageLoading ? (
           <>
-           <PageLoading/>
+            <PageLoading />
           </>
         ) : (
           <>
@@ -78,42 +79,42 @@ const LandingPage = () => {
 
               {/* hero */}
               <form onSubmit={navigate_to_courses}>
-              <section className={styles['hero']} style={heroBg}>
+                <section className={styles['hero']} style={heroBg}>
 
-                <h1 className='mt-sm-0 mt-5'>Learn Something <span>New</span> Today</h1>
+                  <h1 className='mt-sm-0 mt-5'>Learn Something <span>New</span> Today</h1>
 
-                <div className={styles['text-field']}>
-                  <input
-                    placeholder='What do you want to learn?'
-                    name='search-box'
-                    onChange={search_course}
-                    value={input}
-                  />
-                  <i className="fa-thin fa-magnifying-glass" type='submit'></i>
-                </div>
+                  <div className={styles['text-field']}>
+                    <input
+                      placeholder='What do you want to learn?'
+                      name='search-box'
+                      onChange={search_course}
+                      value={input}
+                    />
+                    <i className="fa-thin fa-magnifying-glass" type='submit'></i>
+                  </div>
 
-                <div className={styles['hero-cards']}>
-                  <CardItems
-                    icon={noteIcon}
-                    title={'6000+'}
-                    subTitle={'Online Courses'}
-                    description={'Explore wide-range of online courses'}
-                  />
-                  <CardItems
-                    icon={starIcon}
-                    title={'Top'}
-                    subTitle={'Instructors'}
-                    description={'Learn from the best experts of the subjects'}
-                  />
-                  <CardItems
-                    icon={historyIcon}
-                    title={'Portable'}
-                    subTitle={'Programs'}
-                    description={'Allow you to learn anywhere, anytime'}
-                  />
-                </div>
+                  <div className={styles['hero-cards']}>
+                    <CardItems
+                      icon={noteIcon}
+                      title={'100+'}
+                      subTitle={'Online Courses'}
+                      description={'Explore wide-range of online courses'}
+                    />
+                    <CardItems
+                      icon={starIcon}
+                      title={'Top'}
+                      subTitle={'Instructors'}
+                      description={'Learn from the best experts of the subjects'}
+                    />
+                    <CardItems
+                      icon={historyIcon}
+                      title={'Portable'}
+                      subTitle={'Programs'}
+                      description={'Allow you to learn anywhere, anytime'}
+                    />
+                  </div>
 
-              </section>
+                </section>
               </form>
               {/* hero */}
 
@@ -179,7 +180,7 @@ const LandingPage = () => {
                             filteredCourses.map((ele, ind) => {
                               return (
                                 <>
-                                  <div className={styles['course-card']} key={ind}>
+                                  <div className={styles['course-card']} key={ind} onClick={() => navigate('/auth/signup')} style={{ cursor: 'pointer' }}>
                                     <div className={`position-relative ${styles.course_card_head}`}>
                                       <img src={`./images/${ele.image}`} alt='course_thumbail_1' className='img-fluid' />
                                       <div className={styles['courses_card_btns']}>
@@ -262,15 +263,15 @@ const LandingPage = () => {
                         <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/bulb.png' alt='bulb image' />
-                            <h5 className='mt-3'>18,099</h5>
+                            <h5 className='mt-3'>50+</h5>
                             <p>Student Enrolled</p>
                           </div>
                         </div>
                         <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/notes.png' alt='bulb image' />
-                            <h5 className='mt-3'>18,099</h5>
-                            <p>Student Enrolled</p>
+                            <h5 className='mt-3'>100+</h5>
+                            <p>Certificates Distributed</p>
                           </div>
                         </div>
                         <div className='col-sm-3 col-6'>
@@ -283,7 +284,7 @@ const LandingPage = () => {
                         <div className='col-sm-3 col-6'>
                           <div className={`text-center ${styles.about_card}`}>
                             <img src='./images/courses.png' alt='bulb image' />
-                            <h5 className='mt-3'>4,038</h5>
+                            <h5 className='mt-3'>100+</h5>
                             <p>Courses from top instructors</p>
                           </div>
                         </div>
@@ -340,31 +341,31 @@ const LandingPage = () => {
                   <div className={`mt-4 ${styles.testimonial_slider}`}>
                     <TestimonialCard
                       title='Code Quality'
-                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
-                      name='Madley Pondor'
-                      position='/ Reporter, San Diego'
-                      img='./images/test_img_1.png'
+                      description='EduWise has been a game-changer for me! The courses are detailed, and the instructors are very professional. I recently completed the Web Development course and received my certification, which helped me land an internship. Highly recommended for anyone looking to upskill in Pakistan!'
+                      name='Ahmed Raza'
+                      position='Computer Science Student, NUST'
+                      img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
                     <TestimonialCard
                       title='Code Quality'
-                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
-                      name='Madley Pondor'
-                      position='/ Reporter, San Diego'
-                      img='./images/test_img_2.png'
+                      description='I loved how EduWise made learning so accessible. The Business Analytics course was well-structured, and the certification added great value to my resume. The platform is easy to use, and the support team is very responsive. Definitely worth it!'
+                      name='Ayesha Fatima'
+                      position='MBA Graduate, Lahore School of Economics'
+                      img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
                     <TestimonialCard
                       title='Code Quality'
-                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
-                      name='Madley Pondor'
-                      position='/ Reporter, San Diego'
-                      img='./images/test_img_3.png'
+                      description='EduWise offers top-notch courses with practical insights. I completed the Python for Data Science course and found it incredibly helpful. The certification added credibility to my LinkedIn profile, and I feel more confident applying for data-related roles now.'
+                      name='Bilal Khan'
+                      position='Software Engineer, FAST University'
+                      img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
                     <TestimonialCard
                       title='Code Quality'
-                      description='ThemeMove deserves 5 star for theme’s features, design quality, flexibility, and support service!'
-                      name='Madley Pondor'
-                      position='/ Reporter, San Diego'
-                      img='./images/test_img_4.png'
+                      description='EduWise has some of the best online courses out there! The UI/UX Design course was interactive and provided hands-on projects that prepared me for real-world challenges. The certification was a nice bonus, and I cannot wait to explore more courses.'
+                      name='Sana Tariq'
+                      position='Final Year Student, UET Lahore'
+                      img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
 
                   </div>
@@ -388,7 +389,7 @@ const LandingPage = () => {
                     faqs?.map((ele, ind) => {
                       const isOpen = faqVisibility[`faq${ind + 1}`];
                       return (
-                        <div className={`${styles.faq_item} mt-4`} onClick={() => toggleFaq(ind)} style={{cursor:'pointer'}} key={ind}>
+                        <div className={`${styles.faq_item} mt-4`} onClick={() => toggleFaq(ind)} style={{ cursor: 'pointer' }} key={ind}>
                           <div className='d-flex justify-content-between'>
                             <h6>{ele.question}</h6>
                             <i

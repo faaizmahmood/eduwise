@@ -12,6 +12,7 @@ import facebookIcon from '../../../../public/icons/Facebook.png'
 import callIcon from '../../../../public/icons/call.png'
 import mailIcon from '../../../../public/icons/mail.png'
 import addressIcon from '../../../../public/icons/address.png'
+import { NavLink } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -22,17 +23,17 @@ const Footer = () => {
                     <div className="row justify-content-center">
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Logo Here</h5>
-                            <p>ThemeMove deserves 5 star for themes features, design quality, flexibility and support service!</p>
+                            <p>EduWise is a platform offering certified courses to help you gain skills and advance your career.</p>
                         </div>
 
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Quick Links</h5>
                             <ul className="list-unstyled mt-3">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Courses</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Become an Instructor</a></li>
+                                <NavLink to='/'><li>Home</li></NavLink>
+                                <NavLink to='/about'><li>About</li></NavLink>
+                                <NavLink to='/courses'><li>Courses</li></NavLink>
+                                <NavLink to='/become-instructor'><li>Become an Instructor</li></NavLink>
+                                <NavLink to='/contact'><li>Contact</li></NavLink>
                             </ul>
                         </div>
 

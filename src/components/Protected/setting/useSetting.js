@@ -11,7 +11,7 @@ const useSetting = () => {
 
     const currentUser = useSelector((state) => state.set_up_user)
 
-    const [profilePic, setProfilePic] = useState(currentUser?.profile_image  || "../../../../public/images/PF_img_main.png");
+    const [profilePic, setProfilePic] = useState(currentUser?.profile_image || "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp");
 
     const fileInputRef = useRef(null);
 
@@ -26,7 +26,7 @@ const useSetting = () => {
             phone_number: currentUser?.phone_number,
             username: `User Name: ${currentUser?.username}`,
             country: currentUser?.country,
-            role: `Role: ${currentUser?.role}`,
+            // role: `Role: ${currentUser?.role}`,
         },
         validationSchema: yup.object({
             fName: yup.string().required('First name is required'),
