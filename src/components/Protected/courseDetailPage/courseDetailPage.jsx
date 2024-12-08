@@ -60,25 +60,32 @@ const CourseDetailPage = () => {
                                         controls="controls"
                                         onTimeUpdate={handleTimeUpdate}
                                         onLoadedMetadata={handleLoadedMetadata}
-                                        poster={thumbnail}
+                                        poster={course?.thumbnail ? course?.thumbnail : thumbnail}
                                     >
-                                        <source src={video} type="video/mp4" />
+                                        <source src={course?.video ? course?.video : video} type="video/mp4" />
                                     </video>
                                     <div className={`${styles.course_meta_data} d-flex justify-content-between align-items-center`}>
-                                        <h3 className='mt-3'>{course?.title}</h3>
-                                        {enableButton ? <button onClick={() => {
-                                            navigate(`/quiz/${courseID}/?source=course&course_title=${course?.title}`, { state: { course_source: "course" } })
-                                        }}>Got To Quiz</button> : ""}
+                                        <div className='row'>
+                                            <div className='col-9'>
+                                                <h3 className='mt-3'>{course?.title}</h3>
+                                            </div>
+                                            <div className='col-3'>
+
+                                                {enableButton ? <button onClick={() => {
+                                                    navigate(`/quiz/${courseID}/?source=course&course_title=${course?.title}`, { state: { course_source: "course" } })
+                                                }}>Got To Quiz</button> : ""}
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div className={`${styles.instructor_detail} mt-4`}>
 
                                         <div className='row align-items-center'>
                                             <div className='col-6 d-flex gap-4 align-items-center'>
-                                                <img src={pf} alt='...' className='img-fluid' />
+                                                <img src={course?.instructor?.profile_image ? course?.instructor?.profile_image : "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp"} alt='...' className='img-fluid' />
                                                 <div className='mt-2'>
                                                     <h4>{course?.instructor?.name}</h4>
-                                                    <p>{course?.instructor?.bio}</p>
+                                                    <p>{course?.instructor?.bio.slice(0, 30)}</p>
                                                 </div>
                                             </div>
                                             <div className='col-6 d-flex gap-3 justify-content-end align-items-center'>

@@ -12,7 +12,7 @@ const useInstructorsRequests = () => {
                 setLoading(true); // Set loading to true before the fetch
 
                 // Fetch data from the server
-                const response = await fetch('http://localhost:5000/api/instructor-requests/admin-requests');
+                const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/instructor-requests/admin-requests');
 
                 if (!response.ok) {
                     // Handle HTTP errors

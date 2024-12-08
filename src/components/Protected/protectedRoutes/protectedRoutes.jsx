@@ -18,6 +18,7 @@ import { useSelector } from 'react-redux'
 import BecomeInstructor from '../becomeInstructor/becomeInstructor'
 import InstructorsRequests from '../../admin/InstructorsRequests/InstructorsRequests'
 import InstructorsRequestsDetails from '../../admin/InstructorsRequestsDetails/InstructorsRequestsDetails'
+import AddCourses from '../Instructor/addCourses/addCourses'
 
 
 export const ProtectedRoutes = () => {
@@ -60,7 +61,7 @@ export const ProtectedRoutes = () => {
                                 userMode ? (
                                     <>
                                         <Route path='/' element={"<DashBoard />"} />
-                                        <Route path='/add-course' element={"Add Courses"} />
+                                        <Route path='/add-course' element={<AddCourses />} />
                                         <Route path='/view-trends' element={"view Trends"} />
                                         <Route path='/manage-courses' element={"Add Courses"} />
                                         <Route path='/analytics' element={"Analytics"} />

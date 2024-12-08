@@ -12,7 +12,7 @@ const useInstructorRequest = (applicationID, currentUser) => {
             try {
                 setLoading(true);
                 const response = await fetch(
-                    `http://localhost:5000/api/instructor-requests/admin-single-requests/${applicationID}`
+                    `https://eduwise-708c009023f3.herokuapp.com/api/instructor-requests/admin-single-requests/${applicationID}`
                 );
 
                 if (!response.ok) {
@@ -41,7 +41,7 @@ const useInstructorRequest = (applicationID, currentUser) => {
             };
 
             const response = await fetch(
-                'http://localhost:5000/api/instructor-requests/admin-handle-request',
+                'https://eduwise-708c009023f3.herokuapp.com/api/instructor-requests/admin-handle-request',
                 {
                     method: 'POST',
                     headers: {

@@ -34,7 +34,7 @@ const useHeader = () => {
 
         // Construct the API endpoint dynamically
         const response = await fetch(
-          `http://localhost:5000/api/instructor/single-instructor/${userId}`
+          `https://eduwise-708c009023f3.herokuapp.com/api/instructor/single-instructor/${userId}`
         );
 
         // Check if the response is a 404 (not found)

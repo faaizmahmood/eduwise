@@ -9,7 +9,6 @@ const useReviewCourses = () => {
 
     const [loading, setLoading] = useState(true)
 
-
     const [reviewLoading, setReviewLoading] = useState(false)
 
     const { courseID } = useParams()
@@ -128,7 +127,7 @@ const useReviewCourses = () => {
         setReviewLoading(true)
 
         try {
-            const res = await fetch(`https://eduwise-708c009023f3.herokuapp.com/api/courses/review-course/${courseID}`, {
+            const res = await fetch(`http://localhost:5000/api/courses/review-course/${courseID}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
