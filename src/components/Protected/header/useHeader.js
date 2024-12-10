@@ -74,6 +74,8 @@ const useHeader = () => {
 
     localStorage.removeItem("user_mode")
 
+    localStorage.removeItem("instructor")
+
     navigate("/");
 
     location.reload();

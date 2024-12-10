@@ -1,0 +1,90 @@
+.adminDasboard {
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .admin_cards {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        .admin_cards_item {
+            width: 19%;
+            min-height: 100px;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(234, 234, 234);
+
+            h4 {
+                font-size: 16px;
+                font-weight: 700;
+            }
+        }
+
+    }
+
+    .activity_logs {
+        width: 100%;
+        min-height: 150px;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: rgb(234, 234, 234);
+
+        h3 {
+            font-size: 16px;
+        }
+
+        h4 {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.606);
+        }
+    }
+
+
+    .reviews_admin {
+        width: 100%;
+        min-height: 80px;
+        background-color: rgb(235, 235, 235);
+        padding: 20px;
+        border-radius: 10px;
+
+        h2 {
+            color: #262626;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .review_item {
+            margin-top: 10px;
+            width: 100%;
+            min-height: 100px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+
+            h6 {
+                font-size: 10px;
+                color: gold;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 0px;
+                color: rgba(0, 0, 0, 0.606);
+            }
+        }
+    }
+
+}

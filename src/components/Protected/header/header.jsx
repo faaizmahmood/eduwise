@@ -84,9 +84,9 @@ const Header = () => {
                     {/* <div className='col-6'>
                     <i className="fa-solid fa-file-certificate fa-2x"></i>
                     </div> */}
-                    <div className='col-12 text-center'>
+                    {/* <div className='col-12 text-center'>
                       <NavLink to="/notifications"><img src={bellIcon} /></NavLink>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className='col-6' style={{ borderLeft: '2px solid #A6A6A6' }}>

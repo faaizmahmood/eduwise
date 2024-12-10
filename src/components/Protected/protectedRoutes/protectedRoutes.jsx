@@ -19,6 +19,10 @@ import BecomeInstructor from '../becomeInstructor/becomeInstructor'
 import InstructorsRequests from '../../admin/InstructorsRequests/InstructorsRequests'
 import InstructorsRequestsDetails from '../../admin/InstructorsRequestsDetails/InstructorsRequestsDetails'
 import AddCourses from '../Instructor/addCourses/addCourses'
+import AddQuiz from '../Instructor/addQuiz/addQuiz'
+import Drafts from '../Instructor/drafts/drafts'
+import InstructorDashboard from '../Instructor/instructorDashboard/instructorDashboard'
+import AdminDasboard from '../../admin/dashboard/adminDasboard'
 
 
 export const ProtectedRoutes = () => {
@@ -48,7 +52,7 @@ export const ProtectedRoutes = () => {
                 {
                     isAdmin ? (
                         <>
-                            <Route path='/' element={"admin DashBoard"} />
+                            <Route path='/' element={<AdminDasboard/>} />
                             <Route path='/instructors-application' element={<InstructorsRequests />} />
                             <Route path='/instructors-application/:applicationID' element={<InstructorsRequestsDetails />} />
                             <Route path='/app-users' element={"App Users"} />
@@ -60,8 +64,10 @@ export const ProtectedRoutes = () => {
                             {
                                 userMode ? (
                                     <>
-                                        <Route path='/' element={"<DashBoard />"} />
+                                        <Route path='/' element={<InstructorDashboard />} />
                                         <Route path='/add-course' element={<AddCourses />} />
+                                        <Route path='/add-course/add-quiz/:courseID' element={<AddQuiz />} />
+                                        <Route path='/drafts' element={<Drafts />} />
                                         <Route path='/view-trends' element={"view Trends"} />
                                         <Route path='/manage-courses' element={"Add Courses"} />
                                         <Route path='/analytics' element={"Analytics"} />

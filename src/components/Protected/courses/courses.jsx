@@ -10,7 +10,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Popup from 'reactjs-popup'
 
 
-const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_percent }) => {
+const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_percent, thumbnail }) => {
 
     const navigate = useNavigate()
 
@@ -23,22 +23,33 @@ const CourseCard = ({ id, name, total_lesson, completed_lesson, completion_perce
     return (
         <>
             <div className={`${styles.course_item} mt-3`} onClick={() => navigateCourseDetailPage(id, completion_percent)} style={{ cursor: 'pointer' }}>
-                <img src='./images/course_thumbail_1.png' />
-                <div className={`${styles.course_data}`}>
-                    <h5>{name}</h5>
 
-                    {/* <div className={`${styles.course_lesson_count}`}>
+                <div className='row'>
+                    <div className='col-4'>
+
+                        <img src={thumbnail === "" ? "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/img_dummy.jpg" : thumbnail} />
+                        
+                    </div>
+                    <div className='col-8'>
+
+                        <div className={`${styles.course_data}`}>
+                            <h5>{name}</h5>
+
+                            {/* <div className={`${styles.course_lesson_count}`}>
                         <p>Total Lessons: <span>{total_lesson}</span></p>
                         <p>Completed Lessons: <span>{completed_lesson} / {total_lesson}</span></p>
                     </div> */}
 
-                    {/* <div className={`${styles.course_progress}`}>
+                            {/* <div className={`${styles.course_progress}`}>
                         <div className={`${styles.course_progress_bar}`}>
                             <div className={`${styles.course_progress_bar_percent}`} style={{ width: `${completion_percent}%` }}> </div>
                         </div>
                         <p className='mt-3'>{completion_percent} % Complete</p>
                     </div> */}
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </>
     )
@@ -117,6 +128,7 @@ const Courses = () => {
                                                                                         total_lesson={ele.totalLessons}
                                                                                         completed_lesson={ele.completedLessons}
                                                                                         completion_percent={ele.progress_percentage}
+                                                                                        thumbnail={ele?.thumbnail ? ele?.thumbnail : ""}
                                                                                     />
                                                                                 </>
                                                                             )

@@ -10,7 +10,7 @@ import Agreements from './components/agreements/agreements'
 
 const BecomeInstructor = () => {
 
-    const { handelStepNext, step, handelStepBack, handleInputChange, formData,  handelSubmit } = useBecomeInstructor();
+    const { handelStepNext, step, handelStepBack, handleInputChange, formData, handelSubmit } = useBecomeInstructor();
 
 
 
@@ -51,7 +51,7 @@ const BecomeInstructor = () => {
                         <div>
 
                             {/* <form className='w-100 text-align-center' onSubmit={formik.handleSubmit}> */}
-                            <form className='w-100 text-align-center' onSubmit={handelSubmit}> 
+                            <form className='w-100 text-align-center' onSubmit={handelSubmit}>
 
 
                                 {

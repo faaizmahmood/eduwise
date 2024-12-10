@@ -42,7 +42,7 @@ const Certificate = () => {
                 <div className='row'>
 
                   {
-                    certificateItems?.map((ele, ind) => {
+                    certificateItems?.slice().reverse().map((ele, ind) => {
                       return (
                         <>
                           <div className='col-lg-4 col-md-6 p-2' key={ind}>

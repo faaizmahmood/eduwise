@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -8,9 +8,20 @@ const useBecomeInstructor = () => {
 
     const currentUser = useSelector((state) => state.set_up_user)
 
-    const [step, setStep] = useState(1);
+    const instructor = useSelector((state) => state.Instructor)
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+
+        if (instructor?._id) {
+            toast.warning("You are Instructor!")
+            navigate('/')
+        }
+
+    }, [])
+
+    const [step, setStep] = useState(1);
 
     const [formData, setFormData] = useState({
         InstructorPic: "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp",
