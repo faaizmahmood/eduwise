@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
+import InnerPageLoading from '../../../containers/pageLoading/InnerPageLoading/innerPageLoading';
 import styles from './adminDasboard.module.scss'
+import useAdminDashboard from './useAdminDasboard';
 
 
 const AdminCard = ({ title, value }) => {
@@ -13,28 +15,41 @@ const AdminCard = ({ title, value }) => {
 
 const AdminDasboard = () => {
 
+    const { loading, dashboardData } = useAdminDashboard()
 
-
-    const stats = [
-        { title: 'Total Users', value: '1,234' },
-        { title: 'Total Courses', value: '67' },
-        { title: 'Total Enrollments', value: '4,589' },
-        { title: 'Revenue', value: '$10,500' },
-        { title: 'Pending Approvals', value: '23' }
-    ];
 
 
     return (
         <>
+
+            {
+                loading ? (
+                    <>
+                        <InnerPageLoading />
+                    </>
+                ) : (
+                    <>
+
+                    </>
+                )
+            }
+
             <main className={`${styles.adminDasboard}`}>
 
 
                 <h2>Overview Statistics</h2>
 
                 <div className={`${styles.admin_cards} mt-4`}>
-                    {stats.map((stat, index) => (
-                        <AdminCard key={index} title={stat.title} value={stat.value} />
-                    ))}
+                    {/* {stats.map((stat, index) => (
+                        
+                    ))} */}
+
+                    <AdminCard title={"Total Users"} value={dashboardData?.totalUsers} />
+                    <AdminCard title={"Total Courses"} value={dashboardData?.totalCourses} />
+                    <AdminCard title={"Total Enrollments"} value={dashboardData?.totalEnrollments} />
+                    <AdminCard title={"Revenue"} value={dashboardData?.totalUsers} />
+                    <AdminCard title={"Completion Rate"} value={`${dashboardData?.completionRate} %`} />
+
                 </div>
 
 
@@ -58,34 +73,71 @@ const AdminDasboard = () => {
 
                     </div>
 
-                    <div className={`row`}>
+                    {
+                        dashboardData?.activityLogs?.length === 0 ? (
+                            <>
 
-                        <div className='col-3'>
-                            <h4>01/12/2024</h4>
-                        </div>
+                            </>
+                        ) : (
+                            <>
+                                {
+                                    dashboardData?.activityLogs?.map((ele, ind) => {
+                                        return (
+                                            <div className={`row mt-3`} key={ind}>
 
-                        <div className='col-6'>
-                            <h4>Approved Instructor Request</h4>
-                        </div>
+                                                <div className='col-3'>
+                                                    <h4>{ele?.date ? ele?.date : 'N/A'}</h4>
+                                                </div>
 
-                        <div className='col-3'>
-                            <h4> Admin John</h4>
-                        </div>
+                                                <div className='col-6'>
+                                                    <h4>{ele?.action}</h4>
+                                                </div>
 
-                    </div>
+                                                <div className='col-3'>
+                                                    <h4>User</h4>
+                                                </div>
+
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </>
+                        )
+                    }
+
+
 
                 </div>
 
 
-                <h2 className='mt-4'>Feedback and Reviews</h2>
+                <h2 className='mt-4'>Latest Feedback and Reviews</h2>
 
                 <div className={`${styles.reviews_admin}`}>
 
-                    <div className={`${styles.review_item}`} >
-                        <h6>5 stars Rating</h6>
-                        <p>Good</p>
-                    </div>
+                    {
+                        dashboardData?.latestReviews.length === 0 ? (
+                            <>
+                                <p>No Review Right Now</p>
+                            </>
+                        ) : (
+                            <>
 
+                                {
+                                    dashboardData?.latestReviews?.map((ele, ind) => {
+                                        return (
+                                            <>
+                                                <div className={`${styles.review_item}`} key={ind}>
+                                                    <h6>{ele?.rating ? ele?.rating : "N/A"} stars Rating</h6>
+                                                    <p>{ele?.comment ? ele?.comment : "N/A"}</p>
+                                                </div>
+                                            </>
+                                        )
+                                    })
+                                }
+
+                            </>
+                        )
+                    }
                 </div>
 
 

@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.13.5",
     "@mui/icons-material": "^6.0.2",
     "@mui/material": "^6.0.2",
+    "@mui/x-data-grid": "^7.23.1",
     "@reduxjs/toolkit": "^2.2.8",
     "aws-amplify": "^6.10.0",
     "aws-sdk": "^2.1692.0",

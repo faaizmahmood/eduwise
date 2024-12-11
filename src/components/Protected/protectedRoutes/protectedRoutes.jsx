@@ -23,6 +23,8 @@ import AddQuiz from '../Instructor/addQuiz/addQuiz'
 import Drafts from '../Instructor/drafts/drafts'
 import InstructorDashboard from '../Instructor/instructorDashboard/instructorDashboard'
 import AdminDasboard from '../../admin/dashboard/adminDasboard'
+import Users from '../../admin/users/users'
+import InstructorProfile from '../instructorProfile/instructorProfile'
 
 
 export const ProtectedRoutes = () => {
@@ -49,13 +51,15 @@ export const ProtectedRoutes = () => {
         <>
             <Routes>
 
+            <Route path='/instructor/profile/:InstructorID' element={<InstructorProfile/>} />
+
                 {
                     isAdmin ? (
                         <>
-                            <Route path='/' element={<AdminDasboard/>} />
+                            <Route path='/' element={<AdminDasboard />} />
                             <Route path='/instructors-application' element={<InstructorsRequests />} />
                             <Route path='/instructors-application/:applicationID' element={<InstructorsRequestsDetails />} />
-                            <Route path='/app-users' element={"App Users"} />
+                            <Route path='/app-users' element={<Users />} />
                             <Route path='/view-analytics' element={"Analytics Here"} />
                             <Route path='/setting' element={<Setting />} />
                         </>

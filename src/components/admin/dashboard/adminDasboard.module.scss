@@ -35,7 +35,9 @@
 
     .activity_logs {
         width: 100%;
-        min-height: 150px;
+        height: 200px;
+        overflow: scroll;
+        scrollbar-width: none;
         border-radius: 10px;
         padding: 20px;
         background-color: rgb(234, 234, 234);
@@ -53,7 +55,9 @@
 
     .reviews_admin {
         width: 100%;
-        min-height: 80px;
+        height: 200px;
+        overflow: scroll;
+        scrollbar-width: none;
         background-color: rgb(235, 235, 235);
         padding: 20px;
         border-radius: 10px;
