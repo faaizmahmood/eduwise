@@ -58,7 +58,7 @@ const ExploreCourses = () => {
                                   />
                                 </div>
                                 <div className={`text-start ${styles.course_card_body}`}>
-                                  <h3>{ele?.title}</h3>
+                                  <h3>{ele?.title.slice(0, 40)}...</h3>
                                   <h4>{ele?.instructor?.name}</h4>
                                   <div className='d-flex gap-2 align-items-center'>
                                     {[...Array(rating_num > 0 ? rating_num : 0)].map((_, ind) => {

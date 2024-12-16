@@ -69,7 +69,7 @@ const useAddQuiz = (maxQuestions = 50) => {
 
     const handleUploadQuiz = async () => {
 
-        if (questions.length < 10) {
+        if (questions.length < 2) {
             toast.error("At least 10 MCQs are required!");
             return;
         }

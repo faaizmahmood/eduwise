@@ -9,7 +9,9 @@
     .instructorProfileImage {
 
         img {
-            width: 10%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
         }
     }
 
@@ -81,6 +83,27 @@
             }
 
         }
+    }
+
+
+    .review {
+
+        .review_item {
+            min-height: 100px;
+             width:100%;
+             background-color: #0071DC;
+             border-radius: 10px;
+             padding: 20px;
+             margin-top: 10px;
+
+
+             p{
+                margin-bottom: 0;
+                font-size: 18px;
+                color: white;
+             }
+        }
+
     }
 
 }

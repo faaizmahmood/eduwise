@@ -25,6 +25,7 @@ import InstructorDashboard from '../Instructor/instructorDashboard/instructorDas
 import AdminDasboard from '../../admin/dashboard/adminDasboard'
 import Users from '../../admin/users/users'
 import InstructorProfile from '../instructorProfile/instructorProfile'
+import ManageCourses from '../manageCourses/manageCourses'
 
 
 export const ProtectedRoutes = () => {
@@ -73,7 +74,7 @@ export const ProtectedRoutes = () => {
                                         <Route path='/add-course/add-quiz/:courseID' element={<AddQuiz />} />
                                         <Route path='/drafts' element={<Drafts />} />
                                         <Route path='/view-trends' element={"view Trends"} />
-                                        <Route path='/manage-courses' element={"Add Courses"} />
+                                        <Route path='/manage-courses' element={ <ManageCourses/> } />
                                         <Route path='/analytics' element={"Analytics"} />
                                         <Route path='/profile' element={"Instructor Profile"} />
                                         <Route path='/notifications' element={<Notification />} />

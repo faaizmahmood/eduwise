@@ -1,0 +1,48 @@
+.manageCourses {
+
+    padding: 20px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .courseItem {
+
+
+        min-height: 100px;
+
+        img {
+            width: 100%;
+            height: 220px;
+            border-radius: 10px;
+        }
+
+        .itemBody {
+
+            padding: 5px;
+
+            h2 {
+                color: #262626;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            p {
+                margin-bottom: 0;
+                color: #0071DC;
+                line-height: 22px;
+                font-size: 14px;
+            }
+        }
+
+    }
+}

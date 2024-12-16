@@ -16,20 +16,24 @@ const useExploreCourses = () => {
 
     const searchTerm = useSelector((state) => state.handle_search_input);
 
+    const currentUser = useSelector((state) => state.set_up_user)
+
     const navigate = useNavigate();
 
     // Fetch courses on component mount
     useEffect(() => {
         const fetchCourses = async () => {
+
             setLoading(true);
+
             try {
-                const res = await fetch("https://eduwise-708c009023f3.herokuapp.com/api/courses/getcourses");
+                const res = await fetch(`https://eduwiseapp.awaisamjad.engineer/api/course_recommendations/${currentUser._id}`);
 
                 if (res.status === 404) {
                     toast.warn("Courses Not Found");
                 } else if (res.ok) {
                     const data = await res.json();
-                    setCourses(data.courses || []);
+                    setCourses(data.Courses_recommendations || []);
                 } else {
                     toast.error("Failed to fetch courses");
                 }
