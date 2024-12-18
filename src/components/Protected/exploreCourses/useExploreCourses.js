@@ -42,7 +42,7 @@ const useExploreCourses = () => {
 
 
 
-                            setCourses(filterCourses.courses || []);
+                            setCourses(filterCourses || []);
 
                         } else {
                             toast.error("Failed to fetch fallback courses");
