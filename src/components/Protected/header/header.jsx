@@ -34,7 +34,7 @@ const Header = () => {
   useEffect(() => {
     if (
       currentUser?.email === "faizzafar44@gmail.com" ||
-      currentUser?.email === "awaisamjad.officail@gmail.com"
+      currentUser?.email === "awaisamjad.official@gmail.com"
     ) {
       setIsAdmin(true);
     } else {

@@ -140,54 +140,72 @@ const useLandingPage = () => {
 
   const categories = [
     {
-      title: 'Art & Design',
-      img: './images/category_1.png'
+      title: 'AI & ML',
+      img: './images/category_1.png',
     },
     {
-      title: 'Development',
-      img: './images/category_2.png'
+      title: 'Game Dev',
+      img: './images/category_2.png',
     },
     {
-      title: 'Life style',
-      img: './images/category_3.png'
-    },
-    {
-      title: 'Personal Development',
-      img: './images/category_4.png'
-    },
-    {
-      title: 'Business',
-      img: './images/category_5.png'
-    },
-    {
-      title: 'Finance',
-      img: './images/category_6.png'
-    },
-    {
-      title: 'Marketing',
-      img: './images/category_7.png'
-    },
-    {
-      title: 'Photography',
-      img: './images/category_8.png'
+      title: 'Cloud',
+      img: './images/category_3.png',
     },
     {
       title: 'Data Science',
-      img: './images/category_9.png'
+      img: './images/category_4.png',
     },
     {
-      title: 'Health & Fitness',
-      img: './images/category_10.png'
+      title: 'Cybersecurity',
+      img: './images/category_5.png',
     },
     {
-      title: 'Music',
-      img: './images/category_11.png'
+      title: 'Blockchain',
+      img: './images/category_6.png',
     },
     {
-      title: 'Teaching & Academics',
-      img: './images/category_12.png'
+      title: 'IoT',
+      img: './images/category_7.png',
     },
-  ]
+    {
+      title: 'Web Dev',
+      img: './images/category_8.png',
+    },
+    {
+      title: 'Mobile Dev',
+      img: './images/category_9.png',
+    },
+    {
+      title: 'DevOps',
+      img: './images/category_10.png',
+    },
+    {
+      title: 'AR & VR',
+      img: './images/category_11.png',
+    },
+    {
+      title: 'Quantum Computing',
+      img: './images/category_12.png',
+    },
+    {
+      title: 'Software Dev',
+      img: './images/category_1.png',
+    },
+    {
+      title: 'Generative AI',
+      img: './images/category_2.png',
+    },
+    {
+      title: 'Digital Transformation',
+      img: './images/category_3.png',
+    },
+    {
+      title: 'E-commerce',
+      img: './images/category_4.png',
+    },
+  ];
+
+
 
 
   const faqs = [
@@ -227,7 +245,7 @@ const useLandingPage = () => {
     }, 2000)
 
   }, []);
-  
+
 
   const filterCourses = (btn) => {
     if (btn == 'All') {

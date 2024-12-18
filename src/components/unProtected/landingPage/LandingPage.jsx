@@ -200,7 +200,7 @@ const LandingPage = () => {
                                       {
                                         renderButton(ele)
                                       }
-                                      <h3>{ele.description.slice(0,40)}...</h3>
+                                      <h3>{ele.description.slice(0, 40)}...</h3>
                                       <h4>{ele.instructor}</h4>
                                     </div>
                                   </div>

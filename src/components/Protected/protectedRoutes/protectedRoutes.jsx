@@ -26,6 +26,7 @@ import AdminDasboard from '../../admin/dashboard/adminDasboard'
 import Users from '../../admin/users/users'
 import InstructorProfile from '../instructorProfile/instructorProfile'
 import ManageCourses from '../manageCourses/manageCourses'
+import Analytics from '../analytics/InstructorAnalytics'
 
 
 export const ProtectedRoutes = () => {
@@ -39,7 +40,7 @@ export const ProtectedRoutes = () => {
     useEffect(() => {
         if (
             currentUser?.email === "faizzafar44@gmail.com" ||
-            currentUser?.email === "awaisamjad.officail@gmail.com"
+            currentUser?.email === "awaisamjad.official@gmail.com"
         ) {
             setIsAdmin(true);
         } else {
@@ -52,7 +53,7 @@ export const ProtectedRoutes = () => {
         <>
             <Routes>
 
-            <Route path='/instructor/profile/:InstructorID' element={<InstructorProfile/>} />
+                <Route path='/instructor/profile/:InstructorID' element={<InstructorProfile />} />
 
                 {
                     isAdmin ? (
@@ -61,7 +62,7 @@ export const ProtectedRoutes = () => {
                             <Route path='/instructors-application' element={<InstructorsRequests />} />
                             <Route path='/instructors-application/:applicationID' element={<InstructorsRequestsDetails />} />
                             <Route path='/app-users' element={<Users />} />
-                            <Route path='/view-analytics' element={"Analytics Here"} />
+                            <Route path='/admin-analytics' element={<Analytics />} />
                             <Route path='/setting' element={<Setting />} />
                         </>
                     ) : (
@@ -74,8 +75,8 @@ export const ProtectedRoutes = () => {
                                         <Route path='/add-course/add-quiz/:courseID' element={<AddQuiz />} />
                                         <Route path='/drafts' element={<Drafts />} />
                                         <Route path='/view-trends' element={"view Trends"} />
-                                        <Route path='/manage-courses' element={ <ManageCourses/> } />
-                                        <Route path='/analytics' element={"Analytics"} />
+                                        <Route path='/manage-courses' element={<ManageCourses />} />
+                                        <Route path='/instrcutor-analytics' element={<Analytics />} />
                                         <Route path='/profile' element={"Instructor Profile"} />
                                         <Route path='/notifications' element={<Notification />} />
 

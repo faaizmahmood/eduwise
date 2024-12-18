@@ -1,5 +1,7 @@
 .dashboard {
-    overflow-x: hidden;
+    overflow-x: scroll;
+    height: 80vh;
+    scrollbar-width: none;
 
     .main_content {
         min-height: 90vh;

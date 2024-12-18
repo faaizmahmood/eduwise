@@ -14,10 +14,7 @@ const Users = () => {
 
 
     const handelChange = (e) => {
-
-
         setUserType(e.target.value)
-
     }
 
     return (

@@ -12,7 +12,7 @@ const Card = ({ img, count, name }) => {
                 <div className='d-flex gap-3 align-items-center'>
                     <img src={img} alt={img} />
                     <div>
-                        <h6>{count}</h6>
+                        <h6>{count ? count : "N/A"}</h6>
                         <h6>{name}</h6>
                     </div>
                 </div>
