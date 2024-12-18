@@ -6,10 +6,17 @@ import { toast } from "react-toastify";
 const useExploreCourses = () => {
 
     const [loading, setLoading] = useState(true);
+
     const [course, setCourses] = useState([]); // Initialize as an empty array
+
     const [filteredCourses, setFilteredCourses] = useState();
+
     const searchTerm = useSelector((state) => state.handle_search_input);
+
     const currentUser = useSelector((state) => state.set_up_user);
+
+    const Instructor = useSelector((state) => state.Instructor);
+
     const navigate = useNavigate();
 
     // Fetch courses on component mount
@@ -28,12 +35,20 @@ const useExploreCourses = () => {
                         const fallbackRes = await fetch("https://eduwise-708c009023f3.herokuapp.com/api/courses/getcourses");
                         if (fallbackRes.ok) {
                             const fallbackData = await fallbackRes.json();
-                            setCourses(fallbackData.courses || []);
+
+                            const filterCourses = fallbackData?.courses.filter((ele) => {
+                                return ele?.instructor?.id === Instructor?._id
+                            })
+
+
+
+                            setCourses(filterCourses.courses || []);
+
                         } else {
                             toast.error("Failed to fetch fallback courses");
                         }
                     } else {
-                        setCourses(data.Courses_recommendations || []);
+                        setCourses(data.Courses_recommendations.reverse() || []);
                     }
                 } else {
                     toast.error("Failed to fetch courses");
@@ -47,7 +62,7 @@ const useExploreCourses = () => {
         };
 
         fetchCourses();
-    }, [currentUser._id]); // Dependency on currentUser._id to trigger when it changes
+    }, [currentUser._id]);
 
     // Navigate to a specific course
     const openCourse = (course) => {
