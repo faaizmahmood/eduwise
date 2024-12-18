@@ -82,7 +82,7 @@ const Courses = () => {
 
                                     <h3>{ele?.instructor?.name}</h3>
                                     <p>{ele?.ratings?.average_rating} Ratings</p>
-                                    <h4>{ele?.description}</h4>
+                                    <h4>{ele?.title.slice(0, 40)}</h4>
                                   </div>
                                 </div>
                               </>

@@ -17,7 +17,7 @@ const useManageCourses = () => {
                 setLoading(true); // Set loading to true before fetching data
 
                 const response = await fetch(
-                    `http://localhost:5000/api/instructor/getinstructorcourses/${instructor._id}`
+                    `https://eduwise-708c009023f3.herokuapp.com/api/instructor/getinstructorcourses/${instructor._id}`
                 );
 
                 if (!response.ok) {

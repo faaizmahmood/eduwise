@@ -99,13 +99,13 @@ const Contact = () => {
                                     <div className='row g-5'>
                                         <div className={`${styles.contact_form_content} col-lg-6 pt-sm-5`}>
                                             <h2>Keep In Touch With Us.</h2>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s,</p>
+                                            <p>We’re here to help! Whether you have questions, need support, or want to collaborate, reach out and our team will assist you.</p>
 
                                             <h3 className='mt-3'>Address</h3>
-                                            <p>1800 Abbot Kinney Blvd. Unit D & E Veniee</p>
+                                            <p>University of Engineering and Technology, Lahore, Narowal Campus</p>
 
                                             <h3 className='mt-3'>Phone</h3>
-                                            <p>+92 332 8899318</p>
+                                            <p>+92 302 7837990</p>
 
                                             <h3 className='mt-3'>Email</h3>
                                             <p>contact@eduwiseapp.tech</p>

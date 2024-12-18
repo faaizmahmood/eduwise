@@ -31,10 +31,10 @@ const StatsOverview = () => {
             <div className={`${styles.statsOverview} py-5`} style={bg}>
                 <div className='container'>
                     <div className='row align-items-center'>
-                        <StateCard icon={"globe"} title={"15 Years of Service"} count={"02 +"}/>
-                        <StateCard icon={"mind"} title={"Learners Enrolled in our Courses"} count={"2000 +"}/>
-                        <StateCard icon={"users"} title={"Instructors"} count={"1000 +"}/>
-                        <StateCard icon={"course_degree"} title={"Total Courses for you"} count={"5000 +"}/>
+                        <StateCard icon={"globe"} title={"Years of Service"} count={"01 +"}/>
+                        <StateCard icon={"mind"} title={"Learners Enrolled in our Courses"} count={"100 +"}/>
+                        <StateCard icon={"users"} title={"Instructors"} count={"50 +"}/>
+                        <StateCard icon={"course_degree"} title={"Total Courses for you"} count={"30 +"}/>
                     </div>
                 </div>
             </div>

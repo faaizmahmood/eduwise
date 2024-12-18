@@ -78,7 +78,7 @@ const useEnrollCourses = () => {
                     thumbnail: course?.thumbnail ? course?.thumbnail : "https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_thumbnail.png"
                 }
             }
-            const response = await fetch('http://localhost:5000/api/user/update-user', {
+            const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/user/update-user', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

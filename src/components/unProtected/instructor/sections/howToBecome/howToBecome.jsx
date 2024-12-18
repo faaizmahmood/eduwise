@@ -81,11 +81,11 @@ const HowToBecome = () => {
                             <div className={`row mt-5 pt-4 ${styles.tab_body}`}>
                                 <div className="col-lg-6 h-100 d-flex flex-column justify-content-center">
                                     <h3>Become an Instructor</h3>
-                                    <h4 className="mt-4">Plan your course</h4>
-                                    <p>Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt egetnvallis a cras semper auctor...</p>
+                                    <h4 className="mt-4">Sign Up as an User</h4>
+                                    <p>Create your account, complete your profile, and take the first step toward becoming a part of the Eduwise instructor community.</p>
 
-                                    <h4 className="mt-4">How we help you</h4>
-                                    <p>Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt egetnvallis a cras semper auctor...</p>
+                                    <h4 className="mt-4">Submit Your Application</h4>
+                                    <p>Provide your details and share your expertise with us. Our team will review your application to ensure the best fit for our platform.</p>
                                 </div>
 
                                 <div className="col-lg-6 text-lg-start text-center">
@@ -143,12 +143,12 @@ const HowToBecome = () => {
                         <>
                             <div className={`row mt-5 pt-4 ${styles.tab_body}`}>
                                 <div className="col-lg-6 h-100 d-flex flex-column justify-content-center">
-                                    <h3>Become an Instructor</h3>
-                                    <h4 className="mt-4">Plan your course</h4>
-                                    <p>Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt egetnvallis a cras semper auctor...</p>
+                                    <h3>Start With Course</h3>
+                                    <h4 className="mt-4">Design Your Course</h4>
+                                    <p>Plan your course structure, create engaging content, and use our tools to craft a learning experience that stands out.</p>
 
-                                    <h4 className="mt-4">How we help you</h4>
-                                    <p>Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt egetnvallis a cras semper auctor...</p>
+                                    <h4 className="mt-4">Publish and Go Live</h4>
+                                    <p>Submit your course for review, and once approved, it will be available for learners to enroll and start their journey with you.</p>
                                 </div>
 
                                 <div className="col-lg-6 text-lg-start text-center">

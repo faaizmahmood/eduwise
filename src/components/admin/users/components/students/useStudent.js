@@ -14,7 +14,7 @@ const useStudent = () => {
         // Fetch students data from API
         const fetchStudents = async () => {
             try {
-                const response = await fetch("http://localhost:5000/api/admin/admin-users");
+                const response = await fetch("https://eduwise-708c009023f3.herokuapp.com/api/admin/admin-users");
                 if (!response.ok) {
                     throw new Error("Failed to fetch students data");
                 }

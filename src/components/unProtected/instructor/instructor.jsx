@@ -11,6 +11,24 @@ import StatsOverview from './sections/statsOverview/statsOverview'
 import HowToBecome from './sections/howToBecome/howToBecome'
 import { NavLink } from 'react-router-dom'
 
+const CacdItem = ({ title, description }) => {
+
+  return (
+    <>
+      <div className={`col-md-6 col-12 p-sm-2 `}>
+
+        <div className={`${styles.card} `}>
+          {/* <Icon icon={"money"} /> */}
+          <h4 className='mt-3'>{title}</h4>
+          <p>{description}</p>
+        </div>
+
+      </div>
+    </>
+  )
+
+}
+
 const Instructor = () => {
 
   const { loading } = useInstructor()
@@ -39,31 +57,19 @@ const Instructor = () => {
 
 
             <div className={`${styles.discover} text-center my-5 w-75 mx-auto d-flex flex-column align-items-center`}>
-              <h6>UNLEASHED</h6>
-              <h2 className='mt-sm-2 mt-1'>Discover Your Potential</h2>
-              <p className='mt-sm-3 mt-0'>Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt egetnvallis a cras semper auctonvallis a cras semper aucto. Neque convallis a cras semper auctor. Liberoe convallis a cras semper atincidunt egetnval</p>
+              <h6>Join Our Community of Expert Instructors</h6>
+              <h2 className='mt-sm-2 mt-1'>Become an Instructor at Eduwise and Share Your Knowledge</h2>
+              <p className='mt-sm-3 mt-0'>At Eduwise, we believe in the power of education and the value of sharing expertise. As an instructor, you’ll have the opportunity to inspire and guide learners from all over the world. With our platform, you can create and publish your courses, help students achieve their goals, and earn revenue from your content. Start your teaching journey with us today!</p>
 
               <div className='container'>
 
                 <div className='row g-2'>
 
-                  {
-                    [1, 2, 3].map(() => {
-                      return (
-                        <>
-                          <div className={`col-md-4 col-12 p-sm-2 `}>
 
-                            <div className={`${styles.card} `}>
-                              <Icon icon={"money"} />
-                              <h4 className='mt-3'>Earn Money</h4>
-                              <p>Earn money every time a student purchases your course. Get paid monthly through PayPal or Payoneer, it’s your choice.</p>
-                            </div>
 
-                          </div>
-                        </>
-                      )
-                    })
-                  }
+                  <CacdItem title={"Create Your Own Courses"} description={"Design and structure courses that reflect your expertise, making learning engaging and accessible for students worldwide."} />
+                  <CacdItem title={"Reach a Global Audience"} description={"Educate learners from all corners of the world, expanding your impact and connecting with a diverse group of students."} />
+                  {/* <CacdItem title={"Create Your Own Courses"} description={"Design and structure courses that reflect your expertise, making learning engaging and accessible for students worldwide."}/> */}
 
                 </div>
 
@@ -85,8 +91,8 @@ const Instructor = () => {
                   </div>
 
                   <div className='col-lg-6 pt-3 mt-lg-0 mt-4'>
-                    <h3>We&apos;re here to help</h3>
-                    <p>Our Instructor Support Team is here for you 24/7 to help you through your course creation needs. Use our Teaching Center, a resource center to help you through the process.This community group is always on, always there, and always helpful.</p>
+                    <h3>Empower Learners with Your Expertise</h3>
+                    <p>Share your knowledge with a global audience by creating impactful courses on Eduwise. With our user-friendly platform, you can easily design and deliver high-quality educational content that makes a difference. Join us today and help shape the future of learning.</p>
                   </div>
 
                 </div>
@@ -97,12 +103,12 @@ const Instructor = () => {
 
 
             <section className={`${styles.call_to_action} text-center mt-5`}>
-                
-                <h2>Become an Instructor Today</h2>
 
-                <p>Join the world&apos;s largest online learning marketplace.</p>
+              <h2>Become an Instructor Today</h2>
 
-                <NavLink to='/auth/signup'><button>Start teaching today</button></NavLink>
+              <p>Join the instructor Community</p>
+
+              <NavLink to='/auth/signup'><button>Start teaching today</button></NavLink>
 
             </section>
 

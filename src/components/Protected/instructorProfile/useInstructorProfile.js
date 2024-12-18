@@ -22,7 +22,7 @@ const useInstructorProfile = () => {
         setLoading(true);
 
         const response = await fetch(
-          `http://localhost:5000/api/instructor/instructor-profile/${InstructorID}`
+          `https://eduwise-708c009023f3.herokuapp.com/api/instructor/instructor-profile/${InstructorID}`
         );
 
         if (!response.ok) {

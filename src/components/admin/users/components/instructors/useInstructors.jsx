@@ -90,7 +90,7 @@ const useInstructors = () => {
 
             setDeleteLoading(true)
 
-            const response = await fetch(`http://localhost:5000/api/delete/delete-user/${id}`, {
+            const response = await fetch(`https://eduwise-708c009023f3.herokuapp.com/api/delete/delete-user/${id}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -125,7 +125,7 @@ const useInstructors = () => {
         // Fetch data from the API when the component mounts
         const fetchInstructors = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/admin-instructors');
+                const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/admin/admin-instructors');
 
                 if (!response.ok) {
                     throw new Error('Failed to fetch instructors');

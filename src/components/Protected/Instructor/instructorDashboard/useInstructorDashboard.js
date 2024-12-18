@@ -11,7 +11,7 @@ const useInstructorDashboard = () => {
         const fetchDashboardData = async () => {
             setLoading(true);
             try {
-                const response = await fetch('http://localhost:5000/api/instructor/instructor-dashboard/67545aa2863a6141b439d7e7');
+                const response = await fetch('https://eduwise-708c009023f3.herokuapp.com/api/instructor/instructor-dashboard/67545aa2863a6141b439d7e7');
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
                 }

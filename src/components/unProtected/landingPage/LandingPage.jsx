@@ -184,7 +184,7 @@ const LandingPage = () => {
                                     <div className={`position-relative ${styles.course_card_head}`}>
                                       <img src={`./images/${ele.image}`} alt='course_thumbail_1' className='img-fluid' />
                                       <div className={styles['courses_card_btns']}>
-                                        {
+                                        {/* {
                                           ele.isFeatured ? <button disabled className={styles['courses_card_btn']} style={{ backgroundColor: '#D31819' }}>FEATURED</button> : ""
                                         }
                                         {
@@ -192,7 +192,7 @@ const LandingPage = () => {
                                         }
                                         {
                                           ele.discount === 0 ? "" : <button disabled className={styles['courses_card_btn']} style={{ backgroundColor: '#0071DC' }}>-{ele.discount}%</button>
-                                        }
+                                        } */}
                                       </div>
 
                                     </div>
@@ -200,7 +200,7 @@ const LandingPage = () => {
                                       {
                                         renderButton(ele)
                                       }
-                                      <h3>{ele.description}</h3>
+                                      <h3>{ele.description.slice(0,40)}...</h3>
                                       <h4>{ele.instructor}</h4>
                                     </div>
                                   </div>
@@ -341,30 +341,30 @@ const LandingPage = () => {
                   <div className={`mt-4 ${styles.testimonial_slider}`}>
                     <TestimonialCard
                       title='Code Quality'
-                      description='EduWise has been a game-changer for me! The courses are detailed, and the instructors are very professional. I recently completed the Web Development course and received my certification, which helped me land an internship. Highly recommended for anyone looking to upskill in Pakistan!'
-                      name='Ahmed Raza'
-                      position='Computer Science Student, NUST'
+                      description='Eduwise has been a game-changer for my career. The courses are detailed and easy to follow, and the certification opened new opportunities for me!!'
+                      name='Ali Shah'
+                      position='Software Developer'
                       img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
                     <TestimonialCard
                       title='Code Quality'
-                      description='I loved how EduWise made learning so accessible. The Business Analytics course was well-structured, and the certification added great value to my resume. The platform is easy to use, and the support team is very responsive. Definitely worth it!'
-                      name='Ayesha Fatima'
-                      position='MBA Graduate, Lahore School of Economics'
+                      description='Teaching on Eduwise has been an incredible experience. The platform is user-friendly, and I’ve been able to connect with so many motivated learners.'
+                      name='Ayesha Khan'
+                      position='Business Instructor'
                       img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
                     <TestimonialCard
                       title='Code Quality'
-                      description='EduWise offers top-notch courses with practical insights. I completed the Python for Data Science course and found it incredibly helpful. The certification added credibility to my LinkedIn profile, and I feel more confident applying for data-related roles now.'
-                      name='Bilal Khan'
-                      position='Software Engineer, FAST University'
+                      description='I’ve enrolled in multiple courses on Eduwise, and each one has exceeded my expectations. The quality of content is exceptional!'
+                      name='Usman Tariq'
+                      position='Digital Marketing Specialist'
                       img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
                     <TestimonialCard
                       title='Code Quality'
-                      description='EduWise has some of the best online courses out there! The UI/UX Design course was interactive and provided hands-on projects that prepared me for real-world challenges. The certification was a nice bonus, and I cannot wait to explore more courses.'
-                      name='Sana Tariq'
-                      position='Final Year Student, UET Lahore'
+                      description='Eduwise offers a seamless experience for both instructors and students. It’s a fantastic platform to learn and teach.'
+                      name='Sara Iqbal'
+                      position='Graphic Design Instructor'
                       img='https://eduwise-s3bucket.s3.eu-north-1.amazonaws.com/images/dummy_img.webp'
                     />
 
