@@ -34,10 +34,12 @@ const Analytics = () => {
     };
 
     const adminApiEndpoints = {
-        category: 'admin_courses_rating_by_category',
-        'top-rated': 'admin_top_rated_courses/rating-graph',
-        'all-courses': 'admin_all_courses_rating/rating-graph',
-        'low-rated': 'admin_all_courses_rating/lowest-courses-ratings',
+        category: 'api/admin/most-wished-courses',
+        'enroll-completion': 'api/admin/course/enrollment-completion/',
+        'top-rated': 'api/admin/most_completed_courses',
+        'all-courses': 'api/admin/most_enrolled_courses',
+        'low-rated': 'api/admin/course/average_course_ratings',
+        'wish-list': 'top-performing-instructors',
     };
 
     // Fetch data based on user role and selected option
@@ -74,17 +76,28 @@ const Analytics = () => {
             <section className={`${styles.analytics}`}>
                 <div className="text-end">
                     <select onChange={handleSelectChange} value={selectedOption}>
-                        <option value="category">Category Wise Rating</option>
-                        <option value="top-rated">Top Rated Courses</option>
-                        <option value="all-courses">All Courses</option>
-                        <option value="low-rated">Low Rated Courses</option>
+                        {isAdmin ? (
+                            <>
+                                <option value="category">Most Wished Courses</option>
+                                <option value="enroll-completion">Completed VS Enrolled</option>
+                                <option value="top-rated">Most Completed Courses</option>
+                                <option value="all-courses">Most Enrolled Courses</option>
+                                <option value="low-rated">Average Course Rating</option>
+                                <option value="wish-list">Top Performing Instructors</option>
+                            </>
+                        ) : (
+                            <>
+                                <option value="category">Category Wise Rating</option>
+                                <option value="top-rated">Top Rated Courses</option>
+                                <option value="all-courses">All Courses</option>
+                                <option value="low-rated">Low Rated Courses</option>
+                            </>
+                        )}
                     </select>
                 </div>
 
                 {loading ? (
-                    <>
-                        <InnerPageLoading />
-                    </>
+                    <InnerPageLoading />
                 ) : (
                     <div className="mt-4 text-center">
                         {imageSrc ? (
