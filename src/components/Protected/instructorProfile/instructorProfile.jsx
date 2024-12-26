@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Tabs, Tab, Box } from "@mui/material";
 import pp from "../../../../public/images/PF_img_main.png";
 import thumbnail from "../../../../public/images/course_thumbail_4.png";
-import styles from './InstructorProfile.module.scss';
+import styles from './instructorProfile.module.scss';
 import useInstructorProfile from "./useInstructorProfile";
 import InnerPageLoading from "../../../containers/pageLoading/InnerPageLoading/innerPageLoading";
 
@@ -59,7 +59,7 @@ const InstructorProfile = () => {
                             {/* <p className="mb-2 mt-2">⭐⭐⭐⭐⭐</p> */}
 
                             {/* MUI Tabs Section */}
-                            <Box sx={{ width: '100%', marginTop:'10px' }}>
+                            <Box sx={{ width: '100%', marginTop: '10px' }}>
                                 <Tabs value={value} onChange={handleChange} aria-label="Instructor Profile Tabs">
                                     <Tab label="About"
                                         sx={{
@@ -192,7 +192,7 @@ const InstructorProfile = () => {
                                                                 {/* Render stars dynamically */}
                                                                 <p className="mb-2 mt-2">
                                                                     {Array.from({ length: average_rating }, (_, index) => (
-                                                                        <span key={index}style={{fontSize:'16px'}}>⭐</span>
+                                                                        <span key={index} style={{ fontSize: '16px' }}>⭐</span>
                                                                     ))}
                                                                 </p>
                                                                 {/* Render the review text or skip if no review */}
