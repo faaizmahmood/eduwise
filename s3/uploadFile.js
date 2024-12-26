@@ -1,5 +1,15 @@
-import S3 from 'react-s3'
+import AWS from 'aws-sdk'
 import { s3Config } from '../s3-config'
+
+// Configure AWS SDK
+AWS.config.update({
+    accessKeyId: s3Config.accessKeyId,
+    secretAccessKey: s3Config.secretAccessKey,
+    region: s3Config.region,
+});
+
+// Create an S3 instance
+const s3 = new AWS.S3()
 
 // Generate a unique name with a folder path based on the file type
 const generateUniqueFileName = (file) => {
@@ -31,17 +41,19 @@ const uploadFile = async (file) => {
         // Generate a unique file name with folder path
         const uniqueFileName = generateUniqueFileName(file)
 
-        // Create a new file object with the unique name
-        const renamedFile = new File([file], uniqueFileName, { type: file.type })
+        // Upload the file to S3
+        const params = {
+            Bucket: s3Config.bucketName, // Replace with your bucket name
+            Key: uniqueFileName, // File path in S3
+            Body: file, // File content
+            ContentType: file.type, // MIME type
+            ACL: 'bucket-owner-full-control', // Specify access control
+        }
 
-        // Upload the renamed file with the ACL explicitly set
-        const response = await S3.uploadFile(renamedFile, {
-            ...s3Config,
-            ACL: 'bucket-owner-full-control', // Explicitly specify the ACL
-        })
+        const response = await s3.upload(params).promise()
 
         console.log('File uploaded successfully:', response)
-        return response.location // S3 URL of the uploaded file
+        return response.Location // S3 URL of the uploaded file
     } catch (error) {
         console.error('Error uploading file:', error)
         throw error
