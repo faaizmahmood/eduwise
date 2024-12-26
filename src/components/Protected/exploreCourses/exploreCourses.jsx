@@ -45,7 +45,7 @@ const ExploreCourses = () => {
                         return (
                           <>
                             <div
-                              className={`${styles.course_item} mt-3`}
+                              className={`${styles.course_item}  mt-3`}
                               onClick={() => openCourse(ele)}
                               key={ele._id}
                             >
