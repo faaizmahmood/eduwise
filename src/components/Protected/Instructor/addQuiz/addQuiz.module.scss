@@ -1,0 +1,48 @@
+.add_quiz {
+
+    margin: 30px 0px;
+    padding: 20px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
+
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        outline: none;
+        border-radius: 30px;
+        background: #0071DC;
+        color: #FFF;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+
+    h3{
+        font-size: 16px;
+    }
+
+
+    .added_question{
+        font-size: 14px;
+        font-weight: 500;
+
+        .added_option{
+            font-size: 12px;
+        font-weight: 400;
+        }
+    }
+
+}

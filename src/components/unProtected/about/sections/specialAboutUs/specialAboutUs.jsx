@@ -6,16 +6,16 @@ const SpecialAboutUs = () => {
 
   const card_content = [
     {
-      title: "Who We Are",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy ndisse suscipit sagittis leom dolor sit amet."
+      title: "Expert-Led Courses",
+      description: "Learn from industry experts who bring real-world experience to every lesson, ensuring you gain practical and relevant knowledge."
     },
     {
-      title: "What We Do",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy ndisse suscipit sagittis leom dolor sit amet."
+      title: "Flexible Learning",
+      description: "Access courses anytime, anywhere, and learn at your own pace, making education fit into your busy lifestyle."
     },
     {
-      title: "Our Mission",
-      description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy ndisse suscipit sagittis leom dolor sit amet."
+      title: "Certified Success",
+      description: "Receive recognized certificates that showcase your skills and open doors to new career opportunities."
     }
   ]
 
@@ -24,8 +24,8 @@ const SpecialAboutUs = () => {
       <div className='container'>
 
         <div className='text-center'>
-          <h2>What Make Us Spcecial?</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisc ing elit.</p>
+          <h2>Why Choose Eduwise?</h2>
+          <p>Eduwise is designed to offer an exceptional learning experience, with courses tailored to your needs and certifications that boost your career.</p>
         </div>
 
         <div className='row g-3 mt-3'>

@@ -90,8 +90,13 @@
                     color: #262626;
                 }
 
+                .btn_group {
+                    flex-wrap: wrap;
+                    row-gap: 5px;
+                }
+
                 button {
-                    padding: 7px 10px;
+                    padding: 5px 10px;
                     border: 1px solid #0071DC;
                     outline: none;
                     border-radius: 30px;

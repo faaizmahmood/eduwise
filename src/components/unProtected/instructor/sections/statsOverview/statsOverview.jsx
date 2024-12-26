@@ -5,7 +5,7 @@ import styles from './statsOverview.module.scss'
 import Icon from '../../../../../containers/Icon'
 
 
-const StateCard = ({icon, title, count}) => {
+const StateCard = ({ icon, title, count }) => {
     return (
         <>
             <div className={`${styles.stateCard} col-lg-4 col-sm-6 col-12 text-center mt-sm-0 mt-4`}>
@@ -31,9 +31,9 @@ const StatsOverview = () => {
             <div className={`${styles.statsOverview} py-5`} style={bg}>
                 <div className='container'>
                     <div className='row align-items-center'>
-                    <StateCard icon={"mind"} title={"Learners Enrolled in our Courses"} count={"2000 +"}/>
-                        <StateCard icon={"course_degree"} title={"Total Courses for you"} count={"5000 +"}/>
-                        <StateCard icon={"globe"} title={"Countires"} count={"01 +"}/>
+                        <StateCard icon={"mind"} title={"Learners Enrolled in our Courses"} count={"100 +"} />
+                        <StateCard icon={"course_degree"} title={"Total Courses for you"} count={"30 +"} />
+                        <StateCard icon={"globe"} title={"Years of Service"} count={"01 +"} />
                     </div>
                 </div>
             </div>

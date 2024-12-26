@@ -22,35 +22,35 @@ const Footer = () => {
                 <div className='container pt-3'>
                     <div className="row justify-content-center">
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
-                            <h5>Logo Here</h5>
+                            <img src='./images/logo.png' alt='logo here' width={"35px"} />
                             <p>EduWise is a platform offering certified courses to help you gain skills and advance your career.</p>
                         </div>
 
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Quick Links</h5>
                             <ul className="list-unstyled mt-3">
-                                <NavLink to='/'><li>Home</li></NavLink>
-                                <NavLink to='/about'><li>About</li></NavLink>
-                                <NavLink to='/courses'><li>Courses</li></NavLink>
-                                <NavLink to='/become-instructor'><li>Become an Instructor</li></NavLink>
-                                <NavLink to='/contact'><li>Contact</li></NavLink>
+                                <NavLink style={{ textDecoration: 'none', color: '#3F5571' }} to='/'><li>Home</li></NavLink>
+                                <NavLink style={{ textDecoration: 'none', color: '#3F5571' }} to='/about'><li>About</li></NavLink>
+                                <NavLink style={{ textDecoration: 'none', color: '#3F5571' }} to='/courses'><li>Courses</li></NavLink>
+                                <NavLink style={{ textDecoration: 'none', color: '#3F5571' }} to='/become-instructor'><li>Become an Instructor</li></NavLink>
+                                <NavLink style={{ textDecoration: 'none', color: '#3F5571' }} to='/contact'><li>Contact</li></NavLink>
                             </ul>
                         </div>
 
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Social Media</h5>
                             <ul className="list-unstyled mt-3">
-                                <li className='my-2'><a href="#"><img src={twitterIcon} /> <span className='ms-2'>Twitter</span></a></li>
-                                <li className='my-2'><a href="#"><img icon={youtubeIcon} /> <span className='ms-2'>YouTube</span></a></li>
-                                <li className='my-2'><a href="#"><img icon={linkedinIcon} /> <span className='ms-2'>LinkedIn</span></a></li>
-                                <li className='my-2'><a href="#"><img icon={facebookIcon} /> <span className='ms-2'>Facebook</span></a></li>
+                                {/* <li className='my-2'><a href="#"><img src={twitterIcon} /> <span className='ms-2'>Twitter</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={youtubeIcon} /> <span className='ms-2'>YouTube</span></a></li> */}
+                                <li className='my-2'><a href="https://www.linkedin.com/company/eduwisepp" target='_blank'><img icon={linkedinIcon} /> <span className='ms-2'>LinkedIn</span></a></li>
+                                <li className='my-2'><a href="https://www.facebook.com/eduwiseofficial/" target='_blank'><img icon={facebookIcon} /> <span className='ms-2'>Facebook</span></a></li>
                             </ul>
                         </div>
 
                         <div className="col-lg-3 col-sm-6 mt-sm-0 mt-4">
                             <h5>Contact Us</h5>
                             <ul className="list-unstyled">
-                                <li className='my-2'><a href="#"><img icon={callIcon} /> <span className='ms-2'>+92 303 3777018</span></a></li>
+                                <li className='my-2'><a href="#"><img icon={callIcon} /> <span className='ms-2'>+92 302 7837990</span></a></li>
                                 <li className='my-2'><a href="#"><img icon={mailIcon} /> <span className='ms-2'> contact@eduwise.com</span></a></li>
                                 <li className='my-2'><a href="#"><img icon={addressIcon} /> <span className='ms-2'> Lahore, Punjab, Pakistan</span></a></li>
                             </ul>
@@ -59,7 +59,8 @@ const Footer = () => {
                     <hr />
                     <div className='d-flex flex-sm-row flex-column justify-content-sm-between text-md-start text-center'>
                         <p>Copyright 2024 All Rights Reserved</p>
-                        <p>Privacy Policy</p>
+                        <a href='https://www.freeprivacypolicy.com/live/84062085-d77e-4042-a8f4-c30d4af6d0c9' target='_blank'> <p>Privacy Policy</p></a>
+
                     </div>
                 </div>
             </footer>

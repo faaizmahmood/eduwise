@@ -1,0 +1,62 @@
+.dashboard {
+    overflow-x: hidden;
+    height: 80vh;
+    scrollbar-width: none;
+
+    .main_content {
+        min-height: 90vh;
+        overflow-y: auto;
+        scrollbar-width: none;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .side_card {
+        width: 100%;
+        min-height: 80px;
+        background-color: rgb(235, 235, 235);
+        padding: 20px;
+        border-radius: 10px;
+
+        h2 {
+            color: #262626;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .review_item{
+            margin-top: 10px;
+            width: 100%;
+            min-height: 100px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+
+            h6{
+                font-size: 10px;
+                color: gold;
+            }
+            
+            p{
+                font-size: 14px;
+                margin-bottom: 0px;
+                color: rgba(0, 0, 0, 0.606);
+            }
+        }
+    }
+}
+
+
+@media (max-width:992px) {
+    .dashboard {
+
+        .main_content {
+            min-height: 160vh;
+            padding-bottom: 50px;
+        }
+    }
+}

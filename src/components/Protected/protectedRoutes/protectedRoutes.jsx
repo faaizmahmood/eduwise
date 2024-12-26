@@ -19,6 +19,14 @@ import BecomeInstructor from '../becomeInstructor/becomeInstructor'
 import InstructorsRequests from '../../admin/InstructorsRequests/InstructorsRequests'
 import InstructorsRequestsDetails from '../../admin/InstructorsRequestsDetails/InstructorsRequestsDetails'
 import AddCourses from '../Instructor/addCourses/addCourses'
+import AddQuiz from '../Instructor/addQuiz/addQuiz'
+import Drafts from '../Instructor/drafts/drafts'
+import InstructorDashboard from '../Instructor/instructorDashboard/instructorDashboard'
+import AdminDasboard from '../../admin/dashboard/adminDasboard'
+import Users from '../../admin/users/users'
+import InstructorProfile from '../instructorProfile/instructorProfile'
+import ManageCourses from '../manageCourses/manageCourses'
+import Analytics from '../analytics/InstructorAnalytics'
 
 
 export const ProtectedRoutes = () => {
@@ -32,7 +40,7 @@ export const ProtectedRoutes = () => {
     useEffect(() => {
         if (
             currentUser?.email === "faizzafar44@gmail.com" ||
-            currentUser?.email === "awaisamjad.officail@gmail.com"
+            currentUser?.email === "awaisamjad.official@gmail.com"
         ) {
             setIsAdmin(true);
         } else {
@@ -45,14 +53,16 @@ export const ProtectedRoutes = () => {
         <>
             <Routes>
 
+                <Route path='/instructor/profile/:InstructorID' element={<InstructorProfile />} />
+
                 {
                     isAdmin ? (
                         <>
-                            <Route path='/' element={"admin DashBoard"} />
+                            <Route path='/' element={<AdminDasboard />} />
                             <Route path='/instructors-application' element={<InstructorsRequests />} />
                             <Route path='/instructors-application/:applicationID' element={<InstructorsRequestsDetails />} />
-                            <Route path='/app-users' element={"App Users"} />
-                            <Route path='/view-analytics' element={"Analytics Here"} />
+                            <Route path='/app-users' element={<Users />} />
+                            <Route path='/admin-analytics' element={<Analytics />} />
                             <Route path='/setting' element={<Setting />} />
                         </>
                     ) : (
@@ -60,11 +70,13 @@ export const ProtectedRoutes = () => {
                             {
                                 userMode ? (
                                     <>
-                                        <Route path='/' element={"<DashBoard />"} />
+                                        <Route path='/' element={<InstructorDashboard />} />
                                         <Route path='/add-course' element={<AddCourses />} />
+                                        <Route path='/add-course/add-quiz/:courseID' element={<AddQuiz />} />
+                                        <Route path='/drafts' element={<Drafts />} />
                                         <Route path='/view-trends' element={"view Trends"} />
-                                        <Route path='/manage-courses' element={"Add Courses"} />
-                                        <Route path='/analytics' element={"Analytics"} />
+                                        <Route path='/manage-courses' element={<ManageCourses />} />
+                                        <Route path='/instrcutor-analytics' element={<Analytics />} />
                                         <Route path='/profile' element={"Instructor Profile"} />
                                         <Route path='/notifications' element={<Notification />} />
 

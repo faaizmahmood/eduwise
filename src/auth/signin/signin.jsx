@@ -61,7 +61,7 @@ const Signin = () => {
                                                     {/* <i className="fa-sharp fa-solid fa-eye-slash me-2" style={{cursor:'pointer'}}></i> */}
                                                 </div>
 
-                                                <h6 className={`text-end mt-3 ${styles.forget_password}`}> ForgetPassword?</h6>
+                                                {/* <h6 className={`text-end mt-3 ${styles.forget_password}`}> ForgetPassword?</h6> */}
 
                                                 {formik.touched.password && formik.errors.password && (
                                                     <p className={styles['error']}>{formik.errors.password}</p>

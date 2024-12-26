@@ -38,7 +38,7 @@ const ExploreCourses = () => {
                     {
 
 
-                      filteredCourses.map((ele, ind) => {
+                      filteredCourses.slice().reverse().map((ele, ind) => {
 
                         const rating_num = Math.floor(ele?.ratings?.average_rating)
 
@@ -52,13 +52,13 @@ const ExploreCourses = () => {
                               <div className={styles['course-card']}>
                                 <div className={`position-relative ${styles.course_card_head}`}>
                                   <img
-                                    src={`./images/course_thumbail_1.png`}
+                                    src={ele?.thumbnail ? ele?.thumbnail : `./images/course_thumbail_1.png`}
                                     alt="course_thumbnail"
                                     className="img-fluid"
                                   />
                                 </div>
                                 <div className={`text-start ${styles.course_card_body}`}>
-                                  <h3>{ele?.title}</h3>
+                                  <h3>{ele?.title.slice(0, 40)}...</h3>
                                   <h4>{ele?.instructor?.name}</h4>
                                   <div className='d-flex gap-2 align-items-center'>
                                     {[...Array(rating_num > 0 ? rating_num : 0)].map((_, ind) => {

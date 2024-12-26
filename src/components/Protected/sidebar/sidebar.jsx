@@ -25,7 +25,7 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
   useEffect(() => {
     if (
       currentUser?.email === "faizzafar44@gmail.com" ||
-      currentUser?.email === "awaisamjad.officail@gmail.com"
+      currentUser?.email === "awaisamjad.official@gmail.com" 
     ) {
       setIsAdmin(true);
     } else {
@@ -72,8 +72,7 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
                     </NavLink>
 
 
-                    <NavLink to='/analytics' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
-                      {/* <i className="fa-solid fa-bookmark"></i> */}
+                    <NavLink to='/admin-analytics' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                       <i className="fa-duotone fa-regular fa-chart-simple"></i>
                       <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Analytics</h5>
                     </NavLink>
@@ -108,22 +107,26 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Add Courses</h5>
                           </NavLink>
 
+                          <NavLink to='/drafts' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
+                          <i className="fa-regular fa-pen-to-square"></i>
+                            <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Drafts</h5>
+                          </NavLink>
+
                           <NavLink to='/manage-courses' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                             <i className="fa-sharp fa-regular fa-gear-complex-code"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Manage</h5>
                           </NavLink>
 
 
-                          <NavLink to='/view-trends' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
+                          {/* <NavLink to='/view-trends' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                             <i className="fa-regular fa-chart-line-up"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>view Trends</h5>
-                          </NavLink>
+                          </NavLink>*/}
 
-                          <NavLink to='/analytics' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
-                            {/* <i className="fa-solid fa-bookmark"></i> */}
+                          <NavLink to='/instrcutor-analytics' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                             <i className="fa-duotone fa-regular fa-chart-simple"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Analytics</h5>
-                          </NavLink>
+                          </NavLink> 
 
                         </div>
 
@@ -163,7 +166,7 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
                             <i className="fa-regular fa-file-certificate"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Certificates</h5>
                           </NavLink>
-{/* 
+                          {/* 
                           <NavLink to='/profile' style={side_bar_item_style} className={({ isActive }) => `${isActive ? styles.active_side_menu : ''} ${styles.side_bar_item} d-flex align-items-baseline mt-lg-4`}>
                             <i className="fa-regular fa-user"></i>
                             <h5 className='ms-1' style={{ display: drawer ? "" : "none" }}>Profile</h5>

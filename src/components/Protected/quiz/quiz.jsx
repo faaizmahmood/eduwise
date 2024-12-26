@@ -32,7 +32,7 @@ const Quiz = () => {
                     quizData1.questions[index]?.options.find(option => option.text === answer)?.is_correct
             ).length;
 
-            if ((totalCorrectAnswers / quizData1.questions.length) * 100 >= 75) {
+            if ((totalCorrectAnswers / quizData1.questions.length) * 100 >= 65) {
                 handleConfetti();
                 toast.success("Congratulations! You Passed.");
             } else {

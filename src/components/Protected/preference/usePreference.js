@@ -16,6 +16,7 @@ const usePreference = () => {
 
     const options = [
         "Artificial Intelligence & Machine Learning",
+        "Game Development",
         "Cloud Computing",
         "Data Science & Big Data Analytics",
         "Cybersecurity",
@@ -30,8 +31,8 @@ const usePreference = () => {
         "Generative AI & LLMs",
         "Digital Transformation",
         "E-commerce Platforms & Tools",
-        "Game Development",
     ];
+
 
     const handleButtonClick = (text) => {
 

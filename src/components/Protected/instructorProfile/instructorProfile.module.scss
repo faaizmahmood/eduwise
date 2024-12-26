@@ -1,0 +1,109 @@
+.instructorProfile {
+
+
+    padding: 20px;
+    height: 80vh;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    .instructorProfileImage {
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+    }
+
+    h2 {
+        color: #262626;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .hr {
+        margin-top: -2px;
+    }
+
+    .btn_group {
+        button {
+            padding: 5px 20px;
+            border: none;
+            outline: none;
+            border-radius: 30px;
+            background: #0071DC;
+            color: #FFF;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+
+
+    ul li {
+        font-size: 14px;
+        margin-top: 5px;
+    }
+
+    .courses {
+
+        .courses_item {
+            min-height: 100px;
+            border-radius: 10px;
+
+            img {
+                width: 100% !important;
+                height: 220px;
+                border-radius: 10px;
+            }
+
+            h3 {
+                color: #262626;
+                font-size: 16px;
+                font-weight: 600;
+                margin-top: 10px;
+                line-height: 26px;
+            }
+
+            h4 {
+                color: #0071DC;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 22px;
+                margin-top: -5px;
+            }
+
+        }
+    }
+
+
+    .review {
+
+        .review_item {
+            min-height: 100px;
+             width:100%;
+             background-color: #0071DC;
+             border-radius: 10px;
+             padding: 20px;
+             margin-top: 10px;
+
+
+             p{
+                margin-bottom: 0;
+                font-size: 18px;
+                color: white;
+             }
+        }
+
+    }
+
+}
