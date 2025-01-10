@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import styles from './analytics.module.scss';
 import { toast } from 'react-toastify';
