@@ -25,7 +25,8 @@ const Sidebar = ({ toggleDrawer, drawer }) => {
   useEffect(() => {
     if (
       currentUser?.email === "faizzafar44@gmail.com" ||
-      currentUser?.email === "awaisamjad.official@gmail.com" 
+      currentUser?.email === "awaisamjad.official@gmail.com" ||
+      currentUser?.email === "rafaqatsufyan1@gmail.com"
     ) {
       setIsAdmin(true);
     } else {
